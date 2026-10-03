@@ -54,6 +54,6 @@ Clone the repository, explore the example notebooks, and start building your own
 
 ## Google Earth Engine Sentinel-1 use cases
 The [`gee/`](gee/README.md) folder contains six standalone Google Earth Engine Code Editor scripts
-(flood mapping, building damage with PWTT, oil spill detection, omnibus change detection and
-Random Forest crop classification, UK peatland mapping). Each implements a published Sentinel-1 method, runs on a
+(flood mapping, building damage with PWTT, oil spill detection, omnibus change detection,
+Random Forest crop classification and UK peatland mapping). Each implements a published Sentinel-1 method, runs on a
 test site with reference data, and builds its own interactive UI.
