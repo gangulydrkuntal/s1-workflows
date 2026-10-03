@@ -1,6 +1,6 @@
 # Sentinel-1 use cases for the Google Earth Engine Code Editor
 
-Five self-contained JavaScript workflows for the [GEE Code Editor](https://code.earthengine.google.com/).
+Six self-contained JavaScript workflows for the [GEE Code Editor](https://code.earthengine.google.com/).
 Each one implements a published, widely cited Sentinel-1 method. Each runs on a test site that has
 independent reference data, and each builds its own UI: a layer list, a legend, statistics, charts
 and click-to-inspect time series.
@@ -12,6 +12,7 @@ and click-to-inspect time series.
 | 3 | `03_oil_spill_baniyas2021.js` | Marine oil spill | Adaptive dark-spot detection + object features (Solberg et al. 2007; Brekke & Solberg 2005; Topouzelis 2008) | Baniyas, Syria, 23 Aug 2021 onwards | **Pre-spill negative control** (false-alarm area), ERA5 wind check, area vs time compared with the reported slick (imaged 24–25 Aug; ~800 km² by ~31 Aug). Optional reference polygon gives IoU |
 | 4 | `04_omnibus_change_detection_deforestation.js` | Multi-temporal change detection | Sequential omnibus likelihood-ratio test (Conradsen et al. 2016, *IEEE TGRS*; Canty et al. 2020, *Remote Sens.*) | Jaci-Paraná Extractive Reserve, Rondônia, Brazil, 2020–2021 | **Hansen Global Forest Change v1.12**: stratum-weighted accuracy (Olofsson et al. 2014) and year-of-change agreement |
 | 5 | `05_crop_classification_rf_cdl.js` | Crop-type mapping (ML) | Random Forest on dense S1 time series (Veloso et al. 2017; Belgiu & Drăguţ 2016) | Red River Valley, ND/MN, USA, 2021 | **USDA Cropland Data Layer 2021**, with a spatially blocked train/test split: OA, kappa, PA/UA/F1, confusion matrix |
+| 6 | `06_peatland_mapping_uk.js` | UK peat-soil extent (ML) | Random Forest on terrain-flattened S1 statistics + LiDAR slope/TPI/TWI + climate (+ S2); digital soil mapping (Minasny et al. 2019; Karlson et al. 2023; Vollrath et al. 2020) | Peak District, England (Dark Peak blanket peat vs White Peak limestone) | Spatially blocked hold-out (compared against a random split), ROC/AUC, feature-group ablation, known-site stress tests. Optional: national peat map upload and **field depth probes** (the only truly independent test) |
 
 ## How to run
 
@@ -47,6 +48,12 @@ Analysis Ready Data Preparation in Google Earth Engine*:
 | Same relative orbit for comparisons | ✔ | ✔ (one test per orbit) | – | ✔ | – (γ⁰ normalisation) |
 | Incidence-angle handling | same orbit | same orbit | local background ratio | same orbit | γ⁰ = σ⁰/cos θ |
 | Terrain / context masks | HAND > 15 m, slope > 5°, JRC permanent water | Dynamic World built-up | land mask + 1.5 km coastal buffer, low-wind mask | Hansen forest domain | CDL confidence ≥ 80, field interiors |
+
+Use case 6 (peat) uses linear `S1_GRD_FLOAT`, masks swath edges, and applies **angular-based
+radiometric terrain flattening** (volume model) with layover/shadow masking (Vollrath et al. 2020).
+It then combines both orbit directions into temporal statistics: median, 10th/90th percentile,
+standard deviation, winter and summer medians, seasonal difference and VH/VV ratio. About a year
+of images, averaged over 30 m pixels, does the speckle reduction.
 
 Note on #4: the omnibus test is a likelihood-ratio test on the Wishart/Gamma speckle statistics
 with a known number of looks (ENL = 4.4 for IW GRD). Speckle filtering would change those
@@ -117,9 +124,87 @@ intensities.
   under spatial autocorrelation. CDL is itself a classification (major-crop accuracy ≈ 85–97 %),
   so the figures measure agreement with the best available reference.
 
+### 6. UK peatland mapping (Peak District)
+
+**Research basis.** Peat is a soil, defined by an organic layer of a minimum depth. C-band radar
+penetrates only a few centimetres, so no satellite measures peat directly. National and research
+peat maps are therefore built the way digital soil mapping works: a machine-learning model links
+known peat locations to proxies (Minasny et al. 2019, *Earth-Sci. Rev.* 196:102870):
+- **Sentinel-1:** surface wetness and vegetation structure, and their seasonal dynamics. UK
+  blanket-bog studies relate backscatter and coherence to water table and soil moisture (Toca et
+  al. 2023, Forsinard Flows; Lees et al. 2021; InSAR coherence in the Flow Country, *Remote Sens.*
+  2025).
+- **Topography:** peat forms on gentle slopes, plateaux and water-receiving hollows. Slope and TWI
+  are among the strongest predictors of peat depth in UK uplands (Gatis et al. 2019, *Geoderma*,
+  Dartmoor; Finlayson et al. 2021, *Soil Use Manage.*; Aitkenhead 2017/2020, Scotland).
+- **Climate:** blanket bog needs high rainfall and many rain days (Lindsay 1995).
+- **Fusion:** combining S1, S2 and terrain gives 80–90 % accuracy for peatland types (Karlson et al.
+  2023, *JGR Biogeosciences*).
+- **National precedent:** the **England Peat Map (Natural England, May 2025)** used the same recipe
+  (Sentinel-1/2, EA LiDAR slope, geology, climate, random forest, more than 300,000 training
+  points) and reports over 95 % accuracy for peat extent.
+
+**Plan implemented in the script.**
+1. Pre-process Sentinel-1 for one hydrological year (S1A+S1B). Apply terrain flattening and
+   layover/shadow masks, then compute 15 temporal backscatter features.
+2. Build covariates at 30 m on the British National Grid: EA 1 m LiDAR DTM aggregated to 30 m
+   (Copernicus GLO-30 outside England), slope, TPI at 300 m and 1 km, TWI (MERIT-Hydro upstream
+   area), WorldClim rainfall and temperature, and optional Sentinel-2 NDVI/NDMI/NDWI
+   growing-season medians (Cloud Score+ masked).
+3. Exclude water and built-up land from both training and prediction. Reservoirs and urban areas
+   were among the failures publicly reported for the national map.
+4. Take labels either from the **Global Peatland Map 2.0** (default, in GEE; interior of
+   peat-dominated 1 km cells vs land more than 2 km from any mapped peat) or from an uploaded
+   national map:
+   - England Peat Map extent (Natural England / Defra Data Services Platform);
+   - Unified Peat Map of Wales (UKCEH EIDC, doi:10.5285/58139ce6-63f9-4444-9f77-fc7b5dcc00d8) or
+     its 2022 update on DataMapWales;
+   - Scotland Carbon & Peatland 2016 (classes 1, 2, 5 = peat; 4 = non-peat; 3 left out as
+     ambiguous).
+5. Train a Random Forest with probability output, and produce a peat probability map, a binary
+   map (p ≥ 0.5) and an uncertainty layer.
+
+**Validation design.** No single test is enough here, so the script layers several:
+
+| Test | What it shows | Limitation |
+|------|---------------|-----------|
+| Spatially blocked hold-out (~3 × 4 km checkerboard) | Accuracy, kappa and F1 when predicting into unseen areas | Measured against the label map, so it is *agreement*, not truth |
+| Same model with a random split | How much spatial autocorrelation inflates accuracy (reported in percentage points) | Diagnostic only |
+| ROC / AUC | Discrimination power of the probability, independent of the 0.5 threshold | Same labels as above |
+| Feature-group ablation | Whether Sentinel-1 actually adds information beyond terrain and climate | Same labels |
+| Known-site stress tests | Kinder Scout and Bleaklow plateaux (deep blanket peat) should be ≥ 70 % peat; the White Peak limestone plateau should be ≤ 10 %. Shown as PASS/FAIL | Only three sites; the polygons are approximate |
+| Field depth probes (optional upload) | Real accuracy against measured depth (default threshold 40 cm, the English "deep peat" definition), plus probability vs depth | Needs access to probe data (England Peat Map surveys, Moors for the Future, Peatland ACTION) |
+
+**Challenges.**
+1. **Sensing physics.** S1 responds to the top few centimetres of vegetation and soil moisture, so
+   peat *extent* is inferred and *depth* cannot be mapped with S1. Depth needs probes, GPR or
+   airborne gamma radiometrics (Gatis et al. 2019).
+2. **Land-use masking of peat.** Drained arable peat (the Fens), grassland on peat and conifer
+   plantations on peat look like mineral land. Conversely, wet acid grassland, rush pasture and
+   heather on thin peaty podzols look like peat. A model trained in the Peak District uplands
+   will not transfer to lowland fens or the Flow Country without retraining.
+3. **Inconsistent definitions.** England uses ≥ 40 cm for deep peat and 10–40 cm for peaty soils;
+   Scotland uses > 50 cm; international usage is often ≥ 30 cm. Reference maps built on different
+   definitions disagree, so state the definition you use.
+4. **Reference quality.** The GPM 2.0 is generalised to 1 km, so its labels are noisy at 30 m and
+   default-mode accuracies are optimistic about real-world performance. The England Peat Map was
+   criticised after release for showing peat on limestone pavement, reservoirs, rivers, granite
+   tors and quarries, for misreading shadows as bare peat, and for missing some known peat SSSIs.
+   Natural England advises against using it to locate deep peat on individual landholdings.
+   Accuracy against any map is agreement with that map; only field data validates.
+5. **Upland terrain.** Terrain flattening and layover/shadow masks reduce slope-induced radiometry
+   but don't remove it. Steep cloughs and edges remain the least reliable areas.
+6. **Temporal variability.** Drought years (2018, 2022) change peat surface wetness, so the
+   features should come from a typical year or several years. Revisit dropped to 12 days after
+   Sentinel-1B failed in Dec 2021; Sentinel-1C (2025) restores density for recent years.
+7. **Scale mismatch.** 30 m predictions are trained on 1 km labels (GPM mode), and TWI uses a
+   ~90 m flow-accumulation grid.
+8. **Licensing.** The Global Peatland Map 2.0 is **CC BY-NC-SA (non-commercial)**. For commercial
+   work, train on national open data and check each licence before use.
+
 ## Testing performed
 
-- `node --check` syntax check on every script.
+- `node --check` syntax check on every script. Use case 6 was also run with each label mode (GPM, uploaded polygons, uploaded class field), with and without Sentinel-2, and with the probe validation enabled.
 - Execution of every script in a mock Earth Engine runtime (Node `Proxy` objects standing in for
   `ee`, `ui`, `Map` and `Export`). Server-side `map`/`iterate` callbacks and client-side
   `evaluate`/`onClick`/`onChange` callbacks are invoked, which catches undefined variables, typos
@@ -130,7 +215,10 @@ intensities.
   `JRC/GSW1_4/GlobalSurfaceWater` (`seasonality`), `MERIT/Hydro/v1_0_1` (`hnd`),
   `JRC/GHSL/P2023A/GHS_POP/2015` (`population_count`), `ESA/WorldCover/v100` (`Map`),
   `GOOGLE/DYNAMICWORLD/V1` (`built`), `USDA/NASS/CDL` (`cropland`, `confidence`),
-  `UMD/hansen/global_forest_change_2024_v1_12`, `ECMWF/ERA5/HOURLY`, `USDOS/LSIB_SIMPLE/2017`.
+  `UMD/hansen/global_forest_change_2024_v1_12`, `ECMWF/ERA5/HOURLY`, `USDOS/LSIB_SIMPLE/2017`,
+  `UK/EA/ENGLAND_1M_TERRAIN/2022` (`dtm`), `COPERNICUS/DEM/GLO30` (`DEM`), `WORLDCLIM/V1/BIO`
+  (`bio01`, `bio12`), `MERIT/Hydro/v1_0_1` (`upa`), and the community asset
+  `projects/sat-io/open-datasets/GLOBAL-PEATLAND-DATABASE` (1 = peat dominated, 2 = peat in a soil mosaic).
 - The PWTT implementation follows the author's reference code
   ([oballinger/PWTT](https://github.com/oballinger/PWTT)). The omnibus test is a line-by-line port
   of the Python code published with Canty et al. (2020).
@@ -140,6 +228,16 @@ intensities.
 
 ## References
 
+- Aitkenhead, M.J. (2017). Mapping peat in Scotland with remote sensing and site characteristics. *European Journal of Soil Science* 68.
+- Finlayson, A., et al. (2021). Estimating organic surface horizon depth for peat and peaty soils across a Scottish upland catchment using linear mixed models with topographic and geological covariates. *Soil Use and Management*.
+- Gatis, N., et al. (2019). Mapping upland peat depth using airborne radiometric and lidar survey data. *Geoderma* 335.
+- Greifswald Mire Centre (2022). Global Peatland Map 2.0. UNEP Global Peatlands Assessment.
+- Karlson, M., Bastviken, D., et al. (2023). Multi-source mapping of peatland types using Sentinel-1, Sentinel-2 and terrain derivatives – a comparison between five high-latitude landscapes. *JGR Biogeosciences*.
+- Lindsay, R. (1995). *Bogs: the ecology, classification and conservation of ombrotrophic mires*. Scottish Natural Heritage.
+- Minasny, B., et al. (2019). Digital mapping of peatlands – a critical review. *Earth-Science Reviews* 196, 102870.
+- Natural England (2025). England Peat Map (NERR149 final report and user guide).
+- Toca, L., et al. (2023). Potential for peatland water table depth monitoring using Sentinel-1 SAR backscatter: case study of Forsinard Flows, Scotland, UK. *Remote Sensing* 15.
+- Vollrath, A., Mullissa, A., Reiche, J. (2020). Angular-based radiometric slope correction for Sentinel-1 on Google Earth Engine. *Remote Sensing* 12(11), 1867.
 - Ballinger, O. (2025). Open access battle damage detection via pixel-wise T-test on Sentinel-1 imagery. *Remote Sensing of Environment*. arXiv:2405.06323.
 - Bazi, Y., Bruzzone, L., Melgani, F. (2005). An unsupervised approach based on the generalized Gaussian model to automatic change detection in multitemporal SAR images. *IEEE TGRS* 43(4).
 - Belgiu, M., Drăguţ, L. (2016). Random forest in remote sensing: a review of applications and future directions. *ISPRS J. Photogramm.* 114.
