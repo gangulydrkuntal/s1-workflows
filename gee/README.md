@@ -1,7 +1,7 @@
 # Sentinel-1 use cases for the Google Earth Engine Code Editor
 
-Seven self-contained JavaScript workflows for the [GEE Code Editor](https://code.earthengine.google.com/).
-Use cases 1–6 each implement a published, widely cited Sentinel-1 method; use case 7 uses the AlphaEarth Foundations satellite embeddings, which include Sentinel-1 among their inputs. Each runs on a test site that has
+Eight self-contained JavaScript workflows for the [GEE Code Editor](https://code.earthengine.google.com/).
+Use cases 1–6 each implement a published, widely cited Sentinel-1 method; use cases 7 and 8 use the AlphaEarth Foundations satellite embeddings, which include Sentinel-1 among their inputs. Each runs on a test site that has
 independent reference data, and each builds its own UI: a layer list, a legend, statistics, charts
 and click-to-inspect time series.
 
@@ -14,6 +14,7 @@ and click-to-inspect time series.
 | 5 | `05_crop_classification_rf_cdl.js` | Crop-type mapping (ML) | Random Forest on dense S1 time series (Veloso et al. 2017; Belgiu & Drăguţ 2016) | Red River Valley, ND/MN, USA, 2021 | **USDA Cropland Data Layer 2021**, with a spatially blocked train/test split: OA, kappa, PA/UA/F1, confusion matrix |
 | 6 | `06_peatland_mapping_uk.js` | UK peat-soil extent (ML) | Random Forest on terrain-flattened S1 statistics + LiDAR slope/TPI/TWI + climate (+ S2); digital soil mapping (Minasny et al. 2019; Karlson et al. 2023; Vollrath et al. 2020) | Peak District, England (Dark Peak blanket peat vs White Peak limestone) | Spatially blocked hold-out (compared against a random split), ROC/AUC, feature-group ablation, known-site stress tests. Optional: national peat map upload and **field depth probes** (the only truly independent test) |
 | 7 | `07_field_boundaries_alphaearth.js` | Field boundary delineation | Unsupervised edge map in AlphaEarth embedding space + extent "cutoff" (Waldner & Diakogiannis 2020), with a SNIC superpixel baseline (Achanta & Süsstrunk 2017) | Cambridgeshire, England, 2021 (or Story County, Iowa) | **UKFields** (UK) or **USDA Crop Sequence Boundaries** (US), both in GEE: IoU, over/under-segmentation and D index (Clinton et al. 2010), boundary F1. Optional: RPA parcel polygons / Parcel Points (England) |
+| 8 | `08_peatland_alphaearth_ml_vs_similarity.js` | Peatland detection: ML vs similarity search | Random Forest on 64-D AlphaEarth embeddings vs cosine similarity to k-means peat prototypes; both calibrated on validation data | Peak District, England, 2023 (same site as #6) | Spatial-block **train / validation / test** split (60/20/20, edge buffers). Test set: AUC, F1, kappa, Brier score, confident-prediction share, reliability diagram, **McNemar** paired test, known-site stress tests. Split-screen slider compares the two methods, with reference peat layers on both sides |
 
 ## How to run
 
@@ -269,9 +270,70 @@ Both methods are scored on the same reference sample, so the comparison is like-
    workflow is a fast, global, label-free baseline and a feature source; the embeddings can
    also be fed to such models.
 
+### 8. Peatland detection from AlphaEarth embeddings: Random Forest vs similarity search
+
+**Why embeddings for peat.** AlphaEarth vectors summarise a whole year of optical, radar, LiDAR,
+terrain and climate signals. Those are exactly the proxies used in digital peat mapping (use
+case 6), packed into 64 numbers that need no pre-processing.
+
+**Two methods on identical data.**
+1. **Random Forest** (300 trees, probability output) trained on the 64 axes using peat and
+   non-peat examples.
+2. **Similarity search.** The peat training vectors are grouped into K = 5 prototypes with k-means,
+   to represent intact bog, eroded peat, heather moorland and similar sub-types. Each prototype is
+   rescaled to unit length. A pixel's score is its highest cosine similarity to any prototype. The
+   method uses peat examples only (one-class).
+
+**Train / validation / test design.**
+- Spatial blocks of 0.05° (bigger than the 1 km label cells) are randomly assigned 60 % train,
+  20 % validation, 20 % test. Samples within 10 % of a block edge are discarded.
+- *Train* fits the RF and builds the prototypes.
+- *Validation* is used only to pick each method's threshold (max F1) and to **calibrate** each score
+  into a probability by histogram binning (Zadrozny & Elkan 2001). After calibration, "confidence"
+  means the same for an RF vote fraction and a cosine similarity.
+- *Test* is used once, for the final comparison:
+  - AUC (independent of threshold);
+  - OA, kappa, precision, recall and F1 at the validation threshold;
+  - **Brier score** (probability accuracy, lower is better);
+  - **confident share** (calibrated p ≥ 0.8 or ≤ 0.2) and how accurate those confident predictions are;
+  - a **reliability diagram**;
+  - **McNemar's test** of whether the two methods' errors differ significantly (Dietterich 1998).
+- Kinder Scout and Bleaklow (deep peat) and the White Peak limestone (no peat) serve as pass/fail
+  sanity checks for both methods.
+- The panel names the method that is both more confident and better calibrated on the test set,
+  or reports "mixed" when the metrics disagree.
+
+**Viewer.** A split-screen slider shows Random Forest on the left and similarity search on the
+right, with the maps linked. Each side's layer list contains:
+- the **reference peat map** (GPM 2.0, or your uploaded national map);
+- the label zones used;
+- the train/validation/test blocks;
+- Peat-ML for comparison;
+- an agreement map (both / RF only / similarity only);
+- the calibrated probability difference;
+- confidence maps.
+
+Clicking reads both probabilities at a pixel.
+
+**Challenges.**
+1. **Label quality.** The default GPM labels are 1 km cells, so scores measure agreement with GPM.
+   Uploading the England Peat Map, Unified Peat Map of Wales or Scotland Carbon & Peatland 2016
+   gives far better labels; field probes remain the only true validation.
+2. **One-class bias of similarity search.** With no negative examples, it ranks any "peat-like"
+   surface highly (wet heath, acid grassland, moorland on thin peaty podzols). Expect higher recall
+   and lower precision than the RF.
+3. **RF limits.** It learns the label noise along with the signal. Calibration fixes the
+   probability scale, not systematic bias.
+4. **Surface-only signal.** Drained, cultivated or afforested peat looks mineral in the embedding,
+   and neither method can estimate depth.
+5. **Transferability.** Prototypes and models are specific to this region. Applying them to the
+   Fens or the Flow Country needs new training data. Spatial blocks reduce, but don't eliminate,
+   optimism from spatial autocorrelation.
+6. **Licence.** GPM 2.0 is non-commercial (CC BY-NC-SA). The embeddings are CC-BY 4.0.
+
 ## Testing performed
 
-- `node --check` syntax check on every script. Use case 6 was also run with each label mode (GPM, uploaded polygons, uploaded class field), with and without Sentinel-2, and with the probe validation enabled. Use case 7 was run for both sites, with and without the parcel-point check.
+- `node --check` syntax check on every script. Use case 6 was also run with each label mode (GPM, uploaded polygons, uploaded class field), with and without Sentinel-2, and with the probe validation enabled. Use case 7 was run for both sites, with and without the parcel-point check. Use case 8 was run with GPM labels and with an uploaded reference, and its McNemar p-value helper was checked against known chi-square values.
 - Execution of every script in a mock Earth Engine runtime (Node `Proxy` objects standing in for
   `ee`, `ui`, `Map` and `Export`). Server-side `map`/`iterate` callbacks and client-side
   `evaluate`/`onClick`/`onChange` callbacks are invoked, which catches undefined variables, typos
@@ -297,6 +359,9 @@ Both methods are scored on the same reference sample, so the comparison is like-
 
 ## References
 
+- Dietterich, T.G. (1998). Approximate statistical tests for comparing supervised classification learning algorithms. *Neural Computation* 10(7), 1895–1923.
+- Melton, J.R., et al. (2022). A map of global peatland extent created using machine learning (Peat-ML). *Geosci. Model Dev.* 15, 4709–4738.
+- Zadrozny, B., Elkan, C. (2001). Obtaining calibrated probability estimates from decision trees and naive Bayesian classifiers. *ICML 2001*.
 - Achanta, R., Süsstrunk, S. (2017). Superpixels and polygons using simple non-iterative clustering. *CVPR 2017*.
 - Bancroft, S., Wilkins, J. (2024). UKFields (1.0.0) [dataset]. Zenodo. doi:10.5281/zenodo.11110206.
 - Brown, C.F., Kazmierski, M.R., Pasquarella, V.J., et al. (2025). AlphaEarth Foundations: an embedding field model for accurate and efficient global mapping from sparse label data. arXiv:2507.22291.
