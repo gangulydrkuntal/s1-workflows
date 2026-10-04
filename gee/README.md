@@ -1,7 +1,7 @@
 # Sentinel-1 use cases for the Google Earth Engine Code Editor
 
-Six self-contained JavaScript workflows for the [GEE Code Editor](https://code.earthengine.google.com/).
-Each one implements a published, widely cited Sentinel-1 method. Each runs on a test site that has
+Seven self-contained JavaScript workflows for the [GEE Code Editor](https://code.earthengine.google.com/).
+Use cases 1–6 each implement a published, widely cited Sentinel-1 method; use case 7 uses the AlphaEarth Foundations satellite embeddings, which include Sentinel-1 among their inputs. Each runs on a test site that has
 independent reference data, and each builds its own UI: a layer list, a legend, statistics, charts
 and click-to-inspect time series.
 
@@ -13,6 +13,7 @@ and click-to-inspect time series.
 | 4 | `04_omnibus_change_detection_deforestation.js` | Multi-temporal change detection | Sequential omnibus likelihood-ratio test (Conradsen et al. 2016, *IEEE TGRS*; Canty et al. 2020, *Remote Sens.*) | Jaci-Paraná Extractive Reserve, Rondônia, Brazil, 2020–2021 | **Hansen Global Forest Change v1.12**: stratum-weighted accuracy (Olofsson et al. 2014) and year-of-change agreement |
 | 5 | `05_crop_classification_rf_cdl.js` | Crop-type mapping (ML) | Random Forest on dense S1 time series (Veloso et al. 2017; Belgiu & Drăguţ 2016) | Red River Valley, ND/MN, USA, 2021 | **USDA Cropland Data Layer 2021**, with a spatially blocked train/test split: OA, kappa, PA/UA/F1, confusion matrix |
 | 6 | `06_peatland_mapping_uk.js` | UK peat-soil extent (ML) | Random Forest on terrain-flattened S1 statistics + LiDAR slope/TPI/TWI + climate (+ S2); digital soil mapping (Minasny et al. 2019; Karlson et al. 2023; Vollrath et al. 2020) | Peak District, England (Dark Peak blanket peat vs White Peak limestone) | Spatially blocked hold-out (compared against a random split), ROC/AUC, feature-group ablation, known-site stress tests. Optional: national peat map upload and **field depth probes** (the only truly independent test) |
+| 7 | `07_field_boundaries_alphaearth.js` | Field boundary delineation | Unsupervised edge map in AlphaEarth embedding space + extent "cutoff" (Waldner & Diakogiannis 2020), with a SNIC superpixel baseline (Achanta & Süsstrunk 2017) | Cambridgeshire, England, 2021 (or Story County, Iowa) | **UKFields** (UK) or **USDA Crop Sequence Boundaries** (US), both in GEE: IoU, over/under-segmentation and D index (Clinton et al. 2010), boundary F1. Optional: RPA parcel polygons / Parcel Points (England) |
 
 ## How to run
 
@@ -202,9 +203,75 @@ known peat locations to proxies (Minasny et al. 2019, *Earth-Sci. Rev.* 196:1028
 8. **Licensing.** The Global Peatland Map 2.0 is **CC BY-NC-SA (non-commercial)**. For commercial
    work, train on national open data and check each licence before use.
 
+### 7. Field boundaries from AlphaEarth Foundations embeddings
+
+**Data.** `GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL` (AlphaEarth Foundations v2.1, Brown et al. 2025,
+arXiv:2507.22291, CC-BY 4.0) holds one 64-dimensional unit-length vector per 10 m pixel per year,
+learned from Sentinel-2, Landsat, Sentinel-1, LiDAR, elevation, climate and other sources. Each
+vector summarises the pixel's whole annual trajectory. Two adjacent fields that differ in crop,
+sowing date or management therefore differ in embedding space even when they look alike on any
+single image. The dot product between two vectors equals their cosine similarity.
+
+**Method.**
+1. *Edge map:* a Sobel gradient on all 64 axes, combined with the L2 norm (a multispectral
+   gradient) and scaled so a step between vectors a and b equals the chord distance |a − b|
+   (|a − b|² = 2 − 2 cos θ).
+2. *Boundary threshold:* chosen with Otsu's method inside the agricultural extent; a slider lets
+   you override it.
+3. *Extent:* ESA WorldCover 2021 cropland + grassland.
+4. *Fields:* 4-connected regions of (extent AND NOT boundary), vectorised, with small objects
+   removed and a 10 m dilation to close the boundary band. This is the "cutoff" post-processing of
+   Waldner & Diakogiannis (2020), with their CNN boundary probability replaced by a label-free
+   edge map.
+5. *Baseline:* SNIC superpixels run directly on the 64-D embeddings.
+6. *Interactive check:* click a pixel to map the cosine similarity of every other pixel to it.
+
+**Validation.**
+
+| Metric | Definition | Reference |
+|--------|-----------|-----------|
+| IoU of best-matching segment, % matched (IoU ≥ 0.5) | Per reference field, for a random sample of 150 fields fully inside the AOI | Persello et al. 2019; Waldner & Diakogiannis 2020 |
+| Over-segmentation OS, under-segmentation US, D | OS = 1 − \|r∩s\|/\|r\|; US = 1 − \|r∩s\|/\|s\|; D = √((OS² + US²)/2) | Clinton et al. 2010 |
+| Boundary precision / recall / F1 | ±20 m tolerance, evaluated only where the reference has coverage | standard boundary-F measure |
+| Parcel-point check (optional) | Share of segments with exactly 1, 0, or ≥ 2 RPA parcel centroids | RPA Parcel Points (OGL v3) |
+
+Both methods are scored on the same reference sample, so the comparison is like-for-like.
+
+**References available, and how much to trust them.**
+- **UKFields** (`projects/sat-io/open-datasets/UK-FIELDS`, Bancroft & Wilkins 2024, CC-BY 4.0): UK
+  fields segmented with SAM on 2021 Sentinel-2 composites and masked to Dynamic World cropland. It
+  is an automated product, so scores against it are agreement, not truth.
+- **USDA Crop Sequence Boundaries** (`projects/nass-csb/assets/CSB1825_rev23/CSBIA1825`): built
+  from the 30 m CDL plus road and rail networks, so boundaries are coarse and adjacent fields with
+  the same crop sequence are merged. AlphaEarth v2.1 also used the CDL as a training target, so
+  US scores are likely **optimistic**.
+- **RPA Land Parcels** (England, derived from OS MasterMap): the most reliable reference, with its
+  own licence conditions on the Defra Data Services Platform. **RPA Parcel Points** (centroids) are
+  OGL v3 and work with the parcel-point check. Upload either and set `REF_ASSET_OVERRIDE` /
+  `POINTS_ASSET`.
+
+**Challenges.**
+1. **Resolution.** Hedges, ditches and tramlines are 2–5 m wide, narrower than a 10 m pixel, and
+   show up only through mixed pixels. Fields under ~1 ha are poorly resolved.
+2. **Same crop, no physical divide.** Neighbouring fields with the same crop and management have
+   near-identical annual embeddings and merge. Fen fields separated only by drains are a typical
+   case.
+3. **Internal edges.** Within-field heterogeneity (wet hollows, soil changes, in-field trees,
+   partial harvest) can create spurious boundaries that over-segment a field.
+4. **Embedding artefacts.** The catalog notes residual swath and tiling artefacts; they can appear
+   as long straight false edges.
+5. **Interpretability.** The 64 axes are not physical quantities, and thresholds vary by site
+   (hence Otsu plus a manual override).
+6. **One year at a time.** Boundaries that change within a year, such as split or merged fields
+   or rotational grazing, can't be resolved from a single annual embedding.
+7. **Unsupervised baseline.** Supervised deep models trained on raw imagery (FracTAL-ResUNet,
+   Fields of The World, Delineate Anything) generally achieve higher object accuracy. This
+   workflow is a fast, global, label-free baseline and a feature source; the embeddings can
+   also be fed to such models.
+
 ## Testing performed
 
-- `node --check` syntax check on every script. Use case 6 was also run with each label mode (GPM, uploaded polygons, uploaded class field), with and without Sentinel-2, and with the probe validation enabled.
+- `node --check` syntax check on every script. Use case 6 was also run with each label mode (GPM, uploaded polygons, uploaded class field), with and without Sentinel-2, and with the probe validation enabled. Use case 7 was run for both sites, with and without the parcel-point check.
 - Execution of every script in a mock Earth Engine runtime (Node `Proxy` objects standing in for
   `ee`, `ui`, `Map` and `Export`). Server-side `map`/`iterate` callbacks and client-side
   `evaluate`/`onClick`/`onChange` callbacks are invoked, which catches undefined variables, typos
@@ -218,7 +285,9 @@ known peat locations to proxies (Minasny et al. 2019, *Earth-Sci. Rev.* 196:1028
   `UMD/hansen/global_forest_change_2024_v1_12`, `ECMWF/ERA5/HOURLY`, `USDOS/LSIB_SIMPLE/2017`,
   `UK/EA/ENGLAND_1M_TERRAIN/2022` (`dtm`), `COPERNICUS/DEM/GLO30` (`DEM`), `WORLDCLIM/V1/BIO`
   (`bio01`, `bio12`), `MERIT/Hydro/v1_0_1` (`upa`), and the community asset
-  `projects/sat-io/open-datasets/GLOBAL-PEATLAND-DATABASE` (1 = peat dominated, 2 = peat in a soil mosaic).
+  `projects/sat-io/open-datasets/GLOBAL-PEATLAND-DATABASE` (1 = peat dominated, 2 = peat in a soil mosaic),
+  `GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL` (`A00`–`A63`), `ESA/WorldCover/v200` (`Map`), and the community assets
+  `projects/sat-io/open-datasets/UK-FIELDS` and `projects/nass-csb/assets/CSB1825_rev23/CSBIA1825`.
 - The PWTT implementation follows the author's reference code
   ([oballinger/PWTT](https://github.com/oballinger/PWTT)). The omnibus test is a line-by-line port
   of the Python code published with Canty et al. (2020).
@@ -228,6 +297,12 @@ known peat locations to proxies (Minasny et al. 2019, *Earth-Sci. Rev.* 196:1028
 
 ## References
 
+- Achanta, R., Süsstrunk, S. (2017). Superpixels and polygons using simple non-iterative clustering. *CVPR 2017*.
+- Bancroft, S., Wilkins, J. (2024). UKFields (1.0.0) [dataset]. Zenodo. doi:10.5281/zenodo.11110206.
+- Brown, C.F., Kazmierski, M.R., Pasquarella, V.J., et al. (2025). AlphaEarth Foundations: an embedding field model for accurate and efficient global mapping from sparse label data. arXiv:2507.22291.
+- Clinton, N., Holt, A., Scarborough, J., Yan, L., Gong, P. (2010). Accuracy assessment measures for object-based image segmentation goodness. *Photogramm. Eng. Remote Sens.* 76(3), 289–299.
+- Persello, C., et al. (2019). Delineation of agricultural fields in smallholder farms from satellite images using fully convolutional networks and combinatorial grouping. *Remote Sensing of Environment* 231.
+- Waldner, F., Diakogiannis, F.I. (2020). Deep learning on edge: extracting field boundaries from satellite images with a convolutional neural network. *Remote Sensing of Environment* 245.
 - Aitkenhead, M.J. (2017). Mapping peat in Scotland with remote sensing and site characteristics. *European Journal of Soil Science* 68.
 - Finlayson, A., et al. (2021). Estimating organic surface horizon depth for peat and peaty soils across a Scottish upland catchment using linear mixed models with topographic and geological covariates. *Soil Use and Management*.
 - Gatis, N., et al. (2019). Mapping upland peat depth using airborne radiometric and lidar survey data. *Geoderma* 335.

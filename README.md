@@ -53,7 +53,8 @@ The notebook relies on the supporting functions implemented in [`s1_burst_lib.py
 Clone the repository, explore the example notebooks, and start building your own cloud-native InSAR workflows with openEO.
 
 ## Google Earth Engine Sentinel-1 use cases
-The [`gee/`](gee/README.md) folder contains six standalone Google Earth Engine Code Editor scripts
-(flood mapping, building damage with PWTT, oil spill detection, omnibus change detection,
-Random Forest crop classification and UK peatland mapping). Each implements a published Sentinel-1 method, runs on a
-test site with reference data, and builds its own interactive UI.
+The [`gee/`](gee/README.md) folder contains seven standalone Google Earth Engine Code Editor scripts:
+flood mapping, building damage with PWTT, oil spill detection, omnibus change detection, Random
+Forest crop classification, UK peatland mapping, and field boundary delineation from AlphaEarth
+Foundations embeddings. Each runs on a test site with reference data and builds its own
+interactive UI.
