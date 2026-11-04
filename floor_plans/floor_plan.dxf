@@ -489,7 +489,7 @@ $SKPOLY
   9
 $TDCREATE
  40
-2461349.6520949076
+2461349.697222222
   9
 $TDUCREATE
  40
@@ -497,7 +497,7 @@ $TDUCREATE
   9
 $TDUPDATE
  40
-2461349.6520949076
+2461349.697233796
   9
 $TDUUPDATE
  40
@@ -549,7 +549,7 @@ $SPLINESEGS
   9
 $HANDSEED
   5
-1D8
+1B3
   9
 $SURFTAB1
  70
@@ -929,11 +929,11 @@ $PSTYLEMODE
   9
 $FINGERPRINTGUID
   2
-{3A8EDA43-4750-4DBB-A0AB-2B8E30D53B3F}
+{B2FA2571-76CC-48A1-846C-C3EBDE55F7D0}
   9
 $VERSIONGUID
   2
-{87BEC855-085C-4EFE-8125-63B9F130E67C}
+{28837195-406A-46C6-AC1D-D2A6E1947B75}
   9
 $EXTNAMES
 290
@@ -1373,7 +1373,7 @@ AcDbSymbolTable
   0
 VPORT
   5
-1D4
+1AF
 330
 8
 100
@@ -2253,7 +2253,7 @@ LAYER
 100
 AcDbSymbolTable
  70
-11
+13
   0
 LAYER
   5
@@ -2323,7 +2323,7 @@ A-WALL
   6
 CONTINUOUS
 370
-50
+35
 390
 13
 347
@@ -2332,6 +2332,54 @@ CONTINUOUS
 LAYER
   5
 8C
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbLayerTableRecord
+  2
+A-WALL-OUTER
+ 70
+0
+ 62
+7
+  6
+CONTINUOUS
+370
+50
+390
+13
+347
+21
+  0
+LAYER
+  5
+8D
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbLayerTableRecord
+  2
+A-WALL-POCHE
+ 70
+0
+ 62
+8
+  6
+CONTINUOUS
+370
+0
+390
+13
+347
+21
+  0
+LAYER
+  5
+8E
 330
 1
 100
@@ -2355,7 +2403,7 @@ CONTINUOUS
   0
 LAYER
   5
-8D
+8F
 330
 1
 100
@@ -2379,7 +2427,7 @@ DASHED2
   0
 LAYER
   5
-8E
+90
 330
 1
 100
@@ -2403,7 +2451,7 @@ CONTINUOUS
   0
 LAYER
   5
-8F
+91
 330
 1
 100
@@ -2427,7 +2475,7 @@ CONTINUOUS
   0
 LAYER
   5
-90
+92
 330
 1
 100
@@ -2451,7 +2499,7 @@ CONTINUOUS
   0
 LAYER
   5
-91
+93
 330
 1
 100
@@ -2475,7 +2523,7 @@ CONTINUOUS
   0
 LAYER
   5
-92
+94
 330
 1
 100
@@ -2499,7 +2547,7 @@ CONTINUOUS
   0
 LAYER
   5
-93
+95
 330
 1
 100
@@ -3349,7 +3397,7 @@ ACAD
   0
 APPID
   5
-1D5
+1B0
 330
 3
 100
@@ -3363,7 +3411,7 @@ HATCHBACKGROUNDCOLOR
   0
 APPID
   5
-1D6
+1B1
 330
 3
 100
@@ -5473,73 +5521,13 @@ SECTION
   2
 ENTITIES
   0
-LINE
-  5
-94
-102
-{ACAD_REACTORS
-330
-1C1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-0.0
- 20
-8.84
- 30
-0.0
- 11
-4.58
- 21
-8.84
- 31
-0.0
-  0
-LINE
-  5
-95
-102
-{ACAD_REACTORS
-330
-1C1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-5.31
- 20
-8.84
- 30
-0.0
- 11
-9.84
- 21
-8.84
- 31
-0.0
-  0
-LINE
+LWPOLYLINE
   5
 96
 102
 {ACAD_REACTORS
 330
-1C1
+19A
 102
 }
 330
@@ -5549,27 +5537,27 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+2
+ 70
+0
  10
-9.84
+0.0
  20
 8.84
- 30
-0.0
- 11
-9.84
- 21
-15.23
- 31
-0.0
+ 10
+4.58
+ 20
+8.84
   0
-LINE
+LWPOLYLINE
   5
 97
 102
 {ACAD_REACTORS
 330
-1C1
+19A
 102
 }
 330
@@ -5579,27 +5567,35 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+4
+ 70
+0
+ 10
+5.31
+ 20
+8.84
+ 10
+9.84
+ 20
+8.84
  10
 9.84
  20
 15.23
- 30
-0.0
- 11
-0.0
- 21
+ 10
+8.31
+ 20
 15.23
- 31
-0.0
   0
-LINE
+LWPOLYLINE
   5
 98
 102
 {ACAD_REACTORS
 330
-1C1
+19A
 102
 }
 330
@@ -5609,19 +5605,23 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+3
+ 70
+0
+ 10
+7.56
+ 20
+15.23
  10
 0.0
  20
 15.23
- 30
+ 10
 0.0
- 11
-0.0
- 21
+ 20
 8.84
- 31
-0.0
   0
 LWPOLYLINE
   5
@@ -5629,7 +5629,7 @@ LWPOLYLINE
 102
 {ACAD_REACTORS
 330
-1C1
+19A
 102
 }
 330
@@ -5661,13 +5661,13 @@ AcDbPolyline
  20
 15.23
   0
-LINE
+LWPOLYLINE
   5
 9A
 102
 {ACAD_REACTORS
 330
-1C2
+19B
 102
 }
 330
@@ -5677,27 +5677,27 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+2
+ 70
+0
  10
-4.75
+4.71
  20
 15.43
- 30
-0.0
- 11
-7.6
- 21
+ 10
+7.56
+ 20
 15.43
- 31
-0.0
   0
-LINE
+LWPOLYLINE
   5
 9B
 102
 {ACAD_REACTORS
 330
-1C2
+19B
 102
 }
 330
@@ -5707,27 +5707,39 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+5
+ 70
+0
  10
-8.35
+8.31
  20
 15.43
- 30
-0.0
- 11
-9.84
- 21
+ 10
+9.8
+ 20
 15.43
- 31
-0.0
+ 10
+9.8
+ 20
+18.48
+ 10
+4.71
+ 20
+18.48
+ 10
+4.71
+ 20
+15.43
   0
-LINE
+LWPOLYLINE
   5
 9C
 102
 {ACAD_REACTORS
 330
-1C2
+19B
 102
 }
 330
@@ -5735,29 +5747,37 @@ LINE
 100
 AcDbEntity
   8
-A-WALL
+A-AREA-BOUNDARY
 100
-AcDbLine
+AcDbPolyline
+ 90
+4
+ 70
+1
  10
-9.84
+4.71
  20
 15.43
- 30
-0.0
- 11
-9.84
- 21
+ 10
+9.8
+ 20
+15.43
+ 10
+9.8
+ 20
 18.48
- 31
-0.0
+ 10
+4.71
+ 20
+18.48
   0
-LINE
+LWPOLYLINE
   5
 9D
 102
 {ACAD_REACTORS
 330
-1C2
+19C
 102
 }
 330
@@ -5767,27 +5787,31 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+3
+ 70
+0
  10
-9.84
+0.1
  20
-18.48
- 30
-0.0
- 11
-4.75
- 21
-18.48
- 31
-0.0
+4.39
+ 10
+3.74
+ 20
+4.39
+ 10
+3.74
+ 20
+4.55
   0
-LINE
+LWPOLYLINE
   5
 9E
 102
 {ACAD_REACTORS
 330
-1C2
+19C
 102
 }
 330
@@ -5797,19 +5821,27 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+4
+ 70
+0
  10
-4.75
+3.74
  20
-18.48
- 30
-0.0
- 11
-4.75
- 21
-15.43
- 31
-0.0
+5.3
+ 10
+3.74
+ 20
+8.69
+ 10
+0.1
+ 20
+8.69
+ 10
+0.1
+ 20
+4.39
   0
 LWPOLYLINE
   5
@@ -5817,7 +5849,7 @@ LWPOLYLINE
 102
 {ACAD_REACTORS
 330
-1C2
+19C
 102
 }
 330
@@ -5833,29 +5865,29 @@ AcDbPolyline
  70
 1
  10
-4.75
+0.1
  20
-15.43
+4.39
  10
-9.84
+3.74
  20
-15.43
+4.39
  10
-9.84
+3.74
  20
-18.48
+8.69
  10
-4.75
+0.1
  20
-18.48
+8.69
   0
-LINE
+LWPOLYLINE
   5
 A0
 102
 {ACAD_REACTORS
 330
-1C3
+19D
 102
 }
 330
@@ -5865,27 +5897,31 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+3
+ 70
+0
  10
 0.1
  20
-4.39
- 30
 0.0
- 11
-3.74
- 21
-4.39
- 31
+ 10
+4.27
+ 20
 0.0
+ 10
+4.27
+ 20
+3.35
   0
-LINE
+LWPOLYLINE
   5
 A1
 102
 {ACAD_REACTORS
 330
-1C3
+19D
 102
 }
 330
@@ -5895,27 +5931,35 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+4
+ 70
+0
  10
-3.74
+4.27
  20
-4.39
- 30
-0.0
- 11
-3.74
- 21
-4.55
- 31
+4.1
+ 10
+4.27
+ 20
+4.24
+ 10
+0.1
+ 20
+4.24
+ 10
+0.1
+ 20
 0.0
   0
-LINE
+LWPOLYLINE
   5
 A2
 102
 {ACAD_REACTORS
 330
-1C3
+19D
 102
 }
 330
@@ -5923,29 +5967,37 @@ A2
 100
 AcDbEntity
   8
-A-WALL
+A-AREA-BOUNDARY
 100
-AcDbLine
+AcDbPolyline
+ 90
+4
+ 70
+1
  10
-3.74
+0.1
  20
-5.3
- 30
 0.0
- 11
-3.74
- 21
-8.69
- 31
+ 10
+4.27
+ 20
 0.0
+ 10
+4.27
+ 20
+4.24
+ 10
+0.1
+ 20
+4.24
   0
-LINE
+LWPOLYLINE
   5
 A3
 102
 {ACAD_REACTORS
 330
-1C3
+19E
 102
 }
 330
@@ -5955,27 +6007,39 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+5
+ 70
+0
  10
-3.74
+5.75
  20
-8.69
- 30
-0.0
- 11
-0.10000000000000009
- 21
-8.69
- 31
-0.0
+4.44
+ 10
+7.98
+ 20
+4.44
+ 10
+7.98
+ 20
+6.14
+ 10
+5.75
+ 20
+6.14
+ 10
+5.75
+ 20
+5.55
   0
-LINE
+LWPOLYLINE
   5
 A4
 102
 {ACAD_REACTORS
 330
-1C3
+19E
 102
 }
 330
@@ -5985,19 +6049,19 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+2
+ 70
+0
  10
-0.1
+5.75
  20
-8.69
- 30
-0.0
- 11
-0.1
- 21
-4.39
- 31
-0.0
+4.85
+ 10
+5.75
+ 20
+4.44
   0
 LWPOLYLINE
   5
@@ -6005,7 +6069,7 @@ A5
 102
 {ACAD_REACTORS
 330
-1C3
+19E
 102
 }
 330
@@ -6021,29 +6085,29 @@ AcDbPolyline
  70
 1
  10
-0.1
+5.75
  20
-4.39
+4.44
  10
-3.74
+7.98
  20
-4.39
+4.44
  10
-3.74
+7.98
  20
-8.69
+6.14
  10
-0.1
+5.75
  20
-8.69
+6.14
   0
-LINE
+LWPOLYLINE
   5
 A6
 102
 {ACAD_REACTORS
 330
-1C4
+19F
 102
 }
 330
@@ -6053,27 +6117,35 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+4
+ 70
+0
  10
-0.1
+8.1
  20
-0.0
- 30
-0.0
- 11
-4.27
- 21
-0.0
- 31
-0.0
+4.44
+ 10
+9.9
+ 20
+4.44
+ 10
+9.9
+ 20
+6.14
+ 10
+9.09
+ 20
+6.14
   0
-LINE
+LWPOLYLINE
   5
 A7
 102
 {ACAD_REACTORS
 330
-1C4
+19F
 102
 }
 330
@@ -6083,27 +6155,31 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+3
+ 70
+0
  10
-4.27
+8.34
  20
-0.0
- 30
-0.0
- 11
-4.27
- 21
-3.35
- 31
-0.0
+6.14
+ 10
+8.1
+ 20
+6.14
+ 10
+8.1
+ 20
+4.44
   0
-LINE
+LWPOLYLINE
   5
 A8
 102
 {ACAD_REACTORS
 330
-1C4
+19F
 102
 }
 330
@@ -6111,29 +6187,37 @@ A8
 100
 AcDbEntity
   8
-A-WALL
+A-AREA-BOUNDARY
 100
-AcDbLine
+AcDbPolyline
+ 90
+4
+ 70
+1
  10
-4.27
+8.1
  20
-4.1
- 30
-0.0
- 11
-4.27
- 21
-4.24
- 31
-0.0
+4.44
+ 10
+9.9
+ 20
+4.44
+ 10
+9.9
+ 20
+6.14
+ 10
+8.1
+ 20
+6.14
   0
-LINE
+LWPOLYLINE
   5
 A9
 102
 {ACAD_REACTORS
 330
-1C4
+1A0
 102
 }
 330
@@ -6143,27 +6227,47 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+7
+ 70
+0
  10
-4.27
+5.75
+ 20
+0.0
+ 10
+9.93
+ 20
+0.0
+ 10
+9.93
+ 20
+3.32
+ 10
+9.17
+ 20
+3.32
+ 10
+9.17
  20
 4.24
- 30
-0.0
- 11
-0.09999999999999964
- 21
+ 10
+5.75
+ 20
 4.24
- 31
-0.0
+ 10
+5.75
+ 20
+3.95
   0
-LINE
+LWPOLYLINE
   5
 AA
 102
 {ACAD_REACTORS
 330
-1C4
+1A0
 102
 }
 330
@@ -6173,18 +6277,18 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+2
+ 70
+0
  10
-0.1
+5.75
  20
-4.24
- 30
-0.0
- 11
-0.1
- 21
-0.0
- 31
+3.25
+ 10
+5.75
+ 20
 0.0
   0
 LWPOLYLINE
@@ -6193,7 +6297,185 @@ AB
 102
 {ACAD_REACTORS
 330
-1C4
+1A0
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-AREA-BOUNDARY
+100
+AcDbPolyline
+ 90
+6
+ 70
+1
+ 10
+5.75
+ 20
+0.0
+ 10
+9.93
+ 20
+0.0
+ 10
+9.93
+ 20
+3.32
+ 10
+9.17
+ 20
+3.32
+ 10
+9.17
+ 20
+4.24
+ 10
+5.75
+ 20
+4.24
+  0
+LWPOLYLINE
+  5
+AC
+102
+{ACAD_REACTORS
+330
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+6.2
+ 20
+6.3
+ 10
+8.34
+ 20
+6.3
+  0
+LWPOLYLINE
+  5
+AD
+102
+{ACAD_REACTORS
+330
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+3
+ 70
+0
+ 10
+9.09
+ 20
+6.3
+ 10
+9.9
+ 20
+6.3
+ 10
+9.9
+ 20
+6.6
+  0
+LWPOLYLINE
+  5
+AE
+102
+{ACAD_REACTORS
+330
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+4
+ 70
+0
+ 10
+9.9
+ 20
+7.35
+ 10
+9.9
+ 20
+8.69
+ 10
+6.2
+ 20
+8.69
+ 10
+6.2
+ 20
+7.2
+  0
+LWPOLYLINE
+  5
+AF
+102
+{ACAD_REACTORS
+330
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+6.2
+ 20
+6.45
+ 10
+6.2
+ 20
+6.3
+  0
+LWPOLYLINE
+  5
+B0
+102
+{ACAD_REACTORS
+330
+1A1
 102
 }
 330
@@ -6209,171 +6491,21 @@ AcDbPolyline
  70
 1
  10
-0.1
+6.2
  20
-0.0
+6.3
  10
-4.27
+9.9
  20
-0.0
+6.3
  10
-4.27
+9.9
  20
-4.24
+8.69
  10
-0.1
+6.2
  20
-4.24
-  0
-LINE
-  5
-AC
-102
-{ACAD_REACTORS
-330
-1C5
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-5.75
- 20
-4.44
- 30
-0.0
- 11
-7.98
- 21
-4.44
- 31
-0.0
-  0
-LINE
-  5
-AD
-102
-{ACAD_REACTORS
-330
-1C5
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-7.98
- 20
-4.44
- 30
-0.0
- 11
-7.98
- 21
-6.14
- 31
-0.0
-  0
-LINE
-  5
-AE
-102
-{ACAD_REACTORS
-330
-1C5
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-7.98
- 20
-6.14
- 30
-0.0
- 11
-5.75
- 21
-6.14
- 31
-0.0
-  0
-LINE
-  5
-AF
-102
-{ACAD_REACTORS
-330
-1C5
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-5.75
- 20
-6.14
- 30
-0.0
- 11
-5.75
- 21
-5.55
- 31
-0.0
-  0
-LINE
-  5
-B0
-102
-{ACAD_REACTORS
-330
-1C5
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-5.75
- 20
-4.85
- 30
-0.0
- 11
-5.75
- 21
-4.44
- 31
-0.0
+8.69
   0
 LWPOLYLINE
   5
@@ -6381,7 +6513,49 @@ B1
 102
 {ACAD_REACTORS
 330
-1C5
+1A2
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+5
+ 70
+0
+ 10
+14.2
+ 20
+9.08
+ 10
+22.71
+ 20
+9.08
+ 10
+22.71
+ 20
+14.9
+ 10
+14.2
+ 20
+14.9
+ 10
+14.2
+ 20
+9.08
+  0
+LWPOLYLINE
+  5
+B2
+102
+{ACAD_REACTORS
+330
+1A2
 102
 }
 330
@@ -6397,59 +6571,29 @@ AcDbPolyline
  70
 1
  10
-5.75
+14.2
  20
-4.44
+9.08
  10
-7.98
+22.71
  20
-4.44
+9.08
  10
-7.98
+22.71
  20
-6.14
+14.9
  10
-5.75
+14.2
  20
-6.14
+14.9
   0
-LINE
-  5
-B2
-102
-{ACAD_REACTORS
-330
-1C6
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-8.1
- 20
-4.44
- 30
-0.0
- 11
-9.9
- 21
-4.44
- 31
-0.0
-  0
-LINE
+LWPOLYLINE
   5
 B3
 102
 {ACAD_REACTORS
 330
-1C6
+1A3
 102
 }
 330
@@ -6459,27 +6603,27 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+2
+ 70
+0
  10
-9.9
+14.0
  20
-4.44
- 30
-0.0
- 11
-9.9
- 21
-6.14
- 31
-0.0
+5.5
+ 10
+17.5
+ 20
+5.5
   0
-LINE
+LWPOLYLINE
   5
 B4
 102
 {ACAD_REACTORS
 330
-1C6
+1A3
 102
 }
 330
@@ -6489,27 +6633,39 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+5
+ 70
+0
  10
-9.9
+18.23
  20
-6.14
- 30
-0.0
- 11
-9.3
- 21
-6.14
- 31
-0.0
+5.5
+ 10
+18.64
+ 20
+5.5
+ 10
+18.64
+ 20
+6.5
+ 10
+19.34
+ 20
+6.5
+ 10
+19.34
+ 20
+6.6
   0
-LINE
+LWPOLYLINE
   5
 B5
 102
 {ACAD_REACTORS
 330
-1C6
+1A3
 102
 }
 330
@@ -6519,27 +6675,35 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+4
+ 70
+0
  10
-8.6
+19.34
  20
-6.14
- 30
-0.0
- 11
-8.1
- 21
-6.14
- 31
-0.0
+7.35
+ 10
+19.34
+ 20
+8.75
+ 10
+14.0
+ 20
+8.75
+ 10
+14.0
+ 20
+5.5
   0
-LINE
+LWPOLYLINE
   5
 B6
 102
 {ACAD_REACTORS
 330
-1C6
+1A3
 102
 }
 330
@@ -6547,21 +6711,37 @@ B6
 100
 AcDbEntity
   8
-A-WALL
+A-AREA-BOUNDARY
 100
-AcDbLine
+AcDbPolyline
+ 90
+6
+ 70
+1
  10
-8.1
+14.0
  20
-6.14
- 30
-0.0
- 11
-8.1
- 21
-4.44
- 31
-0.0
+5.5
+ 10
+18.64
+ 20
+5.5
+ 10
+18.64
+ 20
+6.5
+ 10
+19.34
+ 20
+6.5
+ 10
+19.34
+ 20
+8.75
+ 10
+14.0
+ 20
+8.75
   0
 LWPOLYLINE
   5
@@ -6569,7 +6749,79 @@ B7
 102
 {ACAD_REACTORS
 330
-1C6
+1A4
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+4
+ 70
+0
+ 10
+17.37
+ 20
+4.35
+ 10
+18.64
+ 20
+4.35
+ 10
+18.64
+ 20
+5.5
+ 10
+18.23
+ 20
+5.5
+  0
+LWPOLYLINE
+  5
+B8
+102
+{ACAD_REACTORS
+330
+1A4
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+3
+ 70
+0
+ 10
+17.5
+ 20
+5.5
+ 10
+17.37
+ 20
+5.5
+ 10
+17.37
+ 20
+4.35
+  0
+LWPOLYLINE
+  5
+B9
+102
+{ACAD_REACTORS
+330
+1A4
 102
 }
 330
@@ -6585,89 +6837,29 @@ AcDbPolyline
  70
 1
  10
-8.1
+17.37
  20
-4.44
+4.35
  10
-9.9
+18.64
  20
-4.44
+4.35
  10
-9.9
+18.64
  20
-6.14
+5.5
  10
-8.1
+17.37
  20
-6.14
+5.5
   0
-LINE
-  5
-B8
-102
-{ACAD_REACTORS
-330
-1C7
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-5.75
- 20
-0.0
- 30
-0.0
- 11
-9.93
- 21
-0.0
- 31
-0.0
-  0
-LINE
-  5
-B9
-102
-{ACAD_REACTORS
-330
-1C7
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-9.93
- 20
-0.0
- 30
-0.0
- 11
-9.93
- 21
-3.32
- 31
-0.0
-  0
-LINE
+LWPOLYLINE
   5
 BA
 102
 {ACAD_REACTORS
 330
-1C7
+1A5
 102
 }
 330
@@ -6677,27 +6869,35 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+4
+ 70
+0
  10
-9.93
+14.0
  20
-3.32
- 30
 0.0
- 11
-9.17
- 21
-3.32
- 31
+ 10
+19.9
+ 20
 0.0
+ 10
+19.9
+ 20
+4.25
+ 10
+19.759999999999998
+ 20
+4.25
   0
-LINE
+LWPOLYLINE
   5
 BB
 102
 {ACAD_REACTORS
 330
-1C7
+1A5
 102
 }
 330
@@ -6707,27 +6907,39 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+5
+ 70
+0
  10
-9.17
+19.009999999999998
  20
-3.32
- 30
-0.0
- 11
-9.17
- 21
-4.24
- 31
+4.25
+ 10
+17.27
+ 20
+4.25
+ 10
+17.27
+ 20
+5.38
+ 10
+14.0
+ 20
+5.38
+ 10
+14.0
+ 20
 0.0
   0
-LINE
+LWPOLYLINE
   5
 BC
 102
 {ACAD_REACTORS
 330
-1C7
+1A5
 102
 }
 330
@@ -6735,29 +6947,45 @@ BC
 100
 AcDbEntity
   8
-A-WALL
+A-AREA-BOUNDARY
 100
-AcDbLine
+AcDbPolyline
+ 90
+6
+ 70
+1
  10
-9.17
+14.0
  20
-4.24
- 30
 0.0
- 11
-5.75
- 21
-4.24
- 31
+ 10
+19.9
+ 20
 0.0
+ 10
+19.9
+ 20
+4.25
+ 10
+17.27
+ 20
+4.25
+ 10
+17.27
+ 20
+5.38
+ 10
+14.0
+ 20
+5.38
   0
-LINE
+LWPOLYLINE
   5
 BD
 102
 {ACAD_REACTORS
 330
-1C7
+1A6
 102
 }
 330
@@ -6767,27 +6995,47 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+7
+ 70
+0
  10
-5.75
+20.05
  20
-4.24
- 30
 0.0
- 11
-5.75
- 21
-3.95
- 31
+ 10
+23.84
+ 20
 0.0
+ 10
+23.84
+ 20
+2.98
+ 10
+23.08
+ 20
+3.64
+ 10
+21.33
+ 20
+3.64
+ 10
+21.33
+ 20
+4.25
+ 10
+20.85
+ 20
+4.25
   0
-LINE
+LWPOLYLINE
   5
 BE
 102
 {ACAD_REACTORS
 330
-1C7
+1A6
 102
 }
 330
@@ -6797,18 +7045,22 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+3
+ 70
+0
  10
-5.75
+20.1
  20
-3.25
- 30
-0.0
- 11
-5.75
- 21
-0.0
- 31
+4.25
+ 10
+20.05
+ 20
+4.25
+ 10
+20.05
+ 20
 0.0
   0
 LWPOLYLINE
@@ -6817,1399 +7069,7 @@ BF
 102
 {ACAD_REACTORS
 330
-1C7
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-AREA-BOUNDARY
-100
-AcDbPolyline
- 90
-6
- 70
-1
- 10
-5.75
- 20
-0.0
- 10
-9.93
- 20
-0.0
- 10
-9.93
- 20
-3.32
- 10
-9.17
- 20
-3.32
- 10
-9.17
- 20
-4.24
- 10
-5.75
- 20
-4.24
-  0
-LINE
-  5
-C0
-102
-{ACAD_REACTORS
-330
-1C8
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-6.2
- 20
-6.3
- 30
-0.0
- 11
-9.9
- 21
-6.3
- 31
-0.0
-  0
-LINE
-  5
-C1
-102
-{ACAD_REACTORS
-330
-1C8
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-9.9
- 20
-6.3
- 30
-0.0
- 11
-9.9
- 21
-6.6
- 31
-0.0
-  0
-LINE
-  5
-C2
-102
-{ACAD_REACTORS
-330
-1C8
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-9.9
- 20
-7.35
- 30
-0.0
- 11
-9.9
- 21
-8.69
- 31
-0.0
-  0
-LINE
-  5
-C3
-102
-{ACAD_REACTORS
-330
-1C8
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-9.9
- 20
-8.69
- 30
-0.0
- 11
-6.2
- 21
-8.69
- 31
-0.0
-  0
-LINE
-  5
-C4
-102
-{ACAD_REACTORS
-330
-1C8
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-6.2
- 20
-8.69
- 30
-0.0
- 11
-6.2
- 21
-7.2
- 31
-0.0
-  0
-LINE
-  5
-C5
-102
-{ACAD_REACTORS
-330
-1C8
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-6.2
- 20
-6.45
- 30
-0.0
- 11
-6.2
- 21
-6.3
- 31
-0.0
-  0
-LWPOLYLINE
-  5
-C6
-102
-{ACAD_REACTORS
-330
-1C8
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-AREA-BOUNDARY
-100
-AcDbPolyline
- 90
-4
- 70
-1
- 10
-6.2
- 20
-6.3
- 10
-9.9
- 20
-6.3
- 10
-9.9
- 20
-8.69
- 10
-6.2
- 20
-8.69
-  0
-LINE
-  5
-C7
-102
-{ACAD_REACTORS
-330
-1C9
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-14.2
- 20
-9.03
- 30
-0.0
- 11
-23.509999999999998
- 21
-9.03
- 31
-0.0
-  0
-LINE
-  5
-C8
-102
-{ACAD_REACTORS
-330
-1C9
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-23.509999999999998
- 20
-9.03
- 30
-0.0
- 11
-23.509999999999998
- 21
-15.06
- 31
-0.0
-  0
-LINE
-  5
-C9
-102
-{ACAD_REACTORS
-330
-1C9
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-23.509999999999998
- 20
-15.06
- 30
-0.0
- 11
-14.2
- 21
-15.06
- 31
-0.0
-  0
-LINE
-  5
-CA
-102
-{ACAD_REACTORS
-330
-1C9
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-14.2
- 20
-15.06
- 30
-0.0
- 11
-14.2
- 21
-9.03
- 31
-0.0
-  0
-LWPOLYLINE
-  5
-CB
-102
-{ACAD_REACTORS
-330
-1C9
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-AREA-BOUNDARY
-100
-AcDbPolyline
- 90
-4
- 70
-1
- 10
-14.2
- 20
-9.03
- 10
-23.509999999999998
- 20
-9.03
- 10
-23.509999999999998
- 20
-15.06
- 10
-14.2
- 20
-15.06
-  0
-LINE
-  5
-CC
-102
-{ACAD_REACTORS
-330
-1CA
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-14.0
- 20
-5.5
- 30
-0.0
- 11
-17.8
- 21
-5.5
- 31
-0.0
-  0
-LINE
-  5
-CD
-102
-{ACAD_REACTORS
-330
-1CA
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-18.58
- 20
-5.5
- 30
-0.0
- 11
-18.64
- 21
-5.5
- 31
-0.0
-  0
-LINE
-  5
-CE
-102
-{ACAD_REACTORS
-330
-1CA
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-18.64
- 20
-5.5
- 30
-0.0
- 11
-18.64
- 21
-6.5
- 31
-0.0
-  0
-LINE
-  5
-CF
-102
-{ACAD_REACTORS
-330
-1CA
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-18.64
- 20
-6.5
- 30
-0.0
- 11
-19.34
- 21
-6.5
- 31
-0.0
-  0
-LINE
-  5
-D0
-102
-{ACAD_REACTORS
-330
-1CA
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-19.34
- 20
-6.5
- 30
-0.0
- 11
-19.34
- 21
-6.6
- 31
-0.0
-  0
-LINE
-  5
-D1
-102
-{ACAD_REACTORS
-330
-1CA
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-19.34
- 20
-7.35
- 30
-0.0
- 11
-19.34
- 21
-8.75
- 31
-0.0
-  0
-LINE
-  5
-D2
-102
-{ACAD_REACTORS
-330
-1CA
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-19.34
- 20
-8.75
- 30
-0.0
- 11
-14.0
- 21
-8.75
- 31
-0.0
-  0
-LINE
-  5
-D3
-102
-{ACAD_REACTORS
-330
-1CA
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-14.0
- 20
-8.75
- 30
-0.0
- 11
-14.0
- 21
-5.5
- 31
-0.0
-  0
-LWPOLYLINE
-  5
-D4
-102
-{ACAD_REACTORS
-330
-1CA
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-AREA-BOUNDARY
-100
-AcDbPolyline
- 90
-6
- 70
-1
- 10
-14.0
- 20
-5.5
- 10
-18.64
- 20
-5.5
- 10
-18.64
- 20
-6.5
- 10
-19.34
- 20
-6.5
- 10
-19.34
- 20
-8.75
- 10
-14.0
- 20
-8.75
-  0
-LINE
-  5
-D5
-102
-{ACAD_REACTORS
-330
-1CB
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-17.37
- 20
-4.35
- 30
-0.0
- 11
-18.64
- 21
-4.35
- 31
-0.0
-  0
-LINE
-  5
-D6
-102
-{ACAD_REACTORS
-330
-1CB
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-18.64
- 20
-4.35
- 30
-0.0
- 11
-18.64
- 21
-5.5
- 31
-0.0
-  0
-LINE
-  5
-D7
-102
-{ACAD_REACTORS
-330
-1CB
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-18.64
- 20
-5.5
- 30
-0.0
- 11
-18.58
- 21
-5.5
- 31
-0.0
-  0
-LINE
-  5
-D8
-102
-{ACAD_REACTORS
-330
-1CB
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-17.8
- 20
-5.5
- 30
-0.0
- 11
-17.37
- 21
-5.5
- 31
-0.0
-  0
-LINE
-  5
-D9
-102
-{ACAD_REACTORS
-330
-1CB
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-17.37
- 20
-5.5
- 30
-0.0
- 11
-17.37
- 21
-4.35
- 31
-0.0
-  0
-LWPOLYLINE
-  5
-DA
-102
-{ACAD_REACTORS
-330
-1CB
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-AREA-BOUNDARY
-100
-AcDbPolyline
- 90
-4
- 70
-1
- 10
-17.37
- 20
-4.35
- 10
-18.64
- 20
-4.35
- 10
-18.64
- 20
-5.5
- 10
-17.37
- 20
-5.5
-  0
-LINE
-  5
-DB
-102
-{ACAD_REACTORS
-330
-1CC
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-14.0
- 20
-0.0
- 30
-0.0
- 11
-19.9
- 21
-0.0
- 31
-0.0
-  0
-LINE
-  5
-DC
-102
-{ACAD_REACTORS
-330
-1CC
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-19.9
- 20
-0.0
- 30
-0.0
- 11
-19.9
- 21
-4.25
- 31
-0.0
-  0
-LINE
-  5
-DD
-102
-{ACAD_REACTORS
-330
-1CC
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-19.9
- 20
-4.25
- 30
-0.0
- 11
-19.759999999999998
- 21
-4.25
- 31
-0.0
-  0
-LINE
-  5
-DE
-102
-{ACAD_REACTORS
-330
-1CC
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-19.009999999999998
- 20
-4.25
- 30
-0.0
- 11
-17.27
- 21
-4.25
- 31
-0.0
-  0
-LINE
-  5
-DF
-102
-{ACAD_REACTORS
-330
-1CC
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-17.27
- 20
-4.25
- 30
-0.0
- 11
-17.27
- 21
-5.38
- 31
-0.0
-  0
-LINE
-  5
-E0
-102
-{ACAD_REACTORS
-330
-1CC
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-17.27
- 20
-5.38
- 30
-0.0
- 11
-14.0
- 21
-5.38
- 31
-0.0
-  0
-LINE
-  5
-E1
-102
-{ACAD_REACTORS
-330
-1CC
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-14.0
- 20
-5.38
- 30
-0.0
- 11
-14.0
- 21
-0.0
- 31
-0.0
-  0
-LWPOLYLINE
-  5
-E2
-102
-{ACAD_REACTORS
-330
-1CC
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-AREA-BOUNDARY
-100
-AcDbPolyline
- 90
-6
- 70
-1
- 10
-14.0
- 20
-0.0
- 10
-19.9
- 20
-0.0
- 10
-19.9
- 20
-4.25
- 10
-17.27
- 20
-4.25
- 10
-17.27
- 20
-5.38
- 10
-14.0
- 20
-5.38
-  0
-LINE
-  5
-E3
-102
-{ACAD_REACTORS
-330
-1CD
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-20.05
- 20
-0.0
- 30
-0.0
- 11
-23.84
- 21
-0.0
- 31
-0.0
-  0
-LINE
-  5
-E4
-102
-{ACAD_REACTORS
-330
-1CD
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-23.84
- 20
-0.0
- 30
-0.0
- 11
-23.84
- 21
-2.98
- 31
-0.0
-  0
-LINE
-  5
-E5
-102
-{ACAD_REACTORS
-330
-1CD
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-23.84
- 20
-2.98
- 30
-0.0
- 11
-23.08
- 21
-3.64
- 31
-0.0
-  0
-LINE
-  5
-E6
-102
-{ACAD_REACTORS
-330
-1CD
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-23.08
- 20
-3.64
- 30
-0.0
- 11
-21.33
- 21
-3.64
- 31
-0.0
-  0
-LINE
-  5
-E7
-102
-{ACAD_REACTORS
-330
-1CD
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-21.33
- 20
-3.64
- 30
-0.0
- 11
-21.33
- 21
-4.25
- 31
-0.0
-  0
-LINE
-  5
-E8
-102
-{ACAD_REACTORS
-330
-1CD
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-21.33
- 20
-4.25
- 30
-0.0
- 11
-20.85
- 21
-4.25
- 31
-0.0
-  0
-LINE
-  5
-E9
-102
-{ACAD_REACTORS
-330
-1CD
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-20.1
- 20
-4.25
- 30
-0.0
- 11
-20.05
- 21
-4.25
- 31
-0.0
-  0
-LINE
-  5
-EA
-102
-{ACAD_REACTORS
-330
-1CD
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-20.05
- 20
-4.25
- 30
-0.0
- 11
-20.05
- 21
-0.0
- 31
-0.0
-  0
-LWPOLYLINE
-  5
-EB
-102
-{ACAD_REACTORS
-330
-1CD
+1A6
 102
 }
 330
@@ -8253,13 +7113,13 @@ AcDbPolyline
  20
 4.25
   0
-LINE
+LWPOLYLINE
   5
-EC
+C0
 102
 {ACAD_REACTORS
 330
-1CE
+1A7
 102
 }
 330
@@ -8269,117 +7129,39 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+5
+ 70
+0
  10
 21.33
  20
 3.74
- 30
-0.0
- 11
-23.79
- 21
-3.74
- 31
-0.0
-  0
-LINE
-  5
-ED
-102
-{ACAD_REACTORS
-330
-1CE
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
  10
 23.79
  20
 3.74
- 30
-0.0
- 11
-23.79
- 21
-4.88
- 31
-0.0
-  0
-LINE
-  5
-EE
-102
-{ACAD_REACTORS
-330
-1CE
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
  10
 23.79
  20
 4.88
- 30
-0.0
- 11
-21.33
- 21
-4.88
- 31
-0.0
-  0
-LINE
-  5
-EF
-102
-{ACAD_REACTORS
-330
-1CE
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
  10
 21.33
  20
 4.88
- 30
-0.0
- 11
+ 10
 21.33
- 21
+ 20
 4.85
- 31
-0.0
   0
-LINE
+LWPOLYLINE
   5
-F0
+C1
 102
 {ACAD_REACTORS
 330
-1CE
+1A7
 102
 }
 330
@@ -8389,27 +7171,27 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+2
+ 70
+0
  10
 21.33
  20
 4.3
- 30
-0.0
- 11
+ 10
 21.33
- 21
+ 20
 3.74
- 31
-0.0
   0
 LWPOLYLINE
   5
-F1
+C2
 102
 {ACAD_REACTORS
 330
-1CE
+1A7
 102
 }
 330
@@ -8441,13 +7223,13 @@ AcDbPolyline
  20
 4.88
   0
-LINE
+LWPOLYLINE
   5
-F2
+C3
 102
 {ACAD_REACTORS
 330
-1CF
+1A8
 102
 }
 330
@@ -8457,117 +7239,39 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+5
+ 70
+0
  10
 21.37
  20
 5.0
- 30
-0.0
- 11
-23.79
- 21
-5.0
- 31
-0.0
-  0
-LINE
-  5
-F3
-102
-{ACAD_REACTORS
-330
-1CF
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
  10
 23.79
  20
 5.0
- 30
-0.0
- 11
-23.79
- 21
-5.86
- 31
-0.0
-  0
-LINE
-  5
-F4
-102
-{ACAD_REACTORS
-330
-1CF
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
  10
 23.79
  20
 5.86
- 30
-0.0
- 11
-21.37
- 21
-5.86
- 31
-0.0
-  0
-LINE
-  5
-F5
-102
-{ACAD_REACTORS
-330
-1CF
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
  10
 21.37
  20
 5.86
- 30
-0.0
- 11
+ 10
 21.37
- 21
+ 20
 5.7
- 31
-0.0
   0
-LINE
+LWPOLYLINE
   5
-F6
+C4
 102
 {ACAD_REACTORS
 330
-1CF
+1A8
 102
 }
 330
@@ -8577,27 +7281,27 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+2
+ 70
+0
  10
 21.37
  20
 5.05
- 30
-0.0
- 11
+ 10
 21.37
- 21
+ 20
 5.0
- 31
-0.0
   0
 LWPOLYLINE
   5
-F7
+C5
 102
 {ACAD_REACTORS
 330
-1CF
+1A8
 102
 }
 330
@@ -8629,13 +7333,13 @@ AcDbPolyline
  20
 5.86
   0
-LINE
+LWPOLYLINE
   5
-F8
+C6
 102
 {ACAD_REACTORS
 330
-1D0
+1A9
 102
 }
 330
@@ -8645,117 +7349,39 @@ AcDbEntity
   8
 A-WALL
 100
-AcDbLine
+AcDbPolyline
+ 90
+5
+ 70
+0
  10
 20.27
  20
 6.1
- 30
-0.0
- 11
-23.79
- 21
-6.1
- 31
-0.0
-  0
-LINE
-  5
-F9
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
  10
 23.79
  20
 6.1
- 30
-0.0
- 11
-23.79
- 21
-8.8
- 31
-0.0
-  0
-LINE
-  5
-FA
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
  10
 23.79
  20
-8.8
- 30
-0.0
- 11
-20.27
- 21
-8.8
- 31
-0.0
-  0
-LINE
-  5
-FB
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
+8.75
  10
 20.27
  20
-8.8
- 30
-0.0
- 11
+8.75
+ 10
 20.27
- 21
+ 20
 6.1
- 31
-0.0
   0
 LWPOLYLINE
   5
-FC
+C7
 102
 {ACAD_REACTORS
 330
-1D0
+1A9
 102
 }
 330
@@ -8781,1617 +7407,113 @@ AcDbPolyline
  10
 23.79
  20
-8.8
+8.75
  10
 20.27
  20
-8.8
-  0
-LINE
-  5
-FD
-102
-{ACAD_REACTORS
-330
-1D1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-3.84
- 20
-8.69
- 30
-0.0
- 11
-3.84
- 21
-4.32
- 31
-0.0
-  0
-LINE
-  5
-FE
-102
-{ACAD_REACTORS
-330
-1D1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-3.84
- 20
-4.32
- 30
-0.0
- 11
-4.42
- 21
-4.32
- 31
-0.0
-  0
-LINE
-  5
-FF
-102
-{ACAD_REACTORS
-330
-1D1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-4.42
- 20
-4.32
- 30
-0.0
- 11
-4.42
- 21
-1.0
- 31
-0.0
-  0
-LINE
-  5
-100
-102
-{ACAD_REACTORS
-330
-1D1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-5.6
- 20
-8.69
- 30
-0.0
- 11
-5.6
- 21
-6.2
- 31
-0.0
-  0
-LINE
-  5
-101
-102
-{ACAD_REACTORS
-330
-1D1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-5.6
- 20
-4.24
- 30
-0.0
- 11
-5.6
- 21
-1.0
- 31
-0.0
-  0
-LINE
-  5
-102
-102
-{ACAD_REACTORS
-330
-1D1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-4.42
- 20
-1.0
- 30
-0.0
- 11
-4.75
- 21
-1.0
- 31
-0.0
-  0
-LINE
-  5
-103
-102
-{ACAD_REACTORS
-330
-1D2
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-18.43
- 20
-15.06
- 30
-0.0
- 11
-18.43
- 21
-12.26
- 31
-0.0
-  0
-LINE
-  5
-104
-102
-{ACAD_REACTORS
-330
-1D2
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbLine
- 10
-18.43
- 20
-12.26
- 30
-0.0
- 11
-18.75
- 21
-12.26
- 31
-0.0
-  0
-LINE
-  5
-105
-102
-{ACAD_REACTORS
-330
-1C1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-GLAZ
-100
-AcDbLine
- 10
-0.0
- 20
-11.22
- 30
-0.0
- 11
-4.03
- 21
-11.22
- 31
-0.0
-  0
-LINE
-  5
-106
-102
-{ACAD_REACTORS
-330
-1C1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-GLAZ
-100
-AcDbLine
- 10
-4.03
- 20
-11.22
- 30
-0.0
- 11
-4.03
- 21
-11.35
- 31
-0.0
-  0
-LINE
-  5
-107
-102
-{ACAD_REACTORS
-330
-1C1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-GLAZ
-100
-AcDbLine
- 10
-4.03
- 20
-12.1
- 30
-0.0
- 11
-4.03
- 21
-15.23
- 31
-0.0
-  0
-LINE
-  5
-108
-102
-{ACAD_REACTORS
-330
-1C9
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-GLAZ
-100
-AcDbLine
- 10
-19.45
- 20
-12.26
- 30
-0.0
- 11
-23.509999999999998
- 21
-12.26
- 31
-0.0
-  0
-LINE
-  5
-109
-102
-{ACAD_REACTORS
-330
-1C9
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-GLAZ
-100
-AcDbLine
- 10
-20.13
- 20
-12.26
- 30
-0.0
- 11
-20.13
- 21
-11.8
- 31
-0.0
-  0
-LINE
-  5
-10A
-102
-{ACAD_REACTORS
-330
-1C9
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-GLAZ
-100
-AcDbLine
- 10
-20.13
- 20
-11.1
- 30
-0.0
- 11
-20.13
- 21
-9.03
- 31
-0.0
-  0
-LINE
-  5
-10B
-102
-{ACAD_REACTORS
-330
-1C2
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-7.6
- 20
-15.43
- 30
-0.0
- 11
-7.6
- 21
-16.18
- 31
-0.0
-  0
-ARC
-  5
-10C
-102
-{ACAD_REACTORS
-330
-1C2
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-7.6
- 20
-15.43
- 30
-0.0
- 40
-0.75
-100
-AcDbArc
- 50
-0.0
- 51
-90.0
-  0
-LINE
-  5
-10D
-102
-{ACAD_REACTORS
-330
-1C1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-5.31
- 20
-8.84
- 30
-0.0
- 11
-5.31
- 21
-9.57
- 31
-0.0
-  0
-ARC
-  5
-10E
-102
-{ACAD_REACTORS
-330
-1C1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-5.31
- 20
-8.84
- 30
-0.0
- 40
-0.7299999999999995
-100
-AcDbArc
- 50
-90.0
- 51
-180.0
-  0
-LINE
-  5
-10F
-102
-{ACAD_REACTORS
-330
-1C3
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-3.74
- 20
-4.55
- 30
-0.0
- 11
-2.99
- 21
-4.55
- 31
-0.0
-  0
-ARC
-  5
-110
-102
-{ACAD_REACTORS
-330
-1C3
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-3.74
- 20
-4.55
- 30
-0.0
- 40
-0.75
-100
-AcDbArc
- 50
-90.0
- 51
-180.0
-  0
-LINE
-  5
-111
-102
-{ACAD_REACTORS
-330
-1C4
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-4.27
- 20
-4.1
- 30
-0.0
- 11
-3.52
- 21
-4.1
- 31
-0.0
-  0
-ARC
-  5
-112
-102
-{ACAD_REACTORS
-330
-1C4
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-4.27
- 20
-4.1
- 30
-0.0
- 40
-0.7499999999999996
-100
-AcDbArc
- 50
--180.0
- 51
--90.0
-  0
-LINE
-  5
-113
-102
-{ACAD_REACTORS
-330
-1C5
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-5.75
- 20
-4.85
- 30
-0.0
- 11
-5.05
- 21
-4.85
- 31
-0.0
-  0
-ARC
-  5
-114
-102
-{ACAD_REACTORS
-330
-1C5
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-5.75
- 20
-4.85
- 30
-0.0
- 40
-0.7000000000000002
-100
-AcDbArc
- 50
-90.0
- 51
-180.0
-  0
-LINE
-  5
-115
-102
-{ACAD_REACTORS
-330
-1C7
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-5.75
- 20
-3.95
- 30
-0.0
- 11
-6.45
- 21
-3.95
- 31
-0.0
-  0
-ARC
-  5
-116
-102
-{ACAD_REACTORS
-330
-1C7
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-5.75
- 20
-3.95
- 30
-0.0
- 40
-0.7000000000000002
-100
-AcDbArc
- 50
--90.0
- 51
-0.0
-  0
-LINE
-  5
-117
-102
-{ACAD_REACTORS
-330
-1C6
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-8.6
- 20
-6.14
- 30
-0.0
- 11
-8.6
- 21
-6.840000000000001
- 31
-0.0
-  0
-ARC
-  5
-118
-102
-{ACAD_REACTORS
-330
-1C6
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-8.6
- 20
-6.14
- 30
-0.0
- 40
-0.7000000000000011
-100
-AcDbArc
- 50
-0.0
- 51
-90.0
-  0
-LINE
-  5
-119
-102
-{ACAD_REACTORS
-330
-1C8
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-6.2
- 20
-6.45
- 30
-0.0
- 11
-6.95
- 21
-6.45
- 31
-0.0
-  0
-ARC
-  5
-11A
-102
-{ACAD_REACTORS
-330
-1C8
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-6.2
- 20
-6.45
- 30
-0.0
- 40
-0.75
-100
-AcDbArc
- 50
--0.0
- 51
-90.0
-  0
-LINE
-  5
-11B
-102
-{ACAD_REACTORS
-330
-1C8
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-9.9
- 20
-6.6
- 30
-0.0
- 11
-9.15
- 21
-6.6
- 31
-0.0
-  0
-ARC
-  5
-11C
-102
-{ACAD_REACTORS
-330
-1C8
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-9.9
- 20
-6.6
- 30
-0.0
- 40
-0.75
-100
-AcDbArc
- 50
-90.0
- 51
-180.0
-  0
-LINE
-  5
-11D
-102
-{ACAD_REACTORS
-330
-1D1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-5.6
- 20
-1.0
- 30
-0.0
- 11
-5.6
- 21
-1.8499999999999996
- 31
-0.0
-  0
-ARC
-  5
-11E
-102
-{ACAD_REACTORS
-330
-1D1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-5.6
- 20
-1.0
- 30
-0.0
- 40
-0.8499999999999996
-100
-AcDbArc
- 50
-90.0
- 51
-180.0
-  0
-LINE
-  5
-11F
-102
-{ACAD_REACTORS
-330
-1C1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-4.03
- 20
-11.35
- 30
-0.0
- 11
-3.2800000000000002
- 21
-11.35
- 31
-0.0
-  0
-ARC
-  5
-120
-102
-{ACAD_REACTORS
-330
-1C1
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-4.03
- 20
-11.35
- 30
-0.0
- 40
-0.75
-100
-AcDbArc
- 50
-90.0
- 51
-180.0
-  0
-LINE
-  5
-121
-102
-{ACAD_REACTORS
-330
-1C9
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-18.75
- 20
-12.26
- 30
-0.0
- 11
-18.75
- 21
-12.959999999999999
- 31
-0.0
-  0
-ARC
-  5
-122
-102
-{ACAD_REACTORS
-330
-1C9
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-18.75
- 20
-12.26
- 30
-0.0
- 40
-0.6999999999999993
-100
-AcDbArc
- 50
-0.0
- 51
-90.0
-  0
-LINE
-  5
-123
-102
-{ACAD_REACTORS
-330
-1C9
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-20.13
- 20
-11.8
- 30
-0.0
- 11
-20.83
- 21
-11.8
- 31
-0.0
-  0
-ARC
-  5
-124
-102
-{ACAD_REACTORS
-330
-1C9
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-20.13
- 20
-11.8
- 30
-0.0
- 40
-0.7000000000000011
-100
-AcDbArc
- 50
--90.0
- 51
-0.0
-  0
-LINE
-  5
-125
-102
-{ACAD_REACTORS
-330
-1CA
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-19.34
- 20
-6.6
- 30
-0.0
- 11
-18.59
- 21
-6.6
- 31
-0.0
-  0
-ARC
-  5
-126
-102
-{ACAD_REACTORS
-330
-1CA
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-19.34
- 20
-6.6
- 30
-0.0
- 40
-0.75
-100
-AcDbArc
- 50
-90.0
- 51
-180.0
-  0
-LINE
-  5
-127
-102
-{ACAD_REACTORS
-330
-1CB
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-18.58
- 20
-5.5
- 30
-0.0
- 11
-18.58
- 21
-6.279999999999998
- 31
-0.0
-  0
-ARC
-  5
-128
-102
-{ACAD_REACTORS
-330
-1CB
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-18.58
- 20
-5.5
- 30
-0.0
- 40
-0.7799999999999976
-100
-AcDbArc
- 50
-90.0
- 51
-180.0
-  0
-LINE
-  5
-129
-102
-{ACAD_REACTORS
-330
-1CC
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-19.759999999999998
- 20
-4.25
- 30
-0.0
- 11
-19.759999999999998
- 21
-3.5
- 31
-0.0
-  0
-ARC
-  5
-12A
-102
-{ACAD_REACTORS
-330
-1CC
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-19.759999999999998
- 20
-4.25
- 30
-0.0
- 40
-0.75
-100
-AcDbArc
- 50
-180.0
- 51
--90.0
-  0
-LINE
-  5
-12B
-102
-{ACAD_REACTORS
-330
-1CD
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-20.1
- 20
-4.25
- 30
-0.0
- 11
-20.1
- 21
-3.5
- 31
-0.0
-  0
-ARC
-  5
-12C
-102
-{ACAD_REACTORS
-330
-1CD
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-20.1
- 20
-4.25
- 30
-0.0
- 40
-0.75
-100
-AcDbArc
- 50
--90.0
- 51
-0.0
-  0
-LINE
-  5
-12D
-102
-{ACAD_REACTORS
-330
-1CE
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-21.33
- 20
-4.3
- 30
-0.0
- 11
-21.88
- 21
-4.3
- 31
-0.0
-  0
-ARC
-  5
-12E
-102
-{ACAD_REACTORS
-330
-1CE
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-21.33
- 20
-4.3
- 30
-0.0
- 40
-0.5499999999999998
-100
-AcDbArc
- 50
--0.0
- 51
-90.0
-  0
-LINE
-  5
-12F
-102
-{ACAD_REACTORS
-330
-1CF
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbLine
- 10
-21.37
- 20
-5.05
- 30
-0.0
- 11
-22.020000000000003
- 21
-5.05
- 31
-0.0
-  0
-ARC
-  5
-130
-102
-{ACAD_REACTORS
-330
-1CF
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-DOOR
-100
-AcDbCircle
- 10
-21.37
- 20
-5.05
- 30
-0.0
- 40
-0.6500000000000004
-100
-AcDbArc
- 50
--0.0
- 51
-90.0
+8.75
   0
 LWPOLYLINE
   5
-131
+C8
 102
 {ACAD_REACTORS
 330
-1C9
+1AA
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+4.42
+ 20
+1.0
+ 10
+4.76
+ 20
+1.0
+  0
+LWPOLYLINE
+  5
+C9
+102
+{ACAD_REACTORS
+330
+1AA
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+3
+ 70
+0
+ 10
+5.55
+ 20
+1.0
+ 10
+5.6
+ 20
+1.0
+ 10
+5.6
+ 20
+3.25
+  0
+LWPOLYLINE
+  5
+CA
+102
+{ACAD_REACTORS
+330
+1AA
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+5.6
+ 20
+3.95
+ 10
+5.6
+ 20
+4.85
+  0
+LWPOLYLINE
+  5
+CB
+102
+{ACAD_REACTORS
+330
+1AA
 102
 }
 330
@@ -10405,31 +7527,1821 @@ AcDbPolyline
  90
 4
  70
+0
+ 10
+5.6
+ 20
+5.55
+ 10
+5.6
+ 20
+6.29
+ 10
+6.05
+ 20
+6.29
+ 10
+6.05
+ 20
+6.45
+  0
+LWPOLYLINE
+  5
+CC
+102
+{ACAD_REACTORS
+330
+1AA
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+3
+ 70
+0
+ 10
+6.05
+ 20
+7.2
+ 10
+6.05
+ 20
+8.69
+ 10
+5.31
+ 20
+8.69
+  0
+LWPOLYLINE
+  5
+CD
+102
+{ACAD_REACTORS
+330
+1AA
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+3
+ 70
+0
+ 10
+4.58
+ 20
+8.69
+ 10
+3.84
+ 20
+8.69
+ 10
+3.84
+ 20
+5.3
+  0
+LWPOLYLINE
+  5
+CE
+102
+{ACAD_REACTORS
+330
+1AA
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+4
+ 70
+0
+ 10
+3.84
+ 20
+4.55
+ 10
+3.84
+ 20
+4.32
+ 10
+4.42
+ 20
+4.32
+ 10
+4.42
+ 20
+4.1
+  0
+LWPOLYLINE
+  5
+CF
+102
+{ACAD_REACTORS
+330
+1AA
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+4.42
+ 20
+3.35
+ 10
+4.42
+ 20
+1.0
+  0
+LWPOLYLINE
+  5
+D0
+102
+{ACAD_REACTORS
+330
+1AA
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-AREA-BOUNDARY
+100
+AcDbPolyline
+ 90
+8
+ 70
 1
  10
-13.799999999999999
+4.42
  20
-8.879999999999999
+1.0
  10
-23.909999999999997
+5.6
  20
-8.879999999999999
+1.0
  10
-23.909999999999997
+5.6
  20
-15.46
+6.29
  10
-13.799999999999999
+6.05
  20
-15.46
+6.29
+ 10
+6.05
+ 20
+8.69
+ 10
+3.84
+ 20
+8.69
+ 10
+3.84
+ 20
+4.32
+ 10
+4.42
+ 20
+4.32
+  0
+LWPOLYLINE
+  5
+D1
+102
+{ACAD_REACTORS
+330
+1AB
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+18.79
+ 20
+4.4
+ 10
+19.009999999999998
+ 20
+4.4
+  0
+LWPOLYLINE
+  5
+D2
+102
+{ACAD_REACTORS
+330
+1AB
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+19.759999999999998
+ 20
+4.4
+ 10
+20.1
+ 20
+4.4
+  0
+LWPOLYLINE
+  5
+D3
+102
+{ACAD_REACTORS
+330
+1AB
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+20.85
+ 20
+4.4
+ 10
+21.08
+ 20
+4.4
+  0
+LWPOLYLINE
+  5
+D4
+102
+{ACAD_REACTORS
+330
+1AB
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+21.18
+ 20
+4.85
+ 10
+21.18
+ 20
+5.05
+  0
+LWPOLYLINE
+  5
+D5
+102
+{ACAD_REACTORS
+330
+1AB
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+6
+ 70
+0
+ 10
+21.18
+ 20
+5.7
+ 10
+21.18
+ 20
+5.95
+ 10
+20.12
+ 20
+5.95
+ 10
+20.12
+ 20
+8.75
+ 10
+19.490000000000002
+ 20
+8.75
+ 10
+19.490000000000002
+ 20
+7.35
+  0
+LWPOLYLINE
+  5
+D6
+102
+{ACAD_REACTORS
+330
+1AB
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+3
+ 70
+0
+ 10
+19.09
+ 20
+6.65
+ 10
+18.79
+ 20
+6.65
+ 10
+18.79
+ 20
+4.4
+  0
+LWPOLYLINE
+  5
+D7
+102
+{ACAD_REACTORS
+330
+1AB
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-AREA-BOUNDARY
+100
+AcDbPolyline
+ 90
+8
+ 70
+1
+ 10
+18.79
+ 20
+4.4
+ 10
+21.18
+ 20
+4.4
+ 10
+21.18
+ 20
+5.95
+ 10
+20.12
+ 20
+5.95
+ 10
+20.12
+ 20
+8.75
+ 10
+19.490000000000002
+ 20
+8.75
+ 10
+19.490000000000002
+ 20
+6.65
+ 10
+18.79
+ 20
+6.65
+  0
+LWPOLYLINE
+  5
+D8
+102
+{ACAD_REACTORS
+330
+1AC
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL-OUTER
+100
+AcDbPolyline
+ 90
+6
+ 70
+0
+ 10
+9.32
+ 20
+3.4699999999999998
+ 10
+10.08
+ 20
+3.4699999999999998
+ 10
+10.08
+ 20
+-0.15
+ 10
+5.6
+ 20
+-0.15
+ 10
+5.6
+ 20
+0.85
+ 10
+5.55
+ 20
+0.85
+  0
+LWPOLYLINE
+  5
+D9
+102
+{ACAD_REACTORS
+330
+1AC
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL-OUTER
+100
+AcDbPolyline
+ 90
+17
+ 70
+0
+ 10
+4.76
+ 20
+0.85
+ 10
+4.42
+ 20
+0.85
+ 10
+4.42
+ 20
+-0.15
+ 10
+-0.04999999999999999
+ 20
+-0.15
+ 10
+-0.04999999999999999
+ 20
+4.239999999999999
+ 10
+-0.04999999999999999
+ 20
+4.390000000000001
+ 10
+-0.04999999999999999
+ 20
+8.69
+ 10
+-0.15
+ 20
+8.69
+ 10
+-0.15
+ 20
+15.38
+ 10
+4.56
+ 20
+15.38
+ 10
+4.56
+ 20
+18.63
+ 10
+9.950000000000001
+ 20
+18.63
+ 10
+9.950000000000001
+ 20
+15.38
+ 10
+9.99
+ 20
+15.38
+ 10
+9.99
+ 20
+8.84
+ 10
+10.05
+ 20
+8.84
+ 10
+10.05
+ 20
+7.35
+  0
+LWPOLYLINE
+  5
+DA
+102
+{ACAD_REACTORS
+330
+1AC
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL-OUTER
+100
+AcDbPolyline
+ 90
+6
+ 70
+0
+ 10
+10.05
+ 20
+6.6
+ 10
+10.05
+ 20
+6.29
+ 10
+10.05
+ 20
+6.1499999999999995
+ 10
+10.05
+ 20
+4.29
+ 10
+9.32
+ 20
+4.29
+ 10
+9.32
+ 20
+3.4699999999999998
   0
 HATCH
   5
-132
+DB
 102
 {ACAD_REACTORS
 330
-1C9
+1AC
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL-POCHE
+ 62
+253
+100
+AcDbHatch
+ 10
+0.0
+ 20
+0.0
+ 30
+0.0
+210
+0.0
+220
+0.0
+230
+1.0
+  2
+SOLID
+ 70
+1
+ 71
+0
+ 91
+2
+ 92
+3
+ 72
+0
+ 73
+1
+ 93
+46
+ 10
+5.6
+ 20
+-0.15
+ 10
+5.6
+ 20
+0.85
+ 10
+5.55
+ 20
+0.85
+ 10
+5.55
+ 20
+1.0
+ 10
+5.6
+ 20
+1.0
+ 10
+5.6
+ 20
+3.25
+ 10
+5.75
+ 20
+3.25
+ 10
+5.75
+ 20
+0.0
+ 10
+9.93
+ 20
+0.0
+ 10
+9.93
+ 20
+3.32
+ 10
+9.17
+ 20
+3.32
+ 10
+9.17
+ 20
+4.24
+ 10
+5.75
+ 20
+4.24
+ 10
+5.75
+ 20
+3.95
+ 10
+5.6
+ 20
+3.95
+ 10
+5.6
+ 20
+4.85
+ 10
+5.75
+ 20
+4.85
+ 10
+5.75
+ 20
+4.44
+ 10
+7.98
+ 20
+4.44
+ 10
+7.98
+ 20
+6.14
+ 10
+5.75
+ 20
+6.14
+ 10
+5.75
+ 20
+5.55
+ 10
+5.6
+ 20
+5.55
+ 10
+5.6
+ 20
+6.29
+ 10
+6.05
+ 20
+6.29
+ 10
+6.05
+ 20
+6.45
+ 10
+6.2
+ 20
+6.45
+ 10
+6.2
+ 20
+6.3
+ 10
+8.34
+ 20
+6.3
+ 10
+8.34
+ 20
+6.14
+ 10
+8.1
+ 20
+6.14
+ 10
+8.1
+ 20
+4.44
+ 10
+9.9
+ 20
+4.44
+ 10
+9.9
+ 20
+6.14
+ 10
+9.09
+ 20
+6.14
+ 10
+9.09
+ 20
+6.3
+ 10
+9.9
+ 20
+6.3
+ 10
+9.9
+ 20
+6.6
+ 10
+10.05
+ 20
+6.6
+ 10
+10.05
+ 20
+6.29
+ 10
+10.05
+ 20
+6.1499999999999995
+ 10
+10.05
+ 20
+4.29
+ 10
+9.32
+ 20
+4.29
+ 10
+9.32
+ 20
+3.4699999999999998
+ 10
+10.08
+ 20
+3.4699999999999998
+ 10
+10.08
+ 20
+-0.15
+ 97
+0
+ 92
+3
+ 72
+0
+ 73
+1
+ 93
+60
+ 10
+4.42
+ 20
+-0.15
+ 10
+-0.04999999999999999
+ 20
+-0.15
+ 10
+-0.04999999999999999
+ 20
+4.239999999999999
+ 10
+-0.04999999999999999
+ 20
+4.390000000000001
+ 10
+-0.04999999999999999
+ 20
+8.69
+ 10
+-0.15
+ 20
+8.69
+ 10
+-0.15
+ 20
+15.38
+ 10
+4.56
+ 20
+15.38
+ 10
+4.56
+ 20
+18.63
+ 10
+9.950000000000001
+ 20
+18.63
+ 10
+9.950000000000001
+ 20
+15.38
+ 10
+9.99
+ 20
+15.38
+ 10
+9.99
+ 20
+8.84
+ 10
+10.05
+ 20
+8.84
+ 10
+10.05
+ 20
+7.35
+ 10
+9.9
+ 20
+7.35
+ 10
+9.9
+ 20
+8.69
+ 10
+6.2
+ 20
+8.69
+ 10
+6.2
+ 20
+7.2
+ 10
+6.05
+ 20
+7.2
+ 10
+6.05
+ 20
+8.69
+ 10
+5.31
+ 20
+8.69
+ 10
+5.31
+ 20
+8.84
+ 10
+9.84
+ 20
+8.84
+ 10
+9.84
+ 20
+15.23
+ 10
+8.31
+ 20
+15.23
+ 10
+8.31
+ 20
+15.43
+ 10
+9.8
+ 20
+15.43
+ 10
+9.8
+ 20
+18.48
+ 10
+4.71
+ 20
+18.48
+ 10
+4.71
+ 20
+15.43
+ 10
+7.56
+ 20
+15.43
+ 10
+7.56
+ 20
+15.23
+ 10
+0.0
+ 20
+15.23
+ 10
+0.0
+ 20
+8.84
+ 10
+4.58
+ 20
+8.84
+ 10
+4.58
+ 20
+8.69
+ 10
+3.84
+ 20
+8.69
+ 10
+3.84
+ 20
+5.3
+ 10
+3.74
+ 20
+5.3
+ 10
+3.74
+ 20
+8.69
+ 10
+0.1
+ 20
+8.69
+ 10
+0.1
+ 20
+4.39
+ 10
+3.74
+ 20
+4.39
+ 10
+3.74
+ 20
+4.55
+ 10
+3.84
+ 20
+4.55
+ 10
+3.84
+ 20
+4.32
+ 10
+4.42
+ 20
+4.32
+ 10
+4.42
+ 20
+4.1
+ 10
+4.27
+ 20
+4.1
+ 10
+4.27
+ 20
+4.24
+ 10
+0.1
+ 20
+4.24
+ 10
+0.1
+ 20
+0.0
+ 10
+4.27
+ 20
+0.0
+ 10
+4.27
+ 20
+3.35
+ 10
+4.42
+ 20
+3.35
+ 10
+4.42
+ 20
+1.0
+ 10
+4.76
+ 20
+1.0
+ 10
+4.76
+ 20
+0.85
+ 10
+4.42
+ 20
+0.85
+ 97
+0
+ 75
+0
+ 76
+1
+ 98
+0
+  0
+LWPOLYLINE
+  5
+DC
+102
+{ACAD_REACTORS
+330
+1AD
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL-OUTER
+100
+AcDbPolyline
+ 90
+20
+ 70
+0
+ 10
+23.939999999999998
+ 20
+3.5900000000000003
+ 10
+23.366343567251423
+ 20
+3.5900000000000003
+ 10
+23.99
+ 20
+3.0484036241920274
+ 10
+23.99
+ 20
+-0.15
+ 10
+20.049999999999997
+ 20
+-0.15
+ 10
+19.900000000000002
+ 20
+-0.15
+ 10
+13.85
+ 20
+-0.15
+ 10
+13.85
+ 20
+5.35
+ 10
+13.85
+ 20
+5.53
+ 10
+13.85
+ 20
+8.75
+ 10
+13.8
+ 20
+8.75
+ 10
+13.8
+ 20
+15.3
+ 10
+23.11
+ 20
+15.3
+ 10
+23.11
+ 20
+8.9
+ 10
+23.939999999999998
+ 20
+8.9
+ 10
+23.939999999999998
+ 20
+6.010000000000001
+ 10
+23.939999999999998
+ 20
+5.949999999999999
+ 10
+23.939999999999998
+ 20
+5.03
+ 10
+23.939999999999998
+ 20
+4.85
+ 10
+23.939999999999998
+ 20
+3.5900000000000003
+  0
+HATCH
+  5
+DD
+102
+{ACAD_REACTORS
+330
+1AD
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL-POCHE
+ 62
+253
+100
+AcDbHatch
+ 10
+0.0
+ 20
+0.0
+ 30
+0.0
+210
+0.0
+220
+0.0
+230
+1.0
+  2
+SOLID
+ 70
+1
+ 71
+0
+ 91
+9
+ 92
+3
+ 72
+0
+ 73
+1
+ 93
+6
+ 10
+21.33
+ 20
+4.3
+ 10
+21.33
+ 20
+4.25
+ 10
+20.85
+ 20
+4.25
+ 10
+20.85
+ 20
+4.4
+ 10
+21.08
+ 20
+4.4
+ 10
+21.08
+ 20
+4.3
+ 97
+0
+ 92
+3
+ 72
+0
+ 73
+1
+ 93
+73
+ 10
+13.85
+ 20
+-0.15
+ 10
+13.85
+ 20
+5.35
+ 10
+13.85
+ 20
+5.53
+ 10
+13.85
+ 20
+8.75
+ 10
+14.0
+ 20
+8.75
+ 10
+14.0
+ 20
+5.5
+ 10
+17.37
+ 20
+5.5
+ 10
+17.37
+ 20
+4.35
+ 10
+18.64
+ 20
+4.35
+ 10
+18.64
+ 20
+5.5
+ 10
+18.64
+ 20
+6.5
+ 10
+18.79
+ 20
+6.5
+ 10
+18.79
+ 20
+4.4
+ 10
+19.009999999999998
+ 20
+4.4
+ 10
+19.009999999999998
+ 20
+4.25
+ 10
+17.27
+ 20
+4.25
+ 10
+17.27
+ 20
+5.38
+ 10
+14.0
+ 20
+5.38
+ 10
+14.0
+ 20
+0.0
+ 10
+19.9
+ 20
+0.0
+ 10
+19.9
+ 20
+4.25
+ 10
+19.759999999999998
+ 20
+4.25
+ 10
+19.759999999999998
+ 20
+4.4
+ 10
+20.1
+ 20
+4.4
+ 10
+20.1
+ 20
+4.25
+ 10
+20.05
+ 20
+4.25
+ 10
+20.05
+ 20
+0.0
+ 10
+23.84
+ 20
+0.0
+ 10
+23.84
+ 20
+2.98
+ 10
+23.08
+ 20
+3.64
+ 10
+21.33
+ 20
+3.64
+ 10
+21.33
+ 20
+3.74
+ 10
+23.79
+ 20
+3.74
+ 10
+23.79
+ 20
+4.88
+ 10
+21.33
+ 20
+4.88
+ 10
+21.33
+ 20
+4.85
+ 10
+21.18
+ 20
+4.85
+ 10
+21.18
+ 20
+5.05
+ 10
+21.37
+ 20
+5.05
+ 10
+21.37
+ 20
+5.0
+ 10
+23.79
+ 20
+5.0
+ 10
+23.79
+ 20
+5.86
+ 10
+21.37
+ 20
+5.86
+ 10
+21.37
+ 20
+5.7
+ 10
+21.18
+ 20
+5.7
+ 10
+21.18
+ 20
+5.95
+ 10
+20.12
+ 20
+5.95
+ 10
+20.12
+ 20
+8.75
+ 10
+19.490000000000002
+ 20
+8.75
+ 10
+19.490000000000002
+ 20
+7.35
+ 10
+19.34
+ 20
+7.35
+ 10
+19.34
+ 20
+8.75
+ 10
+14.2
+ 20
+8.75
+ 10
+14.2
+ 20
+9.08
+ 10
+22.71
+ 20
+9.08
+ 10
+22.71
+ 20
+8.75
+ 10
+20.27
+ 20
+8.75
+ 10
+20.27
+ 20
+6.1
+ 10
+23.79
+ 20
+6.1
+ 10
+23.79
+ 20
+8.75
+ 10
+23.11
+ 20
+8.75
+ 10
+23.11
+ 20
+8.9
+ 10
+23.939999999999998
+ 20
+8.9
+ 10
+23.939999999999998
+ 20
+6.010000000000001
+ 10
+23.939999999999998
+ 20
+5.949999999999999
+ 10
+23.939999999999998
+ 20
+5.03
+ 10
+23.939999999999998
+ 20
+4.85
+ 10
+23.939999999999998
+ 20
+3.5900000000000003
+ 10
+23.366343567251423
+ 20
+3.5900000000000003
+ 10
+23.99
+ 20
+3.0484036241920274
+ 10
+23.99
+ 20
+-0.15
+ 10
+20.049999999999997
+ 20
+-0.15
+ 10
+19.900000000000002
+ 20
+-0.15
+ 97
+0
+ 92
+3
+ 72
+0
+ 73
+1
+ 93
+4
+ 10
+14.299999999999999
+ 20
+10.775
+ 10
+14.2
+ 20
+10.775
+ 10
+14.2
+ 20
+10.985000000000001
+ 10
+14.299999999999999
+ 20
+10.985000000000001
+ 97
+0
+ 92
+3
+ 72
+0
+ 73
+1
+ 93
+4
+ 10
+22.61
+ 20
+10.885
+ 10
+22.61
+ 20
+11.095
+ 10
+22.71
+ 20
+11.095
+ 10
+22.71
+ 20
+10.885
+ 97
+0
+ 92
+3
+ 72
+0
+ 73
+1
+ 93
+4
+ 10
+22.61
+ 20
+12.684999999999999
+ 10
+22.61
+ 20
+12.895
+ 10
+22.71
+ 20
+12.895
+ 10
+22.71
+ 20
+12.684999999999999
+ 97
+0
+ 92
+3
+ 72
+0
+ 73
+1
+ 93
+4
+ 10
+20.515
+ 20
+14.8
+ 10
+20.305
+ 20
+14.8
+ 10
+20.305
+ 20
+14.9
+ 10
+20.515
+ 20
+14.9
+ 97
+0
+ 92
+3
+ 72
+0
+ 73
+1
+ 93
+6
+ 10
+18.41
+ 20
+12.190000000000001
+ 10
+18.75
+ 20
+12.190000000000001
+ 10
+18.75
+ 20
+12.09
+ 10
+18.31
+ 20
+12.09
+ 10
+18.31
+ 20
+14.9
+ 10
+18.41
+ 20
+14.9
+ 97
+0
+ 92
+3
+ 72
+0
+ 73
+1
+ 93
+4
+ 10
+16.445
+ 20
+14.8
+ 10
+16.235
+ 20
+14.8
+ 10
+16.235
+ 20
+14.9
+ 10
+16.445
+ 20
+14.9
+ 97
+0
+ 92
+3
+ 72
+0
+ 73
+1
+ 93
+4
+ 10
+14.299999999999999
+ 20
+12.875
+ 10
+14.299999999999999
+ 20
+12.665
+ 10
+14.2
+ 20
+12.665
+ 10
+14.2
+ 20
+12.875
+ 97
+0
+ 75
+0
+ 76
+1
+ 98
+0
+  0
+HATCH
+  5
+DE
+102
+{ACAD_REACTORS
+330
+1A2
 102
 }
 330
@@ -10471,37 +9383,37 @@ ANSI31
  93
 8
  10
-13.799999999999999
+13.8
  20
-8.879999999999999
+15.3
+ 10
+23.11
+ 20
+15.3
+ 10
+23.11
+ 20
+8.75
+ 10
+22.71
+ 20
+8.75
+ 10
+22.71
+ 20
+14.9
  10
 14.2
  20
-8.879999999999999
+14.9
  10
 14.2
  20
-15.06
+8.75
  10
-23.509999999999998
+13.8
  20
-15.06
- 10
-23.509999999999998
- 20
-8.879999999999999
- 10
-23.909999999999997
- 20
-8.879999999999999
- 10
-23.909999999999997
- 20
-15.46
- 10
-13.799999999999999
- 20
-15.46
+8.75
  97
 0
  75
@@ -10533,11 +9445,11 @@ ANSI31
   0
 LWPOLYLINE
   5
-133
+DF
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -10549,185 +9461,37 @@ A-WALL
 100
 AcDbPolyline
  90
-4
+5
  70
-1
- 10
-16.009999999999998
- 20
-14.860000000000001
- 10
-16.11
- 20
-14.860000000000001
- 10
-16.11
- 20
-15.06
- 10
-16.009999999999998
- 20
-15.06
-  0
-LWPOLYLINE
-  5
-134
-102
-{ACAD_REACTORS
-330
-1C9
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbPolyline
- 90
-4
- 70
-1
- 10
-16.44
- 20
-14.860000000000001
- 10
-16.540000000000003
- 20
-14.860000000000001
- 10
-16.540000000000003
- 20
-15.06
- 10
-16.44
- 20
-15.06
-  0
-LWPOLYLINE
-  5
-135
-102
-{ACAD_REACTORS
-330
-1C9
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbPolyline
- 90
-4
- 70
-1
- 10
-18.38
- 20
-14.860000000000001
- 10
-18.48
- 20
-14.860000000000001
- 10
-18.48
- 20
-15.06
- 10
-18.38
- 20
-15.06
-  0
-LWPOLYLINE
-  5
-136
-102
-{ACAD_REACTORS
-330
-1C9
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbPolyline
- 90
-4
- 70
-1
- 10
-20.9
- 20
-14.860000000000001
- 10
-21.0
- 20
-14.860000000000001
- 10
-21.0
- 20
-15.06
- 10
-20.9
- 20
-15.06
-  0
-LWPOLYLINE
-  5
-137
-102
-{ACAD_REACTORS
-330
-1C9
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-WALL
-100
-AcDbPolyline
- 90
-4
- 70
-1
+0
  10
 14.2
  20
-12.6
+9.08
  10
-14.399999999999999
+22.71
  20
-12.6
+9.08
  10
-14.399999999999999
+22.71
  20
-12.700000000000001
+14.9
  10
 14.2
  20
-12.700000000000001
+14.9
+ 10
+14.2
+ 20
+9.08
   0
 LWPOLYLINE
   5
-138
+E0
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -10743,29 +9507,29 @@ AcDbPolyline
  70
 1
  10
-14.2
+16.445
  20
-10.77
+14.8
  10
-14.399999999999999
+16.445
  20
-10.77
+14.9
  10
-14.399999999999999
+16.235
  20
-10.870000000000001
+14.9
  10
-14.2
+16.235
  20
-10.870000000000001
+14.8
   0
 LWPOLYLINE
   5
-139
+E1
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -10781,29 +9545,29 @@ AcDbPolyline
  70
 1
  10
-23.31
+20.515
  20
-12.639999999999999
+14.8
  10
-23.509999999999998
+20.515
  20
-12.639999999999999
+14.9
  10
-23.509999999999998
+20.305
  20
-12.74
+14.9
  10
-23.31
+20.305
  20
-12.74
+14.8
   0
 LWPOLYLINE
   5
-13A
+E2
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -10819,29 +9583,189 @@ AcDbPolyline
  70
 1
  10
-23.31
+14.299999999999999
  20
-10.87
+12.665
  10
-23.509999999999998
+14.299999999999999
  20
-10.87
+12.875
  10
-23.509999999999998
+14.2
  20
-10.97
+12.875
  10
-23.31
+14.2
  20
-10.97
+12.665
   0
 LWPOLYLINE
   5
-13B
+E3
 102
 {ACAD_REACTORS
 330
-1CC
+1A2
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+4
+ 70
+1
+ 10
+14.299999999999999
+ 20
+10.775
+ 10
+14.299999999999999
+ 20
+10.985000000000001
+ 10
+14.2
+ 20
+10.985000000000001
+ 10
+14.2
+ 20
+10.775
+  0
+LWPOLYLINE
+  5
+E4
+102
+{ACAD_REACTORS
+330
+1A2
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+4
+ 70
+1
+ 10
+22.71
+ 20
+12.684999999999999
+ 10
+22.71
+ 20
+12.895
+ 10
+22.61
+ 20
+12.895
+ 10
+22.61
+ 20
+12.684999999999999
+  0
+LWPOLYLINE
+  5
+E5
+102
+{ACAD_REACTORS
+330
+1A2
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+4
+ 70
+1
+ 10
+22.71
+ 20
+10.885
+ 10
+22.71
+ 20
+11.095
+ 10
+22.61
+ 20
+11.095
+ 10
+22.61
+ 20
+10.885
+  0
+LWPOLYLINE
+  5
+E6
+102
+{ACAD_REACTORS
+330
+1A2
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-WALL
+100
+AcDbPolyline
+ 90
+6
+ 70
+1
+ 10
+18.41
+ 20
+12.190000000000001
+ 10
+18.75
+ 20
+12.190000000000001
+ 10
+18.75
+ 20
+12.09
+ 10
+18.31
+ 20
+12.09
+ 10
+18.31
+ 20
+14.9
+ 10
+18.41
+ 20
+14.9
+  0
+LWPOLYLINE
+  5
+E7
+102
+{ACAD_REACTORS
+330
+1A5
 102
 }
 330
@@ -10859,27 +9783,27 @@ AcDbPolyline
  10
 14.0
  20
-1.14
+1.37
  10
 14.37
  20
-1.14
+1.37
  10
 14.37
  20
-2.87
+3.1
  10
 14.0
  20
-2.87
+3.1
   0
 HATCH
   5
-13C
+E8
 102
 {ACAD_REACTORS
 330
-1CC
+1A5
 102
 }
 330
@@ -10923,19 +9847,19 @@ ANSI31
  10
 14.0
  20
-1.14
+1.37
  10
 14.37
  20
-1.14
+1.37
  10
 14.37
  20
-2.87
+3.1
  10
 14.0
  20
-2.87
+3.1
  97
 0
  75
@@ -10965,13 +9889,13 @@ ANSI31
  98
 0
   0
-LINE
+LWPOLYLINE
   5
-13D
+E9
 102
 {ACAD_REACTORS
 330
-1C8
+19A
 102
 }
 330
@@ -10979,29 +9903,525 @@ LINE
 100
 AcDbEntity
   8
-A-STAIR
+A-GLAZ
+100
+AcDbPolyline
+ 90
+3
+ 70
+0
+ 10
+0.0
+ 20
+11.22
+ 10
+4.03
+ 20
+11.22
+ 10
+4.03
+ 20
+11.35
+  0
+LWPOLYLINE
+  5
+EA
+102
+{ACAD_REACTORS
+330
+19A
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-GLAZ
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+4.03
+ 20
+12.1
+ 10
+4.03
+ 20
+15.23
+  0
+LWPOLYLINE
+  5
+EB
+102
+{ACAD_REACTORS
+330
+1A2
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-GLAZ
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+19.45
+ 20
+12.14
+ 10
+22.71
+ 20
+12.14
+  0
+LWPOLYLINE
+  5
+EC
+102
+{ACAD_REACTORS
+330
+1A2
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-GLAZ
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+20.09
+ 20
+12.14
+ 10
+20.09
+ 20
+11.8
+  0
+LWPOLYLINE
+  5
+ED
+102
+{ACAD_REACTORS
+330
+1A2
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-GLAZ
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+20.09
+ 20
+11.1
+ 10
+20.09
+ 20
+9.08
+  0
+LINE
+  5
+EE
+102
+{ACAD_REACTORS
+330
+19B
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
 100
 AcDbLine
  10
-6.25
+7.56
  20
-7.45
+15.43
  30
 0.0
  11
-9.9
+7.56
  21
-7.45
+16.18
  31
+0.0
+  0
+ARC
+  5
+EF
+102
+{ACAD_REACTORS
+330
+19B
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+7.56
+ 20
+15.43
+ 30
+0.0
+ 40
+0.7500000000000009
+100
+AcDbArc
+ 50
+0.0
+ 51
+90.0
+  0
+LINE
+  5
+F0
+102
+{ACAD_REACTORS
+330
+19A
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbLine
+ 10
+5.31
+ 20
+8.84
+ 30
+0.0
+ 11
+5.31
+ 21
+9.57
+ 31
+0.0
+  0
+ARC
+  5
+F1
+102
+{ACAD_REACTORS
+330
+19A
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+5.31
+ 20
+8.84
+ 30
+0.0
+ 40
+0.7299999999999995
+100
+AcDbArc
+ 50
+90.0
+ 51
+180.0
+  0
+LINE
+  5
+F2
+102
+{ACAD_REACTORS
+330
+19C
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbLine
+ 10
+3.74
+ 20
+4.55
+ 30
+0.0
+ 11
+2.99
+ 21
+4.55
+ 31
+0.0
+  0
+ARC
+  5
+F3
+102
+{ACAD_REACTORS
+330
+19C
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+3.74
+ 20
+4.55
+ 30
+0.0
+ 40
+0.75
+100
+AcDbArc
+ 50
+90.0
+ 51
+180.0
+  0
+LINE
+  5
+F4
+102
+{ACAD_REACTORS
+330
+19D
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbLine
+ 10
+4.27
+ 20
+3.35
+ 30
+0.0
+ 11
+3.52
+ 21
+3.35
+ 31
+0.0
+  0
+ARC
+  5
+F5
+102
+{ACAD_REACTORS
+330
+19D
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+4.27
+ 20
+3.35
+ 30
+0.0
+ 40
+0.7499999999999996
+100
+AcDbArc
+ 50
+90.0
+ 51
+180.0
+  0
+LINE
+  5
+F6
+102
+{ACAD_REACTORS
+330
+19E
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbLine
+ 10
+5.75
+ 20
+4.85
+ 30
+0.0
+ 11
+5.05
+ 21
+4.85
+ 31
+0.0
+  0
+ARC
+  5
+F7
+102
+{ACAD_REACTORS
+330
+19E
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+5.75
+ 20
+4.85
+ 30
+0.0
+ 40
+0.7000000000000002
+100
+AcDbArc
+ 50
+90.0
+ 51
+180.0
+  0
+LINE
+  5
+F8
+102
+{ACAD_REACTORS
+330
+1A0
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbLine
+ 10
+5.75
+ 20
+3.95
+ 30
+0.0
+ 11
+6.45
+ 21
+3.95
+ 31
+0.0
+  0
+ARC
+  5
+F9
+102
+{ACAD_REACTORS
+330
+1A0
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+5.75
+ 20
+3.95
+ 30
+0.0
+ 40
+0.7000000000000002
+100
+AcDbArc
+ 50
+-90.0
+ 51
 0.0
   0
 LINE
   5
-13E
+FA
 102
 {ACAD_REACTORS
 330
-1C8
+19F
 102
 }
 330
@@ -11009,29 +10429,61 @@ LINE
 100
 AcDbEntity
   8
-A-STAIR
+A-DOOR
 100
 AcDbLine
  10
-7.4
+8.34
  20
-7.45
+6.14
  30
 0.0
  11
-6.25
+8.34
  21
-8.05
+5.39
  31
+0.0
+  0
+ARC
+  5
+FB
+102
+{ACAD_REACTORS
+330
+19F
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+8.34
+ 20
+6.14
+ 30
+0.0
+ 40
+0.75
+100
+AcDbArc
+ 50
+-90.0
+ 51
 0.0
   0
 LINE
   5
-13F
+FC
 102
 {ACAD_REACTORS
 330
-1C8
+1A1
 102
 }
 330
@@ -11039,629 +10491,1493 @@ LINE
 100
 AcDbEntity
   8
-A-STAIR
+A-DOOR
 100
 AcDbLine
  10
-7.4
+6.2
  20
-7.45
+6.45
  30
 0.0
  11
-6.25
- 21
-8.69
- 31
-0.0
-  0
-LINE
-  5
-140
-102
-{ACAD_REACTORS
-330
-1C8
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-7.4
- 20
-7.45
- 30
-0.0
- 11
-6.7
- 21
-8.69
- 31
-0.0
-  0
-LINE
-  5
-141
-102
-{ACAD_REACTORS
-330
-1C8
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-7.4
- 20
-7.45
- 30
-0.0
- 11
-7.15
- 21
-8.69
- 31
-0.0
-  0
-LINE
-  5
-142
-102
-{ACAD_REACTORS
-330
-1C8
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-7.4
- 20
-7.45
- 30
-0.0
- 11
-7.6
- 21
-8.69
- 31
-0.0
-  0
-LINE
-  5
-143
-102
-{ACAD_REACTORS
-330
-1C8
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-7.4
- 20
-7.45
- 30
-0.0
- 11
-8.05
- 21
-8.69
- 31
-0.0
-  0
-LINE
-  5
-144
-102
-{ACAD_REACTORS
-330
-1C8
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-7.4
- 20
-7.45
- 30
-0.0
- 11
-8.5
- 21
-8.69
- 31
-0.0
-  0
-LINE
-  5
-145
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-21.46
- 20
-7.59
- 30
-0.0
- 11
-23.79
- 21
-7.59
- 31
-0.0
-  0
-LINE
-  5
-146
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-21.46
- 20
-6.1
- 30
-0.0
- 11
-21.46
- 21
-7.59
- 31
-0.0
-  0
-LINE
-  5
-147
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-21.66
- 20
-6.1
- 30
-0.0
- 11
-21.66
- 21
-7.59
- 31
-0.0
-  0
-LINE
-  5
-148
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-21.86
- 20
-6.1
- 30
-0.0
- 11
-21.86
- 21
-7.59
- 31
-0.0
-  0
-LINE
-  5
-149
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-22.060000000000002
- 20
-6.1
- 30
-0.0
- 11
-22.060000000000002
- 21
-7.59
- 31
-0.0
-  0
-LINE
-  5
-14A
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-22.259999999999998
- 20
-6.1
- 30
-0.0
- 11
-22.259999999999998
- 21
-7.59
- 31
-0.0
-  0
-LINE
-  5
-14B
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-22.560000000000002
- 20
-6.1
- 30
-0.0
- 11
-22.560000000000002
- 21
-7.59
- 31
-0.0
-  0
-LINE
-  5
-14C
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-22.560000000000002
- 20
-7.59
- 30
-0.0
- 11
-22.2
- 21
-8.8
- 31
-0.0
-  0
-LINE
-  5
-14D
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-22.560000000000002
- 20
-7.59
- 30
-0.0
- 11
-22.75
- 21
-8.8
- 31
-0.0
-  0
-LINE
-  5
-14E
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-22.560000000000002
- 20
-7.59
- 30
-0.0
- 11
-23.3
- 21
-8.8
- 31
-0.0
-  0
-LINE
-  5
-14F
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-22.560000000000002
- 20
-7.59
- 30
-0.0
- 11
-23.79
- 21
-8.8
- 31
-0.0
-  0
-LINE
-  5
-150
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-22.560000000000002
- 20
-7.59
- 30
-0.0
- 11
-23.79
- 21
-8.3
- 31
-0.0
-  0
-LINE
-  5
-151
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-22.560000000000002
- 20
-7.59
- 30
-0.0
- 11
-23.79
- 21
-7.95
- 31
-0.0
-  0
-LINE
-  5
-152
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-22.560000000000002
- 20
-7.59
- 30
-0.0
- 11
-23.79
- 21
 6.95
- 31
-0.0
-  0
-LINE
-  5
-153
-102
-{ACAD_REACTORS
-330
-1D0
-102
-}
-330
-17
-100
-AcDbEntity
-  8
-A-STAIR
-100
-AcDbLine
- 10
-22.560000000000002
- 20
-7.59
- 30
-0.0
- 11
-23.79
  21
 6.45
  31
 0.0
   0
-TEXT
+ARC
   5
-154
+FD
 102
 {ACAD_REACTORS
 330
-1D3
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+6.2
+ 20
+6.45
+ 30
+0.0
+ 40
+0.75
+100
+AcDbArc
+ 50
+-0.0
+ 51
+90.0
+  0
+LINE
+  5
+FE
+102
+{ACAD_REACTORS
+330
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbLine
+ 10
+9.9
+ 20
+6.6
+ 30
+0.0
+ 11
+9.15
+ 21
+6.6
+ 31
+0.0
+  0
+ARC
+  5
+FF
+102
+{ACAD_REACTORS
+330
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+9.9
+ 20
+6.6
+ 30
+0.0
+ 40
+0.75
+100
+AcDbArc
+ 50
+90.0
+ 51
+180.0
+  0
+LINE
+  5
+100
+102
+{ACAD_REACTORS
+330
+1AA
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbLine
+ 10
+4.76
+ 20
+1.0
+ 30
+0.0
+ 11
+4.76
+ 21
+1.79
+ 31
+0.0
+  0
+ARC
+  5
+101
+102
+{ACAD_REACTORS
+330
+1AA
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+4.76
+ 20
+1.0
+ 30
+0.0
+ 40
+0.79
+100
+AcDbArc
+ 50
+0.0
+ 51
+90.0
+  0
+LINE
+  5
+102
+102
+{ACAD_REACTORS
+330
+19A
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbLine
+ 10
+4.03
+ 20
+11.35
+ 30
+0.0
+ 11
+3.2800000000000002
+ 21
+11.35
+ 31
+0.0
+  0
+ARC
+  5
+103
+102
+{ACAD_REACTORS
+330
+19A
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+4.03
+ 20
+11.35
+ 30
+0.0
+ 40
+0.75
+100
+AcDbArc
+ 50
+90.0
+ 51
+180.0
+  0
+LINE
+  5
+104
+102
+{ACAD_REACTORS
+330
+1A2
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbLine
+ 10
+18.75
+ 20
+12.14
+ 30
+0.0
+ 11
+18.75
+ 21
+12.84
+ 31
+0.0
+  0
+ARC
+  5
+105
+102
+{ACAD_REACTORS
+330
+1A2
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+18.75
+ 20
+12.14
+ 30
+0.0
+ 40
+0.6999999999999993
+100
+AcDbArc
+ 50
+0.0
+ 51
+90.0
+  0
+LINE
+  5
+106
+102
+{ACAD_REACTORS
+330
+1A2
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbLine
+ 10
+20.09
+ 20
+11.8
+ 30
+0.0
+ 11
+20.79
+ 21
+11.8
+ 31
+0.0
+  0
+ARC
+  5
+107
+102
+{ACAD_REACTORS
+330
+1A2
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+20.09
+ 20
+11.8
+ 30
+0.0
+ 40
+0.7000000000000011
+100
+AcDbArc
+ 50
+-90.0
+ 51
+0.0
+  0
+LINE
+  5
+108
+102
+{ACAD_REACTORS
+330
+1A3
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbLine
+ 10
+19.34
+ 20
+6.6
+ 30
+0.0
+ 11
+18.59
+ 21
+6.6
+ 31
+0.0
+  0
+ARC
+  5
+109
+102
+{ACAD_REACTORS
+330
+1A3
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+19.34
+ 20
+6.6
+ 30
+0.0
+ 40
+0.75
+100
+AcDbArc
+ 50
+90.0
+ 51
+180.0
+  0
+LINE
+  5
+10A
+102
+{ACAD_REACTORS
+330
+1A4
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbLine
+ 10
+17.5
+ 20
+5.5
+ 30
+0.0
+ 11
+17.5
+ 21
+6.23
+ 31
+0.0
+  0
+ARC
+  5
+10B
+102
+{ACAD_REACTORS
+330
+1A4
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+17.5
+ 20
+5.5
+ 30
+0.0
+ 40
+0.7300000000000004
+100
+AcDbArc
+ 50
+0.0
+ 51
+90.0
+  0
+LINE
+  5
+10C
+102
+{ACAD_REACTORS
+330
+1A5
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbLine
+ 10
+19.759999999999998
+ 20
+4.25
+ 30
+0.0
+ 11
+19.759999999999998
+ 21
+3.5
+ 31
+0.0
+  0
+ARC
+  5
+10D
+102
+{ACAD_REACTORS
+330
+1A5
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+19.759999999999998
+ 20
+4.25
+ 30
+0.0
+ 40
+0.75
+100
+AcDbArc
+ 50
+180.0
+ 51
+-90.0
+  0
+LINE
+  5
+10E
+102
+{ACAD_REACTORS
+330
+1A6
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbLine
+ 10
+20.1
+ 20
+4.25
+ 30
+0.0
+ 11
+20.1
+ 21
+3.5
+ 31
+0.0
+  0
+ARC
+  5
+10F
+102
+{ACAD_REACTORS
+330
+1A6
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+20.1
+ 20
+4.25
+ 30
+0.0
+ 40
+0.75
+100
+AcDbArc
+ 50
+-90.0
+ 51
+0.0
+  0
+LINE
+  5
+110
+102
+{ACAD_REACTORS
+330
+1A7
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbLine
+ 10
+21.33
+ 20
+4.3
+ 30
+0.0
+ 11
+21.88
+ 21
+4.3
+ 31
+0.0
+  0
+ARC
+  5
+111
+102
+{ACAD_REACTORS
+330
+1A7
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+21.33
+ 20
+4.3
+ 30
+0.0
+ 40
+0.5499999999999998
+100
+AcDbArc
+ 50
+-0.0
+ 51
+90.0
+  0
+LINE
+  5
+112
+102
+{ACAD_REACTORS
+330
+1A8
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbLine
+ 10
+21.37
+ 20
+5.05
+ 30
+0.0
+ 11
+22.020000000000003
+ 21
+5.05
+ 31
+0.0
+  0
+ARC
+  5
+113
+102
+{ACAD_REACTORS
+330
+1A8
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-DOOR
+100
+AcDbCircle
+ 10
+21.37
+ 20
+5.05
+ 30
+0.0
+ 40
+0.6500000000000004
+100
+AcDbArc
+ 50
+-0.0
+ 51
+90.0
+  0
+LWPOLYLINE
+  5
+114
+102
+{ACAD_REACTORS
+330
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+6.25
+ 20
+7.46
+ 10
+7.76
+ 20
+7.46
+  0
+LWPOLYLINE
+  5
+115
+102
+{ACAD_REACTORS
+330
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+7.39
+ 20
+7.46
+ 10
+6.27
+ 20
+8.04
+  0
+LWPOLYLINE
+  5
+116
+102
+{ACAD_REACTORS
+330
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+7.39
+ 20
+7.46
+ 10
+6.27
+ 20
+8.55
+  0
+LWPOLYLINE
+  5
+117
+102
+{ACAD_REACTORS
+330
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+7.39
+ 20
+7.46
+ 10
+6.71
+ 20
+8.69
+  0
+LWPOLYLINE
+  5
+118
+102
+{ACAD_REACTORS
+330
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+7.39
+ 20
+7.46
+ 10
+7.15
+ 20
+8.69
+  0
+LWPOLYLINE
+  5
+119
+102
+{ACAD_REACTORS
+330
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+7.39
+ 20
+7.46
+ 10
+7.56
+ 20
+8.69
+  0
+LWPOLYLINE
+  5
+11A
+102
+{ACAD_REACTORS
+330
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+7.39
+ 20
+7.46
+ 10
+8.04
+ 20
+8.69
+  0
+LWPOLYLINE
+  5
+11B
+102
+{ACAD_REACTORS
+330
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+7.73
+ 20
+7.46
+ 10
+7.73
+ 20
+8.69
+  0
+LWPOLYLINE
+  5
+11C
+102
+{ACAD_REACTORS
+330
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+7.76
+ 20
+7.46
+ 10
+8.68
+ 20
+8.69
+  0
+LWPOLYLINE
+  5
+11D
+102
+{ACAD_REACTORS
+330
+1A1
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+7.99
+ 20
+7.46
+ 10
+9.9
+ 20
+7.46
+  0
+LWPOLYLINE
+  5
+11E
+102
+{ACAD_REACTORS
+330
+1A9
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+21.46
+ 20
+7.59
+ 10
+23.79
+ 20
+7.59
+  0
+LWPOLYLINE
+  5
+11F
+102
+{ACAD_REACTORS
+330
+1A9
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+21.46
+ 20
+6.1
+ 10
+21.46
+ 20
+7.59
+  0
+LWPOLYLINE
+  5
+120
+102
+{ACAD_REACTORS
+330
+1A9
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+21.66
+ 20
+6.1
+ 10
+21.66
+ 20
+7.59
+  0
+LWPOLYLINE
+  5
+121
+102
+{ACAD_REACTORS
+330
+1A9
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+21.86
+ 20
+6.1
+ 10
+21.86
+ 20
+7.59
+  0
+LWPOLYLINE
+  5
+122
+102
+{ACAD_REACTORS
+330
+1A9
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+22.060000000000002
+ 20
+6.1
+ 10
+22.060000000000002
+ 20
+7.59
+  0
+LWPOLYLINE
+  5
+123
+102
+{ACAD_REACTORS
+330
+1A9
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+22.259999999999998
+ 20
+6.1
+ 10
+22.259999999999998
+ 20
+7.59
+  0
+LWPOLYLINE
+  5
+124
+102
+{ACAD_REACTORS
+330
+1A9
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+22.560000000000002
+ 20
+6.1
+ 10
+22.560000000000002
+ 20
+7.59
+  0
+LWPOLYLINE
+  5
+125
+102
+{ACAD_REACTORS
+330
+1A9
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+22.560000000000002
+ 20
+7.59
+ 10
+22.2
+ 20
+8.75
+  0
+LWPOLYLINE
+  5
+126
+102
+{ACAD_REACTORS
+330
+1A9
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+22.560000000000002
+ 20
+7.59
+ 10
+22.75
+ 20
+8.75
+  0
+LWPOLYLINE
+  5
+127
+102
+{ACAD_REACTORS
+330
+1A9
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+22.560000000000002
+ 20
+7.59
+ 10
+23.3
+ 20
+8.75
+  0
+LWPOLYLINE
+  5
+128
+102
+{ACAD_REACTORS
+330
+1A9
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+22.560000000000002
+ 20
+7.59
+ 10
+23.79
+ 20
+8.75
+  0
+LWPOLYLINE
+  5
+129
+102
+{ACAD_REACTORS
+330
+1A9
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+22.560000000000002
+ 20
+7.59
+ 10
+23.79
+ 20
+8.2
+  0
+LWPOLYLINE
+  5
+12A
+102
+{ACAD_REACTORS
+330
+1A9
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+22.560000000000002
+ 20
+7.59
+ 10
+23.79
+ 20
+7.95
+  0
+LWPOLYLINE
+  5
+12B
+102
+{ACAD_REACTORS
+330
+1A9
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+22.560000000000002
+ 20
+7.59
+ 10
+23.79
+ 20
+6.95
+  0
+LWPOLYLINE
+  5
+12C
+102
+{ACAD_REACTORS
+330
+1A9
+102
+}
+330
+17
+100
+AcDbEntity
+  8
+A-STAIR
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+22.560000000000002
+ 20
+7.59
+ 10
+23.79
+ 20
+6.45
+  0
+TEXT
+  5
+12D
+102
+{ACAD_REACTORS
+330
+1AE
 102
 }
 330
@@ -11699,11 +12015,11 @@ AcDbText
   0
 TEXT
   5
-155
+12E
 102
 {ACAD_REACTORS
 330
-1D3
+1AE
 102
 }
 330
@@ -11741,11 +12057,11 @@ AcDbText
   0
 TEXT
   5
-156
+12F
 102
 {ACAD_REACTORS
 330
-1D3
+1AE
 102
 }
 330
@@ -11785,11 +12101,11 @@ AcDbText
   0
 TEXT
   5
-157
+130
 102
 {ACAD_REACTORS
 330
-1D3
+1AE
 102
 }
 330
@@ -11829,11 +12145,11 @@ AcDbText
   0
 TEXT
   5
-158
+131
 102
 {ACAD_REACTORS
 330
-1C2
+19B
 102
 }
 330
@@ -11871,11 +12187,11 @@ AcDbText
   0
 TEXT
   5
-159
+132
 102
 {ACAD_REACTORS
 330
-1C2
+19B
 102
 }
 330
@@ -11915,11 +12231,11 @@ AcDbText
   0
 TEXT
   5
-15A
+133
 102
 {ACAD_REACTORS
 330
-1C2
+19B
 102
 }
 330
@@ -11957,11 +12273,11 @@ AcDbText
   0
 TEXT
   5
-15B
+134
 102
 {ACAD_REACTORS
 330
-1C2
+19B
 102
 }
 330
@@ -11999,11 +12315,11 @@ AcDbText
   0
 TEXT
   5
-15C
+135
 102
 {ACAD_REACTORS
 330
-1C2
+19B
 102
 }
 330
@@ -12041,11 +12357,11 @@ AcDbText
   0
 TEXT
   5
-15D
+136
 102
 {ACAD_REACTORS
 330
-1C1
+19A
 102
 }
 330
@@ -12083,11 +12399,11 @@ AcDbText
   0
 TEXT
   5
-15E
+137
 102
 {ACAD_REACTORS
 330
-1C1
+19A
 102
 }
 330
@@ -12125,11 +12441,11 @@ AcDbText
   0
 TEXT
   5
-15F
+138
 102
 {ACAD_REACTORS
 330
-1C1
+19A
 102
 }
 330
@@ -12167,11 +12483,11 @@ AcDbText
   0
 TEXT
   5
-160
+139
 102
 {ACAD_REACTORS
 330
-1C1
+19A
 102
 }
 330
@@ -12211,11 +12527,11 @@ AcDbText
   0
 TEXT
   5
-161
+13A
 102
 {ACAD_REACTORS
 330
-1C1
+19A
 102
 }
 330
@@ -12253,11 +12569,11 @@ AcDbText
   0
 TEXT
   5
-162
+13B
 102
 {ACAD_REACTORS
 330
-1C1
+19A
 102
 }
 330
@@ -12295,11 +12611,11 @@ AcDbText
   0
 TEXT
   5
-163
+13C
 102
 {ACAD_REACTORS
 330
-1C1
+19A
 102
 }
 330
@@ -12337,11 +12653,11 @@ AcDbText
   0
 TEXT
   5
-164
+13D
 102
 {ACAD_REACTORS
 330
-1C1
+19A
 102
 }
 330
@@ -12381,11 +12697,11 @@ AcDbText
   0
 TEXT
   5
-165
+13E
 102
 {ACAD_REACTORS
 330
-1C3
+19C
 102
 }
 330
@@ -12423,11 +12739,11 @@ AcDbText
   0
 TEXT
   5
-166
+13F
 102
 {ACAD_REACTORS
 330
-1C3
+19C
 102
 }
 330
@@ -12467,11 +12783,11 @@ AcDbText
   0
 TEXT
   5
-167
+140
 102
 {ACAD_REACTORS
 330
-1C3
+19C
 102
 }
 330
@@ -12509,11 +12825,11 @@ AcDbText
   0
 TEXT
   5
-168
+141
 102
 {ACAD_REACTORS
 330
-1C3
+19C
 102
 }
 330
@@ -12551,11 +12867,11 @@ AcDbText
   0
 TEXT
   5
-169
+142
 102
 {ACAD_REACTORS
 330
-1C3
+19C
 102
 }
 330
@@ -12593,11 +12909,11 @@ AcDbText
   0
 TEXT
   5
-16A
+143
 102
 {ACAD_REACTORS
 330
-1C3
+19C
 102
 }
 330
@@ -12637,11 +12953,11 @@ AcDbText
   0
 TEXT
   5
-16B
+144
 102
 {ACAD_REACTORS
 330
-1C3
+19C
 102
 }
 330
@@ -12681,11 +12997,11 @@ AcDbText
   0
 TEXT
   5
-16C
+145
 102
 {ACAD_REACTORS
 330
-1C4
+19D
 102
 }
 330
@@ -12723,11 +13039,11 @@ AcDbText
   0
 TEXT
   5
-16D
+146
 102
 {ACAD_REACTORS
 330
-1C4
+19D
 102
 }
 330
@@ -12765,11 +13081,11 @@ AcDbText
   0
 TEXT
   5
-16E
+147
 102
 {ACAD_REACTORS
 330
-1C4
+19D
 102
 }
 330
@@ -12809,11 +13125,11 @@ AcDbText
   0
 TEXT
   5
-16F
+148
 102
 {ACAD_REACTORS
 330
-1C4
+19D
 102
 }
 330
@@ -12851,11 +13167,11 @@ AcDbText
   0
 TEXT
   5
-170
+149
 102
 {ACAD_REACTORS
 330
-1C5
+19E
 102
 }
 330
@@ -12893,11 +13209,11 @@ AcDbText
   0
 TEXT
   5
-171
+14A
 102
 {ACAD_REACTORS
 330
-1C5
+19E
 102
 }
 330
@@ -12935,11 +13251,11 @@ AcDbText
   0
 TEXT
   5
-172
+14B
 102
 {ACAD_REACTORS
 330
-1C5
+19E
 102
 }
 330
@@ -12979,11 +13295,11 @@ AcDbText
   0
 TEXT
   5
-173
+14C
 102
 {ACAD_REACTORS
 330
-1C5
+19E
 102
 }
 330
@@ -13021,11 +13337,11 @@ AcDbText
   0
 TEXT
   5
-174
+14D
 102
 {ACAD_REACTORS
 330
-1C6
+19F
 102
 }
 330
@@ -13063,11 +13379,11 @@ AcDbText
   0
 TEXT
   5
-175
+14E
 102
 {ACAD_REACTORS
 330
-1C6
+19F
 102
 }
 330
@@ -13105,11 +13421,11 @@ AcDbText
   0
 TEXT
   5
-176
+14F
 102
 {ACAD_REACTORS
 330
-1C6
+19F
 102
 }
 330
@@ -13147,11 +13463,11 @@ AcDbText
   0
 TEXT
   5
-177
+150
 102
 {ACAD_REACTORS
 330
-1C7
+1A0
 102
 }
 330
@@ -13189,11 +13505,11 @@ AcDbText
   0
 TEXT
   5
-178
+151
 102
 {ACAD_REACTORS
 330
-1C7
+1A0
 102
 }
 330
@@ -13231,11 +13547,11 @@ AcDbText
   0
 TEXT
   5
-179
+152
 102
 {ACAD_REACTORS
 330
-1C7
+1A0
 102
 }
 330
@@ -13273,11 +13589,11 @@ AcDbText
   0
 TEXT
   5
-17A
+153
 102
 {ACAD_REACTORS
 330
-1C7
+1A0
 102
 }
 330
@@ -13315,11 +13631,11 @@ AcDbText
   0
 TEXT
   5
-17B
+154
 102
 {ACAD_REACTORS
 330
-1C7
+1A0
 102
 }
 330
@@ -13359,11 +13675,11 @@ AcDbText
   0
 TEXT
   5
-17C
+155
 102
 {ACAD_REACTORS
 330
-1C7
+1A0
 102
 }
 330
@@ -13403,11 +13719,11 @@ AcDbText
   0
 TEXT
   5
-17D
+156
 102
 {ACAD_REACTORS
 330
-1C7
+1A0
 102
 }
 330
@@ -13445,11 +13761,11 @@ AcDbText
   0
 TEXT
   5
-17E
+157
 102
 {ACAD_REACTORS
 330
-1D3
+1AE
 102
 }
 330
@@ -13461,9 +13777,9 @@ A-ANNO-TITLE
 100
 AcDbText
  10
-18.086021505376344
+18.03204850584669
  20
-17.032258064516128
+17.28174603174603
  30
 0.0
  40
@@ -13475,9 +13791,9 @@ PLAN
  72
 1
  11
-18.086021505376344
+18.03204850584669
  21
-17.032258064516128
+17.28174603174603
  31
 0.0
 100
@@ -13487,11 +13803,11 @@ AcDbText
   0
 TEXT
   5
-17F
+158
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -13503,9 +13819,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-14.64516129032258
+14.567345171069729
  20
-14.32258064516129
+14.503968253968253
  30
 0.0
  40
@@ -13517,9 +13833,9 @@ PLAN
  72
 1
  11
-14.64516129032258
+14.567345171069729
  21
-14.32258064516129
+14.503968253968253
  31
 0.0
 100
@@ -13529,11 +13845,11 @@ AcDbText
   0
 TEXT
   5
-180
+159
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -13545,9 +13861,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-15.46236559139785
+15.390212213079256
  20
-14.451612903225806
+14.636243386243386
  30
 0.0
  40
@@ -13559,9 +13875,9 @@ PLAN
  72
 1
  11
-15.46236559139785
+15.390212213079256
  21
-14.451612903225806
+14.636243386243386
  31
 0.0
 100
@@ -13571,11 +13887,11 @@ AcDbText
   0
 TEXT
   5
-181
+15A
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -13587,9 +13903,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-16.107526881720432
+16.039844088349938
  20
-14.086021505376344
+14.261463844797177
  30
 0.0
  40
@@ -13603,9 +13919,9 @@ PLAN
  72
 1
  11
-16.107526881720432
+16.039844088349938
  21
-14.086021505376344
+14.261463844797177
  31
 0.0
 100
@@ -13615,11 +13931,11 @@ AcDbText
   0
 TEXT
   5
-182
+15B
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -13631,9 +13947,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-16.49462365591398
+16.429623213512343
  20
-14.086021505376344
+14.261463844797177
  30
 0.0
  40
@@ -13647,9 +13963,9 @@ PLAN
  72
 1
  11
-16.49462365591398
+16.429623213512343
  21
-14.086021505376344
+14.261463844797177
  31
 0.0
 100
@@ -13659,11 +13975,11 @@ AcDbText
   0
 TEXT
   5
-183
+15C
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -13675,9 +13991,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-17.397849462365592
+17.339107838891294
  20
-14.494623655913978
+14.680335097001763
  30
 0.0
  40
@@ -13689,9 +14005,9 @@ PLAN
  72
 1
  11
-17.397849462365592
+17.339107838891294
  21
-14.494623655913978
+14.680335097001763
  31
 0.0
 100
@@ -13701,11 +14017,11 @@ AcDbText
   0
 TEXT
   5
-184
+15D
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -13717,9 +14033,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-18.43010752688172
+18.378518839324386
  20
-14.279569892473118
+14.459876543209877
  30
 0.0
  40
@@ -13731,9 +14047,9 @@ PLAN
  72
 1
  11
-18.43010752688172
+18.378518839324386
  21
-14.279569892473118
+14.459876543209877
  31
 0.0
 100
@@ -13743,11 +14059,11 @@ AcDbText
   0
 TEXT
   5
-185
+15E
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -13759,9 +14075,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-19.440860215053764
+19.396275443915115
  20
-14.494623655913978
+14.680335097001763
  30
 0.0
  40
@@ -13773,9 +14089,9 @@ PLAN
  72
 1
  11
-19.440860215053764
+19.396275443915115
  21
-14.494623655913978
+14.680335097001763
  31
 0.0
 100
@@ -13785,11 +14101,11 @@ AcDbText
   0
 TEXT
   5
-186
+15F
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -13801,9 +14117,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-20.408602150537632
+20.370723256821137
  20
-14.279569892473118
+14.459876543209877
  30
 0.0
  40
@@ -13815,9 +14131,9 @@ PLAN
  72
 1
  11
-20.408602150537632
+20.370723256821137
  21
-14.279569892473118
+14.459876543209877
  31
 0.0
 100
@@ -13827,11 +14143,11 @@ AcDbText
   0
 TEXT
   5
-187
+160
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -13843,9 +14159,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-21.225806451612904
+21.193590298830664
  20
-14.53763440860215
+14.72442680776014
  30
 0.0
  40
@@ -13857,9 +14173,9 @@ PLAN
  72
 1
  11
-21.225806451612904
+21.193590298830664
  21
-14.53763440860215
+14.72442680776014
  31
 0.0
 100
@@ -13869,11 +14185,11 @@ AcDbText
   0
 TEXT
   5
-188
+161
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -13885,9 +14201,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-22.129032258064516
+22.103074924209615
  20
-14.43010752688172
+14.614197530864198
  30
 0.0
  40
@@ -13899,9 +14215,9 @@ PLAN
  72
 1
  11
-22.129032258064516
+22.103074924209615
  21
-14.43010752688172
+14.614197530864198
  31
 0.0
 100
@@ -13911,11 +14227,11 @@ AcDbText
   0
 TEXT
   5
-189
+162
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -13927,9 +14243,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-22.451612903225808
+22.427890861844958
  20
-14.086021505376344
+14.261463844797177
  30
 0.0
  40
@@ -13941,9 +14257,9 @@ PLAN
  72
 1
  11
-22.451612903225808
+22.427890861844958
  21
-14.086021505376344
+14.261463844797177
  31
 0.0
 100
@@ -13953,11 +14269,11 @@ AcDbText
   0
 TEXT
   5
-18A
+163
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -13969,9 +14285,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-21.161290322580644
+21.128627111303594
  20
-14.0
+14.173280423280422
  30
 0.0
  40
@@ -13983,9 +14299,9 @@ PLAN
  72
 1
  11
-21.161290322580644
+21.128627111303594
  21
-14.0
+14.173280423280422
  31
 0.0
 100
@@ -13995,11 +14311,11 @@ AcDbText
   0
 TEXT
   5
-18B
+164
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14011,9 +14327,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-14.32258064516129
+14.242529233434388
  20
-13.333333333333334
+13.489858906525573
  30
 0.0
  40
@@ -14027,9 +14343,9 @@ PLAN
  72
 1
  11
-14.32258064516129
+14.242529233434388
  21
-13.333333333333334
+13.489858906525573
  31
 0.0
 100
@@ -14039,11 +14355,11 @@ AcDbText
   0
 TEXT
   5
-18C
+165
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14055,9 +14371,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-14.817204301075268
+14.740580337808575
  20
-12.580645161290322
+12.718253968253968
  30
 0.0
  40
@@ -14069,9 +14385,9 @@ PLAN
  72
 1
  11
-14.817204301075268
+14.740580337808575
  21
-12.580645161290322
+12.718253968253968
  31
 0.0
 100
@@ -14081,11 +14397,11 @@ AcDbText
   0
 TEXT
   5
-18D
+166
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14097,9 +14413,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-14.602150537634408
+14.524036379385016
  20
-12.21505376344086
+12.34347442680776
  30
 0.0
  40
@@ -14111,9 +14427,9 @@ PLAN
  72
 1
  11
-14.602150537634408
+14.524036379385016
  21
-12.21505376344086
+12.34347442680776
  31
 0.0
 100
@@ -14123,11 +14439,11 @@ AcDbText
   0
 TEXT
   5
-18E
+167
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14139,9 +14455,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-14.32258064516129
+14.242529233434388
  20
-11.56989247311828
+11.682098765432098
  30
 0.0
  40
@@ -14155,9 +14471,9 @@ PLAN
  72
 1
  11
-14.32258064516129
+14.242529233434388
  21
-11.56989247311828
+11.682098765432098
  31
 0.0
 100
@@ -14167,11 +14483,11 @@ AcDbText
   0
 TEXT
   5
-18F
+168
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14183,9 +14499,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-14.817204301075268
+14.740580337808575
  20
-10.795698924731182
+10.888447971781305
  30
 0.0
  40
@@ -14197,9 +14513,9 @@ PLAN
  72
 1
  11
-14.817204301075268
+14.740580337808575
  21
-10.795698924731182
+10.888447971781305
  31
 0.0
 100
@@ -14209,11 +14525,11 @@ AcDbText
   0
 TEXT
   5
-190
+169
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14225,9 +14541,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-14.602150537634408
+14.524036379385016
  20
-10.451612903225806
+10.535714285714285
  30
 0.0
  40
@@ -14239,9 +14555,9 @@ PLAN
  72
 1
  11
-14.602150537634408
+14.524036379385016
  21
-10.451612903225806
+10.535714285714285
  31
 0.0
 100
@@ -14251,11 +14567,11 @@ AcDbText
   0
 TEXT
   5
-191
+16A
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14267,9 +14583,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-14.32258064516129
+14.242529233434388
  20
-9.849462365591398
+9.918430335097002
  30
 0.0
  40
@@ -14283,9 +14599,9 @@ PLAN
  72
 1
  11
-14.32258064516129
+14.242529233434388
  21
-9.849462365591398
+9.918430335097002
  31
 0.0
 100
@@ -14295,11 +14611,11 @@ AcDbText
   0
 TEXT
   5
-192
+16B
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14311,9 +14627,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-14.709677419354838
+14.632308358596797
  20
-9.161290322580646
+9.212962962962962
  30
 0.0
  40
@@ -14325,9 +14641,9 @@ PLAN
  72
 1
  11
-14.709677419354838
+14.632308358596797
  21
-9.161290322580646
+9.212962962962962
  31
 0.0
 100
@@ -14337,11 +14653,11 @@ AcDbText
   0
 TEXT
   5
-193
+16C
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14353,9 +14669,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-16.172043010752688
+16.104807275877004
  20
-9.24731182795699
+9.301146384479717
  30
 0.0
  40
@@ -14367,9 +14683,9 @@ PLAN
  72
 1
  11
-16.172043010752688
+16.104807275877004
  21
-9.24731182795699
+9.301146384479717
  31
 0.0
 100
@@ -14379,11 +14695,11 @@ AcDbText
   0
 TEXT
   5
-194
+16D
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14395,9 +14711,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-17.827956989247312
+17.772195755738416
  20
-12.0
+12.123015873015873
  30
 0.0
  40
@@ -14411,9 +14727,9 @@ PLAN
  72
 1
  11
-17.827956989247312
+17.772195755738416
  21
-12.0
+12.123015873015873
  31
 0.0
 100
@@ -14423,11 +14739,11 @@ AcDbText
   0
 TEXT
   5
-195
+16E
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14439,9 +14755,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-19.978494623655912
+19.937635339974015
  20
-12.301075268817204
+12.431657848324514
  30
 0.0
  40
@@ -14453,9 +14769,9 @@ PLAN
  72
 1
  11
-19.978494623655912
+19.937635339974015
  21
-12.301075268817204
+12.431657848324514
  31
 0.0
 100
@@ -14465,11 +14781,11 @@ AcDbText
   0
 TEXT
   5
-196
+16F
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14481,9 +14797,9 @@ A-ANNO-ROOM
 100
 AcDbText
  10
-18.473118279569892
+18.421827631009094
  20
-11.397849462365592
+11.505731922398589
  30
 0.0
  40
@@ -14495,9 +14811,9 @@ PLAN
  72
 1
  11
-18.473118279569892
+18.421827631009094
  21
-11.397849462365592
+11.505731922398589
  31
 0.0
 100
@@ -14507,11 +14823,11 @@ AcDbText
   0
 TEXT
   5
-197
+170
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14523,9 +14839,9 @@ A-ANNO-ROOM
 100
 AcDbText
  10
-18.537634408602152
+18.486790818536164
  20
-10.96774193548387
+11.064814814814815
  30
 0.0
  40
@@ -14537,9 +14853,9 @@ PLAN
  72
 1
  11
-18.537634408602152
+18.486790818536164
  21
-10.96774193548387
+11.064814814814815
  31
 0.0
 100
@@ -14549,11 +14865,11 @@ AcDbText
   0
 TEXT
   5
-198
+171
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14565,9 +14881,9 @@ A-ANNO-ROOM
 100
 AcDbText
  10
-18.473118279569892
+18.421827631009094
  20
-10.580645161290322
+10.667989417989418
  30
 0.0
  40
@@ -14579,9 +14895,9 @@ PLAN
  72
 1
  11
-18.473118279569892
+18.421827631009094
  21
-10.580645161290322
+10.667989417989418
  31
 0.0
 100
@@ -14591,11 +14907,11 @@ AcDbText
   0
 TEXT
   5
-199
+172
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14607,9 +14923,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-18.516129032258064
+18.46513642269381
  20
-9.333333333333334
+9.389329805996473
  30
 0.0
  40
@@ -14621,9 +14937,9 @@ PLAN
  72
 1
  11
-18.516129032258064
+18.46513642269381
  21
-9.333333333333334
+9.389329805996473
  31
 0.0
 100
@@ -14633,11 +14949,11 @@ AcDbText
   0
 TEXT
   5
-19A
+173
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14649,9 +14965,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-22.559139784946236
+22.536162841056736
  20
-13.397849462365592
+13.55599647266314
  30
 0.0
  40
@@ -14665,9 +14981,9 @@ PLAN
  72
 1
  11
-22.559139784946236
+22.536162841056736
  21
-13.397849462365592
+13.55599647266314
  31
 0.0
 100
@@ -14677,11 +14993,11 @@ AcDbText
   0
 TEXT
   5
-19B
+174
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14693,9 +15009,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-22.129032258064516
+22.103074924209615
  20
-12.688172043010752
+12.828483245149911
  30
 0.0
  40
@@ -14707,9 +15023,9 @@ PLAN
  72
 1
  11
-22.129032258064516
+22.103074924209615
  21
-12.688172043010752
+12.828483245149911
  31
 0.0
 100
@@ -14719,11 +15035,11 @@ AcDbText
   0
 TEXT
   5
-19C
+175
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14735,9 +15051,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-22.559139784946236
+22.536162841056736
  20
-11.67741935483871
+11.792328042328043
  30
 0.0
  40
@@ -14751,9 +15067,9 @@ PLAN
  72
 1
  11
-22.559139784946236
+22.536162841056736
  21
-11.67741935483871
+11.792328042328043
  31
 0.0
 100
@@ -14763,11 +15079,11 @@ AcDbText
   0
 TEXT
   5
-19D
+176
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14779,9 +15095,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-22.129032258064516
+22.103074924209615
  20
-10.903225806451612
+10.998677248677248
  30
 0.0
  40
@@ -14793,9 +15109,9 @@ PLAN
  72
 1
  11
-22.129032258064516
+22.103074924209615
  21
-10.903225806451612
+10.998677248677248
  31
 0.0
 100
@@ -14805,11 +15121,11 @@ AcDbText
   0
 TEXT
   5
-19E
+177
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14821,9 +15137,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-22.559139784946236
+22.536162841056736
  20
-9.956989247311828
+10.028659611992945
  30
 0.0
  40
@@ -14837,9 +15153,9 @@ PLAN
  72
 1
  11
-22.559139784946236
+22.536162841056736
  21
-9.956989247311828
+10.028659611992945
  31
 0.0
 100
@@ -14849,11 +15165,11 @@ AcDbText
   0
 TEXT
   5
-19F
+178
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14865,9 +15181,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-21.268817204301076
+21.236899090515376
  20
-9.505376344086022
+9.565696649029983
  30
 0.0
  40
@@ -14879,9 +15195,9 @@ PLAN
  72
 1
  11
-21.268817204301076
+21.236899090515376
  21
-9.505376344086022
+9.565696649029983
  31
 0.0
 100
@@ -14891,11 +15207,11 @@ AcDbText
   0
 TEXT
   5
-1A0
+179
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14907,9 +15223,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-22.731182795698924
+22.709398007795585
  20
-9.505376344086022
+9.565696649029983
  30
 0.0
  40
@@ -14921,9 +15237,9 @@ PLAN
  72
 1
  11
-22.731182795698924
+22.709398007795585
  21
-9.505376344086022
+9.565696649029983
  31
 0.0
 100
@@ -14933,11 +15249,11 @@ AcDbText
   0
 TEXT
   5
-1A1
+17A
 102
 {ACAD_REACTORS
 330
-1C9
+1A2
 102
 }
 330
@@ -14949,9 +15265,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-22.731182795698924
+22.709398007795585
  20
-9.290322580645162
+9.345238095238095
  30
 0.0
  40
@@ -14963,9 +15279,9 @@ PLAN
  72
 1
  11
-22.731182795698924
+22.709398007795585
  21
-9.290322580645162
+9.345238095238095
  31
 0.0
 100
@@ -14975,11 +15291,11 @@ AcDbText
   0
 TEXT
   5
-1A2
+17B
 102
 {ACAD_REACTORS
 330
-1D0
+1A9
 102
 }
 330
@@ -14991,9 +15307,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-23.67741935483871
+23.662191424859248
  20
-9.13978494623656
+9.190917107583774
  30
 0.0
  40
@@ -15005,9 +15321,9 @@ PLAN
  72
 1
  11
-23.67741935483871
+23.662191424859248
  21
-9.13978494623656
+9.190917107583774
  31
 0.0
 100
@@ -15017,11 +15333,11 @@ AcDbText
   0
 TEXT
   5
-1A3
+17C
 102
 {ACAD_REACTORS
 330
-1CA
+1A3
 102
 }
 330
@@ -15033,9 +15349,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-16.537634408602152
+16.472932005197055
  20
-8.53763440860215
+8.57363315696649
  30
 0.0
  40
@@ -15047,9 +15363,9 @@ PLAN
  72
 1
  11
-16.537634408602152
+16.472932005197055
  21
-8.53763440860215
+8.57363315696649
  31
 0.0
 100
@@ -15059,11 +15375,11 @@ AcDbText
   0
 TEXT
   5
-1A4
+17D
 102
 {ACAD_REACTORS
 330
-1CA
+1A3
 102
 }
 330
@@ -15075,9 +15391,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-14.172043010752688
+14.090948462537897
  20
-7.161290322580645
+7.162698412698412
  30
 0.0
  40
@@ -15091,9 +15407,9 @@ PLAN
  72
 1
  11
-14.172043010752688
+14.090948462537897
  21
-7.161290322580645
+7.162698412698412
  31
 0.0
 100
@@ -15103,11 +15419,11 @@ AcDbText
   0
 TEXT
   5
-1A5
+17E
 102
 {ACAD_REACTORS
 330
-1CA
+1A3
 102
 }
 330
@@ -15119,9 +15435,9 @@ A-ANNO-ROOM
 100
 AcDbText
  10
-16.1505376344086
+16.083152880034646
  20
-7.311827956989247
+7.317019400352733
  30
 0.0
  40
@@ -15133,9 +15449,9 @@ PLAN
  72
 1
  11
-16.1505376344086
+16.083152880034646
  21
-7.311827956989247
+7.317019400352733
  31
 0.0
 100
@@ -15145,11 +15461,11 @@ AcDbText
   0
 TEXT
   5
-1A6
+17F
 102
 {ACAD_REACTORS
 330
-1CA
+1A3
 102
 }
 330
@@ -15161,9 +15477,9 @@ A-ANNO-ROOM
 100
 AcDbText
  10
-16.27956989247312
+16.213079255088783
  20
-6.924731182795699
+6.920194003527336
  30
 0.0
  40
@@ -15175,9 +15491,9 @@ PLAN
  72
 1
  11
-16.27956989247312
+16.213079255088783
  21
-6.924731182795699
+6.920194003527336
  31
 0.0
 100
@@ -15187,11 +15503,11 @@ AcDbText
   0
 TEXT
   5
-1A7
+180
 102
 {ACAD_REACTORS
 330
-1CA
+1A3
 102
 }
 330
@@ -15203,9 +15519,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-16.236559139784944
+16.16977046340407
  20
-5.849462365591398
+5.817901234567901
  30
 0.0
  40
@@ -15217,9 +15533,9 @@ PLAN
  72
 1
  11
-16.236559139784944
+16.16977046340407
  21
-5.849462365591398
+5.817901234567901
  31
 0.0
 100
@@ -15229,11 +15545,11 @@ AcDbText
   0
 TEXT
   5
-1A8
+181
 102
 {ACAD_REACTORS
 330
-1CA
+1A3
 102
 }
 330
@@ -15245,9 +15561,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-18.946236559139784
+18.898224339540928
  20
-7.870967741935484
+7.89021164021164
  30
 0.0
  40
@@ -15261,9 +15577,9 @@ PLAN
  72
 1
  11
-18.946236559139784
+18.898224339540928
  21
-7.870967741935484
+7.89021164021164
  31
 0.0
 100
@@ -15273,11 +15589,11 @@ AcDbText
   0
 TEXT
   5
-1A9
+182
 102
 {ACAD_REACTORS
 330
-1CB
+1A4
 102
 }
 330
@@ -15289,9 +15605,9 @@ A-ANNO-ROOM
 100
 AcDbText
  10
-17.870967741935484
+17.815504547423128
  20
-5.096774193548387
+5.046296296296296
  30
 0.0
  40
@@ -15303,9 +15619,9 @@ PLAN
  72
 1
  11
-17.870967741935484
+17.815504547423128
  21
-5.096774193548387
+5.046296296296296
  31
 0.0
 100
@@ -15315,11 +15631,11 @@ AcDbText
   0
 TEXT
   5
-1AA
+183
 102
 {ACAD_REACTORS
 330
-1CB
+1A4
 102
 }
 330
@@ -15331,9 +15647,9 @@ A-ANNO-ROOM
 100
 AcDbText
  10
-17.870967741935484
+17.815504547423128
  20
-4.774193548387097
+4.715608465608465
  30
 0.0
  40
@@ -15345,9 +15661,9 @@ PLAN
  72
 1
  11
-17.870967741935484
+17.815504547423128
  21
-4.774193548387097
+4.715608465608465
  31
 0.0
 100
@@ -15357,11 +15673,11 @@ AcDbText
   0
 TEXT
   5
-1AB
+184
 102
 {ACAD_REACTORS
 330
-1CC
+1A5
 102
 }
 330
@@ -15373,9 +15689,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-15.56989247311828
+15.498484192291036
  20
-5.075268817204301
+5.024250440917107
  30
 0.0
  40
@@ -15387,9 +15703,9 @@ PLAN
  72
 1
  11
-15.56989247311828
+15.498484192291036
  21
-5.075268817204301
+5.024250440917107
  31
 0.0
 100
@@ -15399,11 +15715,11 @@ AcDbText
   0
 TEXT
   5
-1AC
+185
 102
 {ACAD_REACTORS
 330
-1CC
+1A5
 102
 }
 330
@@ -15415,9 +15731,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-18.365591397849464
+18.313555651797316
  20
-3.978494623655914
+3.899911816578483
  30
 0.0
  40
@@ -15429,9 +15745,9 @@ PLAN
  72
 1
  11
-18.365591397849464
+18.313555651797316
  21
-3.978494623655914
+3.899911816578483
  31
 0.0
 100
@@ -15441,11 +15757,11 @@ AcDbText
   0
 TEXT
   5
-1AD
+186
 102
 {ACAD_REACTORS
 330
-1CC
+1A5
 102
 }
 330
@@ -15457,9 +15773,9 @@ A-ANNO-ROOM
 100
 AcDbText
  10
-16.9247311827957
+16.862711130359465
  20
-2.7096774193548385
+2.599206349206349
  30
 0.0
  40
@@ -15471,9 +15787,9 @@ PLAN
  72
 1
  11
-16.9247311827957
+16.862711130359465
  21
-2.7096774193548385
+2.599206349206349
  31
 0.0
 100
@@ -15483,11 +15799,11 @@ AcDbText
   0
 TEXT
   5
-1AE
+187
 102
 {ACAD_REACTORS
 330
-1CC
+1A5
 102
 }
 330
@@ -15499,9 +15815,9 @@ A-ANNO-ROOM
 100
 AcDbText
  10
-16.9247311827957
+16.862711130359465
  20
-2.4301075268817205
+2.3126102292768955
  30
 0.0
  40
@@ -15513,9 +15829,9 @@ PLAN
  72
 1
  11
-16.9247311827957
+16.862711130359465
  21
-2.4301075268817205
+2.3126102292768955
  31
 0.0
 100
@@ -15525,11 +15841,11 @@ AcDbText
   0
 TEXT
   5
-1AF
+188
 102
 {ACAD_REACTORS
 330
-1CC
+1A5
 102
 }
 330
@@ -15541,9 +15857,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-15.35483870967742
+15.281940233867477
  20
-2.860215053763441
+2.7535273368606696
  30
 0.0
  40
@@ -15557,9 +15873,9 @@ PLAN
  72
 1
  11
-15.35483870967742
+15.281940233867477
  21
-2.860215053763441
+2.7535273368606696
  31
 0.0
 100
@@ -15569,11 +15885,11 @@ AcDbText
   0
 TEXT
   5
-1B0
+189
 102
 {ACAD_REACTORS
 330
-1CC
+1A5
 102
 }
 330
@@ -15585,9 +15901,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-14.64516129032258
+14.567345171069729
  20
-2.21505376344086
+2.0921516754850082
  30
 0.0
  40
@@ -15601,9 +15917,9 @@ PLAN
  72
 1
  11
-14.64516129032258
+14.567345171069729
  21
-2.21505376344086
+2.0921516754850082
  31
 0.0
 100
@@ -15613,11 +15929,11 @@ AcDbText
   0
 TEXT
   5
-1B1
+18A
 102
 {ACAD_REACTORS
 330
-1CC
+1A5
 102
 }
 330
@@ -15629,9 +15945,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-14.602150537634408
+14.524036379385016
  20
-1.032258064516129
+0.8796296296296291
  30
 0.0
  40
@@ -15643,9 +15959,9 @@ PLAN
  72
 1
  11
-14.602150537634408
+14.524036379385016
  21
-1.032258064516129
+0.8796296296296291
  31
 0.0
 100
@@ -15655,11 +15971,11 @@ AcDbText
   0
 TEXT
   5
-1B2
+18B
 102
 {ACAD_REACTORS
 330
-1CC
+1A5
 102
 }
 330
@@ -15671,9 +15987,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-19.591397849462368
+19.54785621481161
  20
-2.21505376344086
+2.0921516754850082
  30
 0.0
  40
@@ -15687,9 +16003,9 @@ PLAN
  72
 1
  11
-19.591397849462368
+19.54785621481161
  21
-2.21505376344086
+2.0921516754850082
  31
 0.0
 100
@@ -15699,11 +16015,11 @@ AcDbText
   0
 TEXT
   5
-1B3
+18C
 102
 {ACAD_REACTORS
 330
-1CC
+1A5
 102
 }
 330
@@ -15715,9 +16031,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-16.967741935483872
+16.906019922044177
  20
-0.3225806451612903
+0.15211640211640162
  30
 0.0
  40
@@ -15729,9 +16045,9 @@ PLAN
  72
 1
  11
-16.967741935483872
+16.906019922044177
  21
-0.3225806451612903
+0.15211640211640162
  31
 0.0
 100
@@ -15741,11 +16057,11 @@ AcDbText
   0
 TEXT
   5
-1B4
+18D
 102
 {ACAD_REACTORS
 330
-1CD
+1A6
 102
 }
 330
@@ -15757,9 +16073,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-20.451612903225808
+20.41403204850585
  20
-4.043010752688172
+3.966049382716049
  30
 0.0
  40
@@ -15771,9 +16087,9 @@ PLAN
  72
 1
  11
-20.451612903225808
+20.41403204850585
  21
-4.043010752688172
+3.966049382716049
  31
 0.0
 100
@@ -15783,11 +16099,11 @@ AcDbText
   0
 TEXT
   5
-1B5
+18E
 102
 {ACAD_REACTORS
 330
-1CD
+1A6
 102
 }
 330
@@ -15799,9 +16115,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-22.172043010752688
+22.146383715894327
  20
-3.4408602150537635
+3.348765432098765
  30
 0.0
  40
@@ -15813,9 +16129,9 @@ PLAN
  72
 1
  11
-22.172043010752688
+22.146383715894327
  21
-3.4408602150537635
+3.348765432098765
  31
 0.0
 100
@@ -15825,11 +16141,11 @@ AcDbText
   0
 TEXT
   5
-1B6
+18F
 102
 {ACAD_REACTORS
 330
-1CD
+1A6
 102
 }
 330
@@ -15841,9 +16157,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-20.301075268817204
+20.262451277609355
  20
-2.21505376344086
+2.0921516754850082
  30
 0.0
  40
@@ -15857,9 +16173,9 @@ PLAN
  72
 1
  11
-20.301075268817204
+20.262451277609355
  21
-2.21505376344086
+2.0921516754850082
  31
 0.0
 100
@@ -15869,11 +16185,11 @@ AcDbText
   0
 TEXT
   5
-1B7
+190
 102
 {ACAD_REACTORS
 330
-1CD
+1A6
 102
 }
 330
@@ -15885,9 +16201,9 @@ A-ANNO-ROOM
 100
 AcDbText
  10
-21.913978494623656
+21.886530965786054
  20
-2.21505376344086
+2.0921516754850082
  30
 0.0
  40
@@ -15899,9 +16215,9 @@ PLAN
  72
 1
  11
-21.913978494623656
+21.886530965786054
  21
-2.21505376344086
+2.0921516754850082
  31
 0.0
 100
@@ -15911,11 +16227,11 @@ AcDbText
   0
 TEXT
   5
-1B8
+191
 102
 {ACAD_REACTORS
 330
-1CD
+1A6
 102
 }
 330
@@ -15927,9 +16243,9 @@ A-ANNO-ROOM
 100
 AcDbText
  10
-21.913978494623656
+21.886530965786054
  20
-1.935483870967742
+1.8055555555555551
  30
 0.0
  40
@@ -15941,9 +16257,9 @@ PLAN
  72
 1
  11
-21.913978494623656
+21.886530965786054
  21
-1.935483870967742
+1.8055555555555551
  31
 0.0
 100
@@ -15953,11 +16269,11 @@ AcDbText
   0
 TEXT
   5
-1B9
+192
 102
 {ACAD_REACTORS
 330
-1CD
+1A6
 102
 }
 330
@@ -15969,9 +16285,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-23.483870967741936
+23.467301862278042
  20
-1.6344086021505377
+1.4969135802469131
  30
 0.0
  40
@@ -15985,9 +16301,9 @@ PLAN
  72
 1
  11
-23.483870967741936
+23.467301862278042
  21
-1.6344086021505377
+1.4969135802469131
  31
 0.0
 100
@@ -15997,11 +16313,11 @@ AcDbText
   0
 TEXT
   5
-1BA
+193
 102
 {ACAD_REACTORS
 330
-1CD
+1A6
 102
 }
 330
@@ -16013,9 +16329,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-21.913978494623656
+21.886530965786054
  20
-0.4731182795698925
+0.3064373897707226
  30
 0.0
  40
@@ -16027,9 +16343,9 @@ PLAN
  72
 1
  11
-21.913978494623656
+21.886530965786054
  21
-0.4731182795698925
+0.3064373897707226
  31
 0.0
 100
@@ -16039,11 +16355,11 @@ AcDbText
   0
 TEXT
   5
-1BB
+194
 102
 {ACAD_REACTORS
 330
-1CE
+1A7
 102
 }
 330
@@ -16055,9 +16371,9 @@ A-ANNO-ROOM
 100
 AcDbText
  10
-22.602150537634408
+22.57947163274145
  20
-4.580645161290323
+4.5171957671957665
  30
 0.0
  40
@@ -16069,9 +16385,9 @@ PLAN
  72
 1
  11
-22.602150537634408
+22.57947163274145
  21
-4.580645161290323
+4.5171957671957665
  31
 0.0
 100
@@ -16081,11 +16397,11 @@ AcDbText
   0
 TEXT
   5
-1BC
+195
 102
 {ACAD_REACTORS
 330
-1CE
+1A7
 102
 }
 330
@@ -16097,9 +16413,9 @@ A-ANNO-ROOM
 100
 AcDbText
  10
-22.494623655913976
+22.471199653529666
  20
-4.258064516129032
+4.186507936507936
  30
 0.0
  40
@@ -16111,9 +16427,9 @@ PLAN
  72
 1
  11
-22.494623655913976
+22.471199653529666
  21
-4.258064516129032
+4.186507936507936
  31
 0.0
 100
@@ -16123,11 +16439,11 @@ AcDbText
   0
 TEXT
   5
-1BD
+196
 102
 {ACAD_REACTORS
 330
-1CF
+1A8
 102
 }
 330
@@ -16139,9 +16455,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-22.387096774193548
+22.362927674317888
  20
-5.849462365591398
+5.817901234567901
  30
 0.0
  40
@@ -16153,9 +16469,9 @@ PLAN
  72
 1
  11
-22.387096774193548
+22.362927674317888
  21
-5.849462365591398
+5.817901234567901
  31
 0.0
 100
@@ -16165,11 +16481,11 @@ AcDbText
   0
 TEXT
   5
-1BE
+197
 102
 {ACAD_REACTORS
 330
-1CF
+1A8
 102
 }
 330
@@ -16181,9 +16497,9 @@ A-ANNO-ROOM
 100
 AcDbText
  10
-22.559139784946236
+22.536162841056736
  20
-5.612903225806452
+5.575396825396825
  30
 0.0
  40
@@ -16195,9 +16511,9 @@ PLAN
  72
 1
  11
-22.559139784946236
+22.536162841056736
  21
-5.612903225806452
+5.575396825396825
  31
 0.0
 100
@@ -16207,11 +16523,11 @@ AcDbText
   0
 TEXT
   5
-1BF
+198
 102
 {ACAD_REACTORS
 330
-1CF
+1A8
 102
 }
 330
@@ -16223,9 +16539,9 @@ A-ANNO-ROOM
 100
 AcDbText
  10
-22.559139784946236
+22.536162841056736
  20
-5.333333333333333
+5.288800705467372
  30
 0.0
  40
@@ -16237,9 +16553,9 @@ PLAN
  72
 1
  11
-22.559139784946236
+22.536162841056736
  21
-5.333333333333333
+5.288800705467372
  31
 0.0
 100
@@ -16249,11 +16565,11 @@ AcDbText
   0
 TEXT
   5
-1C0
+199
 102
 {ACAD_REACTORS
 330
-1CF
+1A8
 102
 }
 330
@@ -16265,9 +16581,9 @@ A-ANNO-DIM
 100
 AcDbText
  10
-23.526881720430108
+23.510610653962758
  20
-5.548387096774194
+5.509259259259259
  30
 0.0
  40
@@ -16281,9 +16597,9 @@ PLAN
  72
 1
  11
-23.526881720430108
+23.510610653962758
  21
-5.548387096774194
+5.509259259259259
  31
 0.0
 100
@@ -16377,79 +16693,87 @@ AcDbDictionary
   3
 06_OFF
 350
-1C1
+19A
   3
 07_OFF
 350
-1C2
+19B
   3
 03_BRD
 350
-1C3
+19C
   3
 01_REC
 350
-1C4
+19D
   3
 05_WCS
 350
-1C5
+19E
   3
 04_WCS
 350
-1C6
+19F
   3
 02_OFF
 350
-1C7
+1A0
   3
 GF_STAIR
 350
-1C8
+1A1
   3
 13_OFF
 350
-1C9
+1A2
   3
 12_KTN
 350
-1CA
+1A3
   3
 CLN_CBD
 350
-1CB
+1A4
   3
 08_OFF
 350
-1CC
+1A5
   3
 09_OFF
 350
-1CD
+1A6
   3
 10_WCS
 350
-1CE
+1A7
   3
 11_WCS
 350
-1CF
+1A8
   3
 FF_STAIR
 350
-1D0
+1A9
   3
 GF_CORRIDOR
 350
-1D1
+1AA
   3
-13_OFF_SHELL
+FF_LOBBY
 350
-1D2
+1AB
+  3
+GF_SHELL
+350
+1AC
+  3
+FF_SHELL
+350
+1AD
   3
 TITLES
 350
-1D3
+1AE
   0
 DICTIONARY
   5
@@ -17457,7 +17781,7 @@ CREATED_BY_EZDXF
   3
 WRITTEN_BY_EZDXF
 350
-1D7
+1B2
   0
 DICTIONARYVAR
   5
@@ -17469,7 +17793,7 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-04T15:39:01.969084+00:00
+1.4.5 @ 2026-11-04T16:44:00.960755+00:00
   0
 VISUALSTYLE
   5
@@ -18173,7 +18497,7 @@ X-Ray
   0
 GROUP
   5
-1C1
+19A
 102
 {ACAD_REACTORS
 330
@@ -18185,15 +18509,11 @@ C
 100
 AcDbGroup
 300
-Room 06-OFF with linked annotation
+06-OFF with linked annotation
  70
 0
  71
 1
-340
-94
-340
-95
 340
 96
 340
@@ -18203,39 +18523,37 @@ Room 06-OFF with linked annotation
 340
 99
 340
-105
+E9
 340
-106
+EA
 340
-107
+F0
 340
-10D
+F1
 340
-10E
+102
 340
-11F
+103
 340
-120
+136
 340
-15D
+137
 340
-15E
+138
 340
-15F
+139
 340
-160
+13A
 340
-161
+13B
 340
-162
+13C
 340
-163
-340
-164
+13D
   0
 GROUP
   5
-1C2
+19B
 102
 {ACAD_REACTORS
 330
@@ -18247,7 +18565,7 @@ C
 100
 AcDbGroup
 300
-Room 07-OFF with linked annotation
+07-OFF with linked annotation
  70
 0
  71
@@ -18259,303 +18577,49 @@ Room 07-OFF with linked annotation
 340
 9C
 340
+EE
+340
+EF
+340
+131
+340
+132
+340
+133
+340
+134
+340
+135
+  0
+GROUP
+  5
+19C
+102
+{ACAD_REACTORS
+330
+C
+102
+}
+330
+C
+100
+AcDbGroup
+300
+03-BRD with linked annotation
+ 70
+0
+ 71
+1
+340
 9D
 340
 9E
 340
 9F
 340
-10B
+F2
 340
-10C
-340
-158
-340
-159
-340
-15A
-340
-15B
-340
-15C
-  0
-GROUP
-  5
-1C3
-102
-{ACAD_REACTORS
-330
-C
-102
-}
-330
-C
-100
-AcDbGroup
-300
-Room 03-BRD with linked annotation
- 70
-0
- 71
-1
-340
-A0
-340
-A1
-340
-A2
-340
-A3
-340
-A4
-340
-A5
-340
-10F
-340
-110
-340
-165
-340
-166
-340
-167
-340
-168
-340
-169
-340
-16A
-340
-16B
-  0
-GROUP
-  5
-1C4
-102
-{ACAD_REACTORS
-330
-C
-102
-}
-330
-C
-100
-AcDbGroup
-300
-Room 01-REC with linked annotation
- 70
-0
- 71
-1
-340
-A6
-340
-A7
-340
-A8
-340
-A9
-340
-AA
-340
-AB
-340
-111
-340
-112
-340
-16C
-340
-16D
-340
-16E
-340
-16F
-  0
-GROUP
-  5
-1C5
-102
-{ACAD_REACTORS
-330
-C
-102
-}
-330
-C
-100
-AcDbGroup
-300
-Room 05-WCS with linked annotation
- 70
-0
- 71
-1
-340
-AC
-340
-AD
-340
-AE
-340
-AF
-340
-B0
-340
-B1
-340
-113
-340
-114
-340
-170
-340
-171
-340
-172
-340
-173
-  0
-GROUP
-  5
-1C6
-102
-{ACAD_REACTORS
-330
-C
-102
-}
-330
-C
-100
-AcDbGroup
-300
-Room 04-WCS with linked annotation
- 70
-0
- 71
-1
-340
-B2
-340
-B3
-340
-B4
-340
-B5
-340
-B6
-340
-B7
-340
-117
-340
-118
-340
-174
-340
-175
-340
-176
-  0
-GROUP
-  5
-1C7
-102
-{ACAD_REACTORS
-330
-C
-102
-}
-330
-C
-100
-AcDbGroup
-300
-Room 02-OFF with linked annotation
- 70
-0
- 71
-1
-340
-B8
-340
-B9
-340
-BA
-340
-BB
-340
-BC
-340
-BD
-340
-BE
-340
-BF
-340
-115
-340
-116
-340
-177
-340
-178
-340
-179
-340
-17A
-340
-17B
-340
-17C
-340
-17D
-  0
-GROUP
-  5
-1C8
-102
-{ACAD_REACTORS
-330
-C
-102
-}
-330
-C
-100
-AcDbGroup
-300
-Room GF-STAIR with linked annotation
- 70
-0
- 71
-1
-340
-C0
-340
-C1
-340
-C2
-340
-C3
-340
-C4
-340
-C5
-340
-C6
-340
-119
-340
-11A
-340
-11B
-340
-11C
-340
-13D
+F3
 340
 13E
 340
@@ -18573,7 +18637,7 @@ C6
   0
 GROUP
   5
-1C9
+19D
 102
 {ACAD_REACTORS
 330
@@ -18585,65 +18649,443 @@ C
 100
 AcDbGroup
 300
-Room 13-OFF with linked annotation
+01-REC with linked annotation
  70
 0
  71
 1
 340
-C7
+A0
 340
-C8
+A1
 340
-C9
+A2
 340
-CA
+F4
 340
-CB
+F5
+340
+145
+340
+146
+340
+147
+340
+148
+  0
+GROUP
+  5
+19E
+102
+{ACAD_REACTORS
+330
+C
+102
+}
+330
+C
+100
+AcDbGroup
+300
+05-WCS with linked annotation
+ 70
+0
+ 71
+1
+340
+A3
+340
+A4
+340
+A5
+340
+F6
+340
+F7
+340
+149
+340
+14A
+340
+14B
+340
+14C
+  0
+GROUP
+  5
+19F
+102
+{ACAD_REACTORS
+330
+C
+102
+}
+330
+C
+100
+AcDbGroup
+300
+04-WCS with linked annotation
+ 70
+0
+ 71
+1
+340
+A6
+340
+A7
+340
+A8
+340
+FA
+340
+FB
+340
+14D
+340
+14E
+340
+14F
+  0
+GROUP
+  5
+1A0
+102
+{ACAD_REACTORS
+330
+C
+102
+}
+330
+C
+100
+AcDbGroup
+300
+02-OFF with linked annotation
+ 70
+0
+ 71
+1
+340
+A9
+340
+AA
+340
+AB
+340
+F8
+340
+F9
+340
+150
+340
+151
+340
+152
+340
+153
+340
+154
+340
+155
+340
+156
+  0
+GROUP
+  5
+1A1
+102
+{ACAD_REACTORS
+330
+C
+102
+}
+330
+C
+100
+AcDbGroup
+300
+GF-STAIR with linked annotation
+ 70
+0
+ 71
+1
+340
+AC
+340
+AD
+340
+AE
+340
+AF
+340
+B0
+340
+FC
+340
+FD
+340
+FE
+340
+FF
+340
+114
+340
+115
+340
+116
+340
+117
+340
+118
+340
+119
+340
+11A
+340
+11B
+340
+11C
+340
+11D
+  0
+GROUP
+  5
+1A2
+102
+{ACAD_REACTORS
+330
+C
+102
+}
+330
+C
+100
+AcDbGroup
+300
+13-OFF with linked annotation
+ 70
+0
+ 71
+1
+340
+B1
+340
+B2
+340
+DE
+340
+DF
+340
+E0
+340
+E1
+340
+E2
+340
+E3
+340
+E4
+340
+E5
+340
+E6
+340
+EB
+340
+EC
+340
+ED
+340
+104
+340
+105
+340
+106
+340
+107
+340
+158
+340
+159
+340
+15A
+340
+15B
+340
+15C
+340
+15D
+340
+15E
+340
+15F
+340
+160
+340
+161
+340
+162
+340
+163
+340
+164
+340
+165
+340
+166
+340
+167
+340
+168
+340
+169
+340
+16A
+340
+16B
+340
+16C
+340
+16D
+340
+16E
+340
+16F
+340
+170
+340
+171
+340
+172
+340
+173
+340
+174
+340
+175
+340
+176
+340
+177
+340
+178
+340
+179
+340
+17A
+  0
+GROUP
+  5
+1A3
+102
+{ACAD_REACTORS
+330
+C
+102
+}
+330
+C
+100
+AcDbGroup
+300
+12-KTN with linked annotation
+ 70
+0
+ 71
+1
+340
+B3
+340
+B4
+340
+B5
+340
+B6
 340
 108
 340
 109
 340
-10A
+17C
 340
-121
+17D
 340
-122
-340
-123
-340
-124
-340
-131
-340
-132
-340
-133
-340
-134
-340
-135
-340
-136
-340
-137
-340
-138
-340
-139
-340
-13A
+17E
 340
 17F
 340
 180
 340
 181
+  0
+GROUP
+  5
+1A4
+102
+{ACAD_REACTORS
+330
+C
+102
+}
+330
+C
+100
+AcDbGroup
+300
+CLN-CBD with linked annotation
+ 70
+0
+ 71
+1
+340
+B7
+340
+B8
+340
+B9
+340
+10A
+340
+10B
 340
 182
 340
 183
+  0
+GROUP
+  5
+1A5
+102
+{ACAD_REACTORS
+330
+C
+102
+}
+330
+C
+100
+AcDbGroup
+300
+08-OFF with linked annotation
+ 70
+0
+ 71
+1
+340
+BA
+340
+BB
+340
+BC
+340
+E7
+340
+E8
+340
+10C
+340
+10D
 340
 184
 340
@@ -18662,6 +19104,36 @@ CB
 18B
 340
 18C
+  0
+GROUP
+  5
+1A6
+102
+{ACAD_REACTORS
+330
+C
+102
+}
+330
+C
+100
+AcDbGroup
+300
+09-OFF with linked annotation
+ 70
+0
+ 71
+1
+340
+BD
+340
+BE
+340
+BF
+340
+10E
+340
+10F
 340
 18D
 340
@@ -18676,38 +19148,10 @@ CB
 192
 340
 193
-340
-194
-340
-195
-340
-196
-340
-197
-340
-198
-340
-199
-340
-19A
-340
-19B
-340
-19C
-340
-19D
-340
-19E
-340
-19F
-340
-1A0
-340
-1A1
   0
 GROUP
   5
-1CA
+1A7
 102
 {ACAD_REACTORS
 330
@@ -18719,11 +19163,147 @@ C
 100
 AcDbGroup
 300
-Room 12-KTN with linked annotation
+10-WCS with linked annotation
  70
 0
  71
 1
+340
+C0
+340
+C1
+340
+C2
+340
+110
+340
+111
+340
+194
+340
+195
+  0
+GROUP
+  5
+1A8
+102
+{ACAD_REACTORS
+330
+C
+102
+}
+330
+C
+100
+AcDbGroup
+300
+11-WCS with linked annotation
+ 70
+0
+ 71
+1
+340
+C3
+340
+C4
+340
+C5
+340
+112
+340
+113
+340
+196
+340
+197
+340
+198
+340
+199
+  0
+GROUP
+  5
+1A9
+102
+{ACAD_REACTORS
+330
+C
+102
+}
+330
+C
+100
+AcDbGroup
+300
+FF-STAIR with linked annotation
+ 70
+0
+ 71
+1
+340
+C6
+340
+C7
+340
+11E
+340
+11F
+340
+120
+340
+121
+340
+122
+340
+123
+340
+124
+340
+125
+340
+126
+340
+127
+340
+128
+340
+129
+340
+12A
+340
+12B
+340
+12C
+340
+17B
+  0
+GROUP
+  5
+1AA
+102
+{ACAD_REACTORS
+330
+C
+102
+}
+330
+C
+100
+AcDbGroup
+300
+GF-CORRIDOR with linked annotation
+ 70
+0
+ 71
+1
+340
+C8
+340
+C9
+340
+CA
+340
+CB
 340
 CC
 340
@@ -18735,6 +19315,30 @@ CF
 340
 D0
 340
+100
+340
+101
+  0
+GROUP
+  5
+1AB
+102
+{ACAD_REACTORS
+330
+C
+102
+}
+330
+C
+100
+AcDbGroup
+300
+FF-LOBBY with linked annotation
+ 70
+0
+ 71
+1
+340
 D1
 340
 D2
@@ -18743,25 +19347,15 @@ D3
 340
 D4
 340
-125
+D5
 340
-126
+D6
 340
-1A3
-340
-1A4
-340
-1A5
-340
-1A6
-340
-1A7
-340
-1A8
+D7
   0
 GROUP
   5
-1CB
+1AC
 102
 {ACAD_REACTORS
 330
@@ -18773,17 +19367,11 @@ C
 100
 AcDbGroup
 300
-Room CLN-CBD with linked annotation
+GF-SHELL with linked annotation
  70
 0
  71
 1
-340
-D5
-340
-D6
-340
-D7
 340
 D8
 340
@@ -18791,17 +19379,11 @@ D9
 340
 DA
 340
-127
-340
-128
-340
-1A9
-340
-1AA
+DB
   0
 GROUP
   5
-1CC
+1AD
 102
 {ACAD_REACTORS
 330
@@ -18813,57 +19395,19 @@ C
 100
 AcDbGroup
 300
-Room 08-OFF with linked annotation
+FF-SHELL with linked annotation
  70
 0
  71
 1
-340
-DB
 340
 DC
 340
 DD
-340
-DE
-340
-DF
-340
-E0
-340
-E1
-340
-E2
-340
-129
-340
-12A
-340
-13B
-340
-13C
-340
-1AB
-340
-1AC
-340
-1AD
-340
+  0
+GROUP
+  5
 1AE
-340
-1AF
-340
-1B0
-340
-1B1
-340
-1B2
-340
-1B3
-  0
-GROUP
-  5
-1CD
 102
 {ACAD_REACTORS
 330
@@ -18875,287 +19419,25 @@ C
 100
 AcDbGroup
 300
-Room 09-OFF with linked annotation
+TITLES with linked annotation
  70
 0
  71
 1
-340
-E3
-340
-E4
-340
-E5
-340
-E6
-340
-E7
-340
-E8
-340
-E9
-340
-EA
-340
-EB
-340
-12B
-340
-12C
-340
-1B4
-340
-1B5
-340
-1B6
-340
-1B7
-340
-1B8
-340
-1B9
-340
-1BA
-  0
-GROUP
-  5
-1CE
-102
-{ACAD_REACTORS
-330
-C
-102
-}
-330
-C
-100
-AcDbGroup
-300
-Room 10-WCS with linked annotation
- 70
-0
- 71
-1
-340
-EC
-340
-ED
-340
-EE
-340
-EF
-340
-F0
-340
-F1
 340
 12D
 340
 12E
 340
-1BB
-340
-1BC
-  0
-GROUP
-  5
-1CF
-102
-{ACAD_REACTORS
-330
-C
-102
-}
-330
-C
-100
-AcDbGroup
-300
-Room 11-WCS with linked annotation
- 70
-0
- 71
-1
-340
-F2
-340
-F3
-340
-F4
-340
-F5
-340
-F6
-340
-F7
-340
 12F
 340
 130
 340
-1BD
-340
-1BE
-340
-1BF
-340
-1C0
-  0
-GROUP
-  5
-1D0
-102
-{ACAD_REACTORS
-330
-C
-102
-}
-330
-C
-100
-AcDbGroup
-300
-Room FF-STAIR with linked annotation
- 70
-0
- 71
-1
-340
-F8
-340
-F9
-340
-FA
-340
-FB
-340
-FC
-340
-145
-340
-146
-340
-147
-340
-148
-340
-149
-340
-14A
-340
-14B
-340
-14C
-340
-14D
-340
-14E
-340
-14F
-340
-150
-340
-151
-340
-152
-340
-153
-340
-1A2
-  0
-GROUP
-  5
-1D1
-102
-{ACAD_REACTORS
-330
-C
-102
-}
-330
-C
-100
-AcDbGroup
-300
-Room GF-CORRIDOR with linked annotation
- 70
-0
- 71
-1
-340
-FD
-340
-FE
-340
-FF
-340
-100
-340
-101
-340
-102
-340
-11D
-340
-11E
-  0
-GROUP
-  5
-1D2
-102
-{ACAD_REACTORS
-330
-C
-102
-}
-330
-C
-100
-AcDbGroup
-300
-Room 13-OFF-SHELL with linked annotation
- 70
-0
- 71
-1
-340
-103
-340
-104
-  0
-GROUP
-  5
-1D3
-102
-{ACAD_REACTORS
-330
-C
-102
-}
-330
-C
-100
-AcDbGroup
-300
-Room TITLES with linked annotation
- 70
-0
- 71
-1
-340
-154
-340
-155
-340
-156
-340
 157
-340
-17E
   0
 DICTIONARYVAR
   5
-1D7
+1B2
 330
 2D
 100
@@ -19163,7 +19445,7 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-04T15:39:01.987834+00:00
+1.4.5 @ 2026-11-04T16:44:01.009326+00:00
   0
 ENDSEC
   0
