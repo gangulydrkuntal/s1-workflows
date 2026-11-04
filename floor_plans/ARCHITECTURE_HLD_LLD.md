@@ -243,6 +243,98 @@ plan2cad/
 tests/  golden/reference_job/         # this folder's source + accepted outputs
 ```
 
+### 7.1 Module dependencies
+
+```mermaid
+flowchart LR
+  subgraph L1["Entry + orchestration"]
+    direction TB
+    cli[cli.py] --> wf[pipeline/workflow]
+  end
+  subgraph L2["Stage modules"]
+    direction TB
+    cfg[config/schema]
+    ing[ingest/normalise]
+    inv[understand/inventory_agent]
+    txt[understand/text_locator]
+    cal[measure/calibrate]
+    rec[decide/reconcile]
+    qry[decide/queries]
+    dxf[export/dxf_writer]
+    gpk[export/gpkg_writer]
+    ver[verify/overlay + metrics]
+    rep[report/report]
+  end
+  subgraph L3["Core libraries"]
+    direction TB
+    prof[measure/profiles]
+    trc[measure/trace]
+    rules[model/rules R01-R16]
+    ir[model/plan_ir]
+    geo[geometry/kernel]
+  end
+  wf --> cfg & ing & inv & txt & cal & rec & qry & dxf & gpk & ver & rep
+  cal --> prof & trc
+  txt -. text masks .-> prof
+  rec --> rules & ir
+  qry --> ir
+  inv -. "elements, no coordinates" .-> ir
+  dxf & gpk & ver --> geo
+  geo --> ir
+  ver --> cal
+  rep --> ir
+  classDef built fill:#e6f4ea,stroke:#2e7d32
+  classDef partial fill:#fff4e0,stroke:#ef6c00
+  classDef proposed fill:#eef2ff,stroke:#5c6bc0
+  class prof,trc,geo,dxf,gpk,ver,cal built
+  class ir partial
+  class cli,wf,cfg,ing,inv,txt,rec,qry,rules,rep proposed
+```
+Green = exists in the reference scripts [built]. Orange = partly there (the
+data tables in `build_floor_plan_dxf.py`, not yet a JSON plan model). Blue =
+[proposed].
+
+### 7.2 Run sequence with human review
+
+```mermaid
+sequenceDiagram
+  autonumber
+  actor U as Requester
+  participant API as Job API
+  participant WF as Workflow
+  participant AI as Inventory agent (Claude)
+  participant M as Measure + Reconcile
+  participant B as Build (DXF/GPKG)
+  participant V as Verify
+  actor R as Reviewer
+  U->>API: POST /jobs (images, run.yaml)
+  API->>WF: start(job)
+  WF->>WF: Phase 0 config check + corrected run plan
+  WF-->>R: blocking questions (if any)
+  R->>API: answers
+  WF->>AI: list elements + read text (no coordinates)
+  AI-->>WF: element register
+  WF->>M: profile pixels, fit scale per block, reconcile labels
+  alt conflict or unclear
+    M-->>WF: Query (element held UNVERIFIED)
+    WF-->>R: question pack + crops
+    R->>API: answer
+    WF->>M: re-reconcile
+  end
+  M-->>WF: plan model vN (every value sourced)
+  WF->>B: write DXF + GeoPackage from plan model
+  B-->>WF: outputs + DXF check (0 errors)
+  WF->>V: overlay + zone metrics
+  alt out of tolerance (round < N)
+    V-->>WF: failing zones
+    WF->>M: re-measure before fixing (R06)
+  end
+  V-->>WF: all zones pass
+  WF-->>R: review pack (overlays, area table, uncertainty register)
+  R->>API: approve
+  WF-->>U: signed links to DXF, GPKG, report
+```
+
 ## 8. Interfaces
 
 ### 8.1 CLI [proposed]
@@ -364,14 +456,64 @@ erDiagram
   ELEMENT ||--o{ MEASUREMENT : evidenced_by
   QUERY ||--o| ANSWER : resolved_by
   PLAN_VERSION ||--o{ ARTIFACT : produces
-  JOB { uuid id; text state; jsonb run_config; timestamptz created }
-  PLAN_VERSION { uuid id; int version; jsonb plan_json; text created_by }
-  ELEMENT { text element_id; text type; text status; geometry geom }
-  MEASUREMENT { text kind; jsonb evidence; float value; float residual_m }
-  QUERY { text qid; bool blocking; text element_id; jsonb options; text recommendation }
-  ANSWER { text option; text note; text answered_by; timestamptz at }
-  ARTIFACT { text kind; text uri; text sha256 }
-  EVENT { text from_state; text to_state; text actor; text reason }
+  JOB {
+    uuid id PK
+    text state
+    jsonb run_config
+    timestamptz created
+  }
+  PLAN_VERSION {
+    uuid id PK
+    uuid job_id FK
+    int version
+    jsonb plan_json
+    text created_by
+  }
+  ELEMENT {
+    text element_id PK
+    uuid plan_version_id FK
+    text type
+    text status
+    geometry geom
+  }
+  MEASUREMENT {
+    uuid id PK
+    text element_id FK
+    text kind
+    jsonb evidence
+    float value
+    float residual_m
+  }
+  QUERY {
+    text qid PK
+    uuid job_id FK
+    bool blocking
+    text element_id
+    jsonb options
+    text recommendation
+  }
+  ANSWER {
+    text qid FK
+    text option
+    text note
+    text answered_by
+    timestamptz at
+  }
+  ARTIFACT {
+    uuid id PK
+    uuid plan_version_id FK
+    text kind
+    text uri
+    text sha256
+  }
+  EVENT {
+    uuid id PK
+    uuid job_id FK
+    text from_state
+    text to_state
+    text actor
+    text reason
+  }
 ```
 
 ### 9.3 Question model (matches the prompt's §11 template)
@@ -464,6 +606,27 @@ if none or several hold → raise a blocking question
   `band = outer − room − unhatched strip`.
 - **Label owner:** the smallest space containing the label point. If none,
   the nearest room. Titles go to `TITLES`.
+
+
+```mermaid
+flowchart TB
+  S[Spaces per block<br/>rooms + corridor/lobby polygons] --> G[Grow outward by wall thickness<br/>mitre joins]
+  G --> C[Clip at block's measured outer face<br/>keep recorded gaps]
+  C --> F[Fill internal voids<br/>polygon exteriors]
+  X[Explicit outer shapes<br/>e.g. 13-OFF 0.4 m shell] --> U
+  F --> U[Union = footprint<br/>one part per block]
+  U --> P[Wall fill = footprint - spaces - door bands + partitions]
+  D[Doors: hinge, end, swing] --> DB[Door bands<br/>buffer 0.25, flat caps]
+  DB --> P
+  DB --> L[Wall lines = space rings - door bands]
+  WB[Wall blocks from dimension strings<br/>corner blocks + piers] --> R13[Room = rectangle - blocks]
+  R13 --> H[Hatched band = outer - room - unhatched strip]
+  H --> P2[Wall fill minus hatched band]
+  P --> P2
+  P2 --> OUT[(DXF layers / GPKG layers)]
+  L --> OUT
+  H --> OUT
+```
 
 ### 11.4 Rule catalogue (each lesson as a check)
 
