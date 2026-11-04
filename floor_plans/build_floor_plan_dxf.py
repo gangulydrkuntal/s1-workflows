@@ -23,6 +23,10 @@ OUT = Path(__file__).with_name("floor_plan.dxf")
 FF_DX = 14.0      # first floor drawn 14 m to the right of the ground floor (sheet layout)
 WALL_T = 0.15     # typical wall thickness used for the outer building line
 EXT_T = 0.40      # hatched external wall of 13-OFF
+# 13-OFF is a separate block on the sketch: its own 0.11 m bottom wall, a
+# 0.13 m gap, then the lower block's 0.09 m top wall (measured on the image).
+Y13_OUTER_BOTTOM = 8.97
+Y_LOWER_OUTER_TOP = 8.84
 
 # Registration of the first floor over the ground floor (shared bottom-left
 # building corner: 08-OFF bottom-left sits over 01-REC bottom-left).
@@ -250,9 +254,9 @@ def pier_polys(floor="FF"):
 def ext_wall_13():
     """Outer rectangle and hatched band (with stepped inner face) of 13-OFF."""
     x0, y0, x1, y1 = X13_0, Y13_0, X13_1, Y13_1
-    outer = Polygon(shift("FF", rect(x0 - EXT_T, 8.75, x1 + EXT_T, y1 + EXT_T)))
+    outer = Polygon(shift("FF", rect(x0 - EXT_T, Y13_OUTER_BOTTOM, x1 + EXT_T, y1 + EXT_T)))
     room = Polygon(shift("FF", ROOMS["13-OFF"][1]))
-    bottom = Polygon(shift("FF", rect(x0 + PIER_D, 8.75, x1 - PIER_D, y0)))
+    bottom = Polygon(shift("FF", rect(x0, Y13_OUTER_BOTTOM, x1, y0)))   # solid, not hatched
     band = outer.difference(unary_union([room, bottom]))
     return outer, band
 
@@ -261,20 +265,25 @@ def floor_geometry(floor):
     """Outer building outline, wall poche and hatched band for one floor."""
     spaces = [Polygon(shift(fl, p)) for fl, p in list(ROOMS.values()) + list(CIRCULATION.values())
               if fl == floor]
-    grown = unary_union([s.buffer(WALL_T, join_style="mitre") for s in spaces])
     band = None
     if floor == "FF":
         outer13, band = ext_wall_13()
-        grown = unary_union([grown, outer13])
-    # fill small internal voids so the outline is one solid footprint
+        lower = [Polygon(shift(fl, p)) for r, (fl, p) in {**ROOMS, **CIRCULATION}.items()
+                 if fl == "FF" and r != "13-OFF"]
+        grown = unary_union([q.buffer(WALL_T, join_style="mitre") for q in lower])
+        grown = grown.intersection(box(-1e3, -1e3, 1e3, Y_LOWER_OUTER_TOP))
+    else:
+        grown = unary_union([q.buffer(WALL_T, join_style="mitre") for q in spaces])
+    # fill small internal voids so each block outline is one solid footprint
     polys = grown.geoms if grown.geom_type == "MultiPolygon" else [grown]
     footprint = unary_union([Polygon(p.exterior) for p in polys])
+    if floor == "FF":
+        footprint = unary_union([footprint, outer13])    # two separate blocks
     solids = [Polygon(shift(CHIMNEY[1], CHIMNEY[2]))] if floor == "FF" else []
     part_polys = [LineString(shift(fl, ln)).buffer(t / 2, cap_style="flat", join_style="mitre")
                   for _, fl, ln, t in PARTITIONS if fl == floor]
-    pier = pier_polys() if floor == "FF" else []
     poche = footprint.difference(unary_union(spaces)).difference(door_bands(floor))
-    poche = unary_union([poche, *part_polys, *pier])
+    poche = unary_union([poche, *part_polys])
     if band is not None:
         poche = poche.difference(band.difference(door_bands(floor)))
     return dict(footprint=footprint, poche=poche, band=band, solids=solids)
