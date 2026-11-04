@@ -3,9 +3,9 @@
 Run build_floor_plan_dxf.py first, then:  python build_geopackage.py
 
 Coordinates are local metres (no real-world location is known), stored without
-a CRS. Unlike the DXF sheet (floors side by side), the floors are STACKED here:
-the first floor is registered over the ground floor on the shared bottom-left
-building corner, so filter on `floor` / `level` to see one floor at a time.
+a CRS. Floors are laid out side by side exactly as on the source sketch and the
+DXF (first floor 14 m to the right of the ground floor); `floor` / `level`
+identify which floor each feature belongs to.
 Each feature carries `room_id`, linking walls, doors, glazing and annotations
 to the room they belong to.
 
@@ -26,7 +26,6 @@ from pathlib import Path
 import ezdxf
 import geopandas as gpd
 from ezdxf import path as ezpath
-from shapely.affinity import translate
 from shapely.geometry import LineString, Point, Polygon
 
 import build_floor_plan_dxf as plan
@@ -64,9 +63,7 @@ def floor_of(room, x):
 
 
 def stacked(geom, floor):
-    """DXF sheet coordinates -> stacked building coordinates."""
-    if floor == "FF":
-        return translate(geom, -plan.FF_DX + plan.FF_STACK_OFFSET[0], plan.FF_STACK_OFFSET[1])
+    """Keep DXF sheet coordinates: floors side by side as on the source sketch."""
     return geom
 
 
