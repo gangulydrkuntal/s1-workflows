@@ -73,7 +73,7 @@ CIRCULATION = {
 
 # Solid internal partitions (centre-line, thickness)
 PARTITIONS = [
-    ("13-OFF", "FF", [(4.36, 14.90), (4.36, 12.14), (4.75, 12.14)], 0.10),
+    ("13-OFF", "FF", [(4.435, 14.80), (4.435, 12.14), (4.75, 12.14)], 0.10),
 ]
 
 # Doors: (room, floor, hinge, closed-end, side) side +1 = leaf rotates CCW, -1 CW
@@ -106,11 +106,41 @@ GLASS = [
     ("13-OFF", "FF", [(6.09, 12.14), (6.09, 9.08)]),
 ]
 
-# Wall piers on the 13-OFF external wall: (x, y, side) on the interior face
-PIERS = [(2.34, 14.90, "top"), (6.41, 14.90, "top"),
-         (0.20, 12.77, "left"), (0.20, 10.88, "left"),
-         (8.71, 12.79, "right"), (8.71, 10.99, "right")]
-PIER_W, PIER_D = 0.21, 0.10
+# 13-OFF hatched external wall: the inner face is STEPPED, as on the sketch.
+# Long recessed bays (the 1.56 / 1.55 / 1.6 / 1.83 / 1.59 m segments) sit
+# between 0.21 m piers that stand 0.1 m proud, with thickened corner blocks.
+# Top wall (left->right): 0.5 corner, 1.6, 0.2 pier, 1.83, 0.21 pier
+#   (partition head), 1.83, 0.21 pier, 1.59, 0.54 corner   = 8.51 m
+# Left wall (top->bottom): 0.54 corner, 1.56, 0.21 pier, 1.55, 0.21 pier, 1.55, 0.2 corner
+# Right wall (top->bottom): 0.35+0.1 corner, 1.56, 0.21 pier, 1.55, 0.21 pier, rest, 0.2 corner
+X13_0, X13_1, Y13_0, Y13_1 = 0.20, 8.71, 9.08, 14.90     # recessed (bay) faces
+PIER_D = 0.10
+
+
+def _wall_blocks_13():
+    x0, x1, y0, y1 = X13_0, X13_1, Y13_0, Y13_1
+    d = PIER_D
+    b = []
+    # corner blocks
+    b += [rect(x0, y1 - 0.20, x0 + 0.50, y1), rect(x0, y1 - 0.54, x0 + d, y1)]          # top-left
+    b += [rect(x1 - 0.54, y1 - d, x1, y1), rect(x1 - d, y1 - 0.45, x1, y1)]             # top-right
+    b += [rect(x0, y0, x0 + d, y0 + 0.20), rect(x1 - d, y0, x1, y0 + 0.20)]             # bottom
+    # top-wall piers
+    for a, w in ((0.50 + 1.60, 0.20), (0.50 + 1.60 + 0.20 + 1.83, 0.21),
+                 (0.50 + 1.60 + 0.20 + 1.83 + 0.21 + 1.83, 0.21)):
+        b.append(rect(x0 + a, y1 - d, x0 + a + w, y1))
+    # left-wall piers (from top)
+    for a in (0.54 + 1.56, 0.54 + 1.56 + 0.21 + 1.55):
+        b.append(rect(x0, y1 - a - 0.21, x0 + d, y1 - a))
+    # right-wall piers (from top)
+    for a in (0.45 + 1.56, 0.45 + 1.56 + 0.21 + 1.55):
+        b.append(rect(x1 - d, y1 - a - 0.21, x1, y1 - a))
+    return [Polygon(q) for q in b]
+
+
+WALL_BLOCKS_13 = _wall_blocks_13()
+_room13 = Polygon(rect(X13_0, Y13_0, X13_1, Y13_1)).difference(unary_union(WALL_BLOCKS_13))
+ROOMS["13-OFF"] = ("FF", [tuple(round(c, 4) for c in pt) for pt in list(_room13.exterior.coords)[:-1]])
 
 CHIMNEY = ("08-OFF", "FF", rect(0.0, 1.37, 0.37, 3.10))   # 0.37 x 1.73
 
@@ -213,23 +243,17 @@ def door_bands(floor):
 
 
 def pier_polys(floor="FF"):
-    out = []
-    for x, y, side in PIERS:
-        (x, y), = shift(floor, [(x, y)])
-        if side == "top":
-            out.append(box(x - PIER_W / 2, y - PIER_D, x + PIER_W / 2, y))
-        elif side == "left":
-            out.append(box(x, y - PIER_W / 2, x + PIER_D, y + PIER_W / 2))
-        else:
-            out.append(box(x - PIER_D, y - PIER_W / 2, x, y + PIER_W / 2))
-    return out
+    """Corner blocks and piers of the 13-OFF wall (sheet coordinates)."""
+    return [Polygon(shift(floor, list(b.exterior.coords)[:-1])) for b in WALL_BLOCKS_13]
 
 
 def ext_wall_13():
-    """Outer rectangle and hatched U-shaped band of the 13-OFF external wall."""
-    x0, y0, x1, y1 = 0.20, 9.08, 8.71, 14.90
+    """Outer rectangle and hatched band (with stepped inner face) of 13-OFF."""
+    x0, y0, x1, y1 = X13_0, Y13_0, X13_1, Y13_1
     outer = Polygon(shift("FF", rect(x0 - EXT_T, 8.75, x1 + EXT_T, y1 + EXT_T)))
-    band = outer.difference(Polygon(shift("FF", rect(x0, 8.75, x1, y1))))
+    room = Polygon(shift("FF", ROOMS["13-OFF"][1]))
+    bottom = Polygon(shift("FF", rect(x0 + PIER_D, 8.75, x1 - PIER_D, y0)))
+    band = outer.difference(unary_union([room, bottom]))
     return outer, band
 
 
@@ -359,12 +383,6 @@ def build():
                 for hole in holes:
                     hb.paths.add_polyline_path(hole[:-1], is_closed=True, flags=0)
             add("13-OFF", hb)
-            inner = LineString(shift("FF", rect(0.20, 9.08, 8.71, 14.90)) + [shift("FF", [(0.20, 9.08)])[0]])
-            for ln in _lines(inner.difference(bands[fl])):
-                add("13-OFF", msp.add_lwpolyline(ln, dxfattribs={"layer": "A-WALL"}))
-    for p in pier_polys():
-        add("13-OFF", msp.add_lwpolyline(list(p.exterior.coords)[:-1], close=True,
-                                         dxfattribs={"layer": "A-WALL"}))
     for room, fl, ln, t in PARTITIONS:
         p = LineString(shift(fl, ln)).buffer(t / 2, cap_style="flat", join_style="mitre")
         add(room, msp.add_lwpolyline(list(p.exterior.coords)[:-1], close=True,
