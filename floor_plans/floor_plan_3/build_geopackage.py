@@ -519,6 +519,9 @@ def build():
     for c in range(1, n):
         if c in exterior or st[c, 4] < 60:
             continue
+        x, y, w, h = st[c, :4]
+        if x <= 12 or y <= 12 or x + w >= W - 12 or y + h >= H - 12:
+            continue                      # gap inside the double-line sheet border, not a room
         m = (lab == c).astype(np.uint8)
         m = cv2.dilate(m, np.ones((3, 3), np.uint8))          # back to the wall face
         cs, _ = cv2.findContours(m, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
