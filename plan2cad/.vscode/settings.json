@@ -1,0 +1,11 @@
+{
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestArgs": ["tests"],
+  "python.analysis.extraPaths": ["src"],
+  "python.terminal.activateEnvironment": true,
+  "files.exclude": { "**/__pycache__": true, "**/.pytest_cache": true, "**/.ruff_cache": true, "**/*.egg-info": true },
+  "yaml.schemas": { "./docs/config.schema.json": ["configs/**/*.yaml", "configs/**/*.yml"] },
+  "[python]": { "editor.formatOnSave": false, "editor.rulers": [130] },
+  "[yaml]": { "editor.insertSpaces": true, "editor.tabSize": 2 }
+}

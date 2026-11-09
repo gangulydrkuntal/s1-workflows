@@ -1,0 +1,15 @@
+# Griffith College ground floor plan 1:50 (mm dimension strings, filled grey walls).
+# engine dimension_sheet = hand-modelled profile (engines/legacy/dimension_sheet.py) reproducing the exercise exactly.
+name: drawing2_ground_floor_1to50
+engine: dimension_sheet
+source: ../inputs/drawing2_ground_floor_1to50.jpg
+outputs: [gpkg]
+review_notes: ['Two unlabelled spaces are named by what is drawn: ''Hall / landing (unlabelled)'' and ''Cross-marked
+    area (unlabelled)''.', 'Not modelled: small door-frame rectangles at door jambs, and dimension extension lines
+    / tick marks.', Internal partitions without a dimension use measured positions with the 100 mm thickness the
+    drawing gives for its labelled internal walls.]
+open_questions: ['Window W2 (top wall, middle) has no dimension for its start; measured at 6.52 m. If it is a standard
+    1,700 mm window it would start at 6.502 m.', 'The bottom dimension string totals 13,787 mm, 2.92 mm short of
+    the top string (13,789.92 mm). Both kept as written.', A small unfilled square at the south-east corner of the
+    wall (0.24 x 0.30 m) is unlabelled; stored in layer windows as 'purpose not stated'.]
+verify: {tolerance_px: 3.0, min_share: 0.85}

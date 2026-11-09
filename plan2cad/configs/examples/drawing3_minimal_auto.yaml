@@ -1,0 +1,13 @@
+# MINIMAL config for a new thin-double-line CAD plan: only the scale is supplied by a person.
+# Room labels come from OCR (adopted, flagged for review), doors are detected automatically,
+# dimension strings are only PROPOSED (see <name>_texts_proposed.yaml) - never guessed.
+name: drawing3_minimal_auto
+engine: auto_lines
+source: ../../inputs/drawing3_two_unit_ftin.png
+outputs: [gpkg]
+units: ft-in
+ocr: auto
+calibration:
+  x: {px: [98, 886], length: "60'"}
+  y: {px: [594, 175], length: "31'11\""}
+door_boxes: auto

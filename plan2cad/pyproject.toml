@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plan2cad"
+version = "1.0.0"
+description = "Floor-plan drawing (image) to CAD (DXF) and GIS (GeoPackage) pipeline"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "Pillow>=10.0",
+  "PyYAML>=6.0",
+  "shapely>=2.0",
+  "geopandas>=1.0",
+  "pyogrio>=0.7",
+  "ezdxf>=1.3",
+  "matplotlib>=3.8",
+  "opencv-python-headless>=4.8",
+]
+
+[project.optional-dependencies]
+ocr = ["rapidocr-onnxruntime>=1.2"]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[project.scripts]
+plan2cad = "plan2cad.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = ["slow: tests that take more than ~10 seconds"]
+filterwarnings = [
+  "ignore:.*crs.*was not provided.*:UserWarning",
+  "ignore::DeprecationWarning",
+]
+
+[tool.ruff]
+line-length = 130
+target-version = "py310"
+extend-exclude = ["src/plan2cad/engines/legacy"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501", "E731", "E741"]

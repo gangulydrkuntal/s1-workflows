@@ -1,0 +1,12 @@
+# EXACT versions this project was developed and tested with (Linux, Python 3.13).
+# Use only if you need to reproduce the tested environment:  pip install -r requirements-lock.txt
+# Otherwise prefer requirements.txt (works with newer versions; tests tell you if something changed).
+PyYAML==6.0.3
+ezdxf==1.4.5
+geopandas==1.2.0
+matplotlib==3.11.2
+numpy==2.5.3
+opencv-python-headless==4.10.0.84
+pillow==12.3.0
+pyogrio==0.13.0
+shapely==2.2.0

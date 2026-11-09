@@ -1,0 +1,3 @@
+# optional: automatic proposal of room labels / dimension strings (pure pip, no system binary needed)
+-r requirements.txt
+rapidocr-onnxruntime>=1.2

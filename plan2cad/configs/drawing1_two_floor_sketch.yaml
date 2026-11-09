@@ -1,0 +1,13 @@
+# Two-floor office sketch (photo of a screen). engine two_floor_sheet = hand-modelled profile
+# (engines/legacy/two_floor_dxf.py) reproducing the exercise exactly: DXF + GeoPackage.
+name: drawing1_two_floor_sketch
+engine: two_floor_sheet
+source: ../inputs/drawing1_two_floor_sketch.jpg
+outputs: [gpkg, dxf]
+review_notes: ['13-OFF: gross 49.53 m2 matches the label; net of wall piers and corner blocks it is 49.12 m2 (both
+    reported).', 'Floors are laid out side by side exactly as on the source sheet; no shared reference point was
+    given, so they are NOT stacked.', 'Hand-modelled from the sketch''s dimension strings and pixel measurements:
+    geometry lives in engines/legacy/two_floor_dxf.py.']
+open_questions: ['03-BRD: its own dimensions (3.64 x 4.3 m) give 15.65 m2 but the label says 15.74 m2. Dimensions
+    kept, label kept as text.']
+verify: {tolerance_px: 6.0, min_share: 0.75}

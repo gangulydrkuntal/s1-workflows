@@ -1,0 +1,251 @@
+# Two-unit residential plan, feet-inches (60' x 31'11"), thin double-line walls.
+# engine auto_lines = automatic line/wall/door/room extraction from pixels.
+# Every value below is what produced the accepted exercise output.
+name: drawing3_two_unit_ftin
+engine: auto_lines
+source: ../inputs/drawing3_two_unit_ftin.png
+outputs: [gpkg]
+units: ft-in
+ocr: 'off'
+calibration:
+  x:
+    px: [98, 886]
+    length: 60'
+  y:
+    px: [594, 175]
+    length: 31'11"
+params:
+  wall_gap_px: [3.5, 7.5]
+  min_segment_px: 10
+  ink_threshold: 225
+texts:
+- text: Road
+  kind: site_label
+  box: [426, 76, 453, 89]
+  rotation: 0
+- text: Baclcony
+  kind: room_label
+  box: [236, 140, 292, 155]
+  rotation: 0
+- text: Baclcony
+  kind: room_label
+  box: [624, 153, 677, 168]
+  rotation: 0
+- text: Baclcony
+  kind: room_label
+  box: [68, 416, 86, 468]
+  rotation: 90
+- text: Bedroom
+  kind: room_label
+  box: [207, 271, 260, 284]
+  rotation: 0
+- text: Bedroom
+  kind: room_label
+  box: [548, 206, 601, 219]
+  rotation: 0
+- text: Bedroom
+  kind: room_label
+  box: [156, 497, 212, 510]
+  rotation: 0
+- text: Bedroom
+  kind: room_label
+  box: [791, 532, 844, 545]
+  rotation: 0
+- text: Dining Area
+  kind: room_label
+  box: [133, 340, 202, 353]
+  rotation: 0
+- text: Drawing Area
+  kind: room_label
+  box: [348, 377, 428, 393]
+  rotation: 0
+- text: Drawing Area
+  kind: room_label
+  box: [578, 353, 658, 368]
+  rotation: 0
+- text: Dining Area
+  kind: room_label
+  box: [787, 356, 855, 372]
+  rotation: 0
+- text: T1
+  kind: room_label
+  box: [302, 484, 319, 498]
+  rotation: 0
+- text: T2
+  kind: room_label
+  box: [367, 482, 384, 495]
+  rotation: 0
+- text: T1
+  kind: room_label
+  box: [586, 486, 601, 499]
+  rotation: 0
+- text: T2
+  kind: room_label
+  box: [651, 486, 668, 499]
+  rotation: 0
+dimension_texts:
+- text: 7'5"
+  box: [143, 129, 161, 138]
+  rotation: 0
+- text: 4'10"
+  box: [135, 146, 146, 167]
+  rotation: 270
+- text: 7'1"
+  box: [535, 122, 549, 130]
+  rotation: 0
+- text: 4'1"
+  box: [526, 140, 537, 153]
+  rotation: 270
+- text: 14'0"
+  box: [185, 223, 206, 232]
+  rotation: 0
+- text: 10'6"
+  box: [179, 256, 190, 275]
+  rotation: 90
+- text: 14'
+  box: [582, 230, 595, 239]
+  rotation: 0
+- text: 10'6"
+  box: [510, 239, 521, 258]
+  rotation: 270
+- text: 8'9"
+  box: [736, 183, 753, 192]
+  rotation: 0
+- text: 14'7"
+  box: [773, 244, 794, 253]
+  rotation: 0
+- text: 19'6"
+  box: [760, 301, 771, 320]
+  rotation: 270
+- text: 29'5"
+  box: [286, 357, 308, 366]
+  rotation: 0
+- text: 7'7"
+  box: [115, 381, 125, 396]
+  rotation: 270
+- text: 30'6"
+  box: [82, 384, 93, 400]
+  rotation: 90
+- text: 10'5"
+  box: [454, 378, 465, 398]
+  rotation: 270
+- text: 20'11"
+  box: [472, 305, 483, 331]
+  rotation: 270
+- text: 10'
+  box: [531, 383, 544, 398]
+  rotation: 270
+- text: 29'2"
+  box: [677, 383, 699, 392]
+  rotation: 0
+- text: 9'7"
+  box: [869, 367, 880, 383]
+  rotation: 270
+- text: 31'11"
+  box: [905, 372, 916, 397]
+  rotation: 90
+- text: 12'4"
+  box: [788, 458, 810, 467]
+  rotation: 0
+- text: 11'
+  box: [745, 510, 756, 522]
+  rotation: 270
+- text: 11'
+  box: [153, 510, 164, 520]
+  rotation: 270
+- text: 12'
+  box: [176, 535, 190, 543]
+  rotation: 0
+- text: 5'
+  box: [293, 520, 304, 529]
+  rotation: 0
+- text: 6'
+  box: [319, 515, 330, 524]
+  rotation: 270
+- text: 6'
+  box: [362, 516, 373, 524]
+  rotation: 270
+- text: 5'
+  box: [365, 528, 375, 537]
+  rotation: 0
+- text: 10'6"
+  box: [323, 569, 344, 578]
+  rotation: 0
+- text: 1'9"
+  box: [395, 569, 403, 583]
+  rotation: 270
+- text: 3'
+  box: [494, 477, 505, 485]
+  rotation: 270
+- text: 6'7"
+  box: [471, 535, 482, 547]
+  rotation: 270
+- text: 11'10"
+  box: [474, 551, 506, 565]
+  rotation: 0
+- text: 5'
+  box: [601, 506, 612, 515]
+  rotation: 0
+- text: 6'
+  box: [622, 517, 633, 524]
+  rotation: 270
+- text: 5'
+  box: [674, 512, 685, 522]
+  rotation: 0
+- text: 6'
+  box: [693, 516, 703, 524]
+  rotation: 270
+- text: 10'7"
+  box: [633, 567, 654, 575]
+  rotation: 0
+- text: 1'9"
+  box: [607, 570, 622, 585]
+  rotation: 270
+- text: 60'
+  box: [485, 604, 500, 613]
+  rotation: 0
+door_boxes:
+  D01: [172, 164, 200, 190]
+  D02: [306, 139, 337, 176]
+  D03: [251, 293, 282, 328]
+  D04: [559, 150, 582, 176]
+  D05: [695, 183, 732, 220]
+  D06: [645, 278, 675, 306]
+  D07: [61, 355, 88, 385]
+  D08: [217, 444, 256, 482]
+  D09: [411, 418, 449, 453]
+  D10: [269, 530, 293, 556]
+  D11: [375, 486, 401, 506]
+  D12: [541, 420, 570, 457]
+  D13: [722, 440, 766, 484]
+  D14: [574, 482, 602, 506]
+  D15: [685, 530, 715, 560]
+door_overrides:
+  D05: {closed_deg: 0, note: 'corner: dark leaf drawn downward, so the opening is the wall to the east'}
+  D10: {closed_deg: 270, note: 'corner: dark leaf drawn to the east, so the opening is the wall above'}
+  D11:
+    hinge: [399.0, 476.5]
+    r: 27.0
+    closed_deg: 180
+    open_deg: 90
+    note: arc tangent at (398,503); jamb ticks at x 373 and 399 in the top wall
+  D13:
+    hinge: [724.5, 445.0]
+    r: 32.5
+    closed_deg: 0
+    open_deg: 90
+    note: grey leaf drawn down at x 724; arc meets top wall at x 757
+  D14:
+    hinge: [575.0, 477.0]
+    r: 23.0
+    closed_deg: 0
+    open_deg: 90
+    note: mirror of D11; jamb tick at x 598 in the top wall
+review_notes: ['Unlabelled spaces (stair hall, the two small boxes in the balconies, the two 1''9" strips, the two
+    green-enclosed L-shapes): purpose not stated on the drawing.', '10 dimension labels have no measurable line
+    (too faint or not drawn): 4''10", 4''1", 14'', 10'', the two 5'' in T1/T2, 10''6", 11''10", both 1''9". Labels
+    kept.', 'Doors D05, D10, D11, D13, D14 were decided visually from 12x zoom; evidence is in each door''s status
+    field.', 'Thin wall lines drawn straight across door openings were treated as thresholds, not solid wall.']
+open_questions: ['Green lines and the maroon line: the drawing does not say what they mean. Kept as drawn (layer
+    other_lines, colour attribute).']
+verify: {tolerance_px: 3.0, min_share: 0.85}

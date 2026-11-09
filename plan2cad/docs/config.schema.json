@@ -1,0 +1,285 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "plan2cad drawing configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "engine",
+    "source"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$",
+      "description": "Used for output file names"
+    },
+    "engine": {
+      "enum": [
+        "auto_lines",
+        "dimension_sheet",
+        "two_floor_sheet"
+      ],
+      "description": "auto_lines = automatic extraction (new drawings); the other two are hand-modelled profiles of the exercise drawings"
+    },
+    "source": {
+      "type": "string",
+      "description": "Image path, relative to this file"
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "gpkg",
+          "dxf"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "dxf is only available for engine two_floor_sheet"
+    },
+    "units": {
+      "enum": [
+        "ft-in",
+        "m",
+        "mm"
+      ],
+      "description": "How dimension strings are written (auto_lines)"
+    },
+    "ocr": {
+      "enum": [
+        "off",
+        "auto",
+        "rapidocr"
+      ],
+      "description": "auto_lines: propose texts with OCR when no texts are configured"
+    },
+    "calibration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x",
+        "y"
+      ],
+      "description": "Two pixel positions of the ends of a known printed length, per axis",
+      "properties": {
+        "x": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "px",
+            "length"
+          ],
+          "properties": {
+            "px": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "type": "number"
+              },
+              "description": "x: [left, right]; y: [bottom row, top row]"
+            },
+            "length": {
+              "type": "string",
+              "description": "As printed, e.g. 60' or 31'11\" or 4500"
+            }
+          }
+        },
+        "y": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "px",
+            "length"
+          ],
+          "properties": {
+            "px": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "type": "number"
+              },
+              "description": "x: [left, right]; y: [bottom row, top row]"
+            },
+            "length": {
+              "type": "string",
+              "description": "As printed, e.g. 60' or 31'11\" or 4500"
+            }
+          }
+        }
+      }
+    },
+    "params": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "wall_gap_px": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number"
+          },
+          "description": "[min, max] pixels between the two lines of a wall"
+        },
+        "min_segment_px": {
+          "type": "integer",
+          "minimum": 3
+        },
+        "ink_threshold": {
+          "type": "integer",
+          "minimum": 50,
+          "maximum": 254
+        }
+      }
+    },
+    "texts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "box"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "room_label",
+              "site_label"
+            ]
+          },
+          "box": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "number"
+            },
+            "description": "[x0, y0, x1, y1] in source-image pixels"
+          },
+          "rotation": {
+            "enum": [
+              0,
+              90,
+              180,
+              270
+            ]
+          }
+        }
+      }
+    },
+    "dimension_texts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "box"
+        ],
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "box": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "number"
+            },
+            "description": "[x0, y0, x1, y1] in source-image pixels"
+          },
+          "rotation": {
+            "enum": [
+              0,
+              90,
+              180,
+              270
+            ]
+          }
+        }
+      }
+    },
+    "door_boxes": {
+      "oneOf": [
+        {
+          "const": "auto"
+        },
+        {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "number"
+            },
+            "description": "[x0, y0, x1, y1] in source-image pixels"
+          }
+        }
+      ],
+      "description": "auto = detect door arcs, or {id: box}"
+    },
+    "door_overrides": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "closed_deg",
+          "note"
+        ]
+      }
+    },
+    "review_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Decisions already taken (shown as information)"
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Questions a person still has to answer (make the drawing REVIEW)"
+    },
+    "verify": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tolerance_px": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "min_share": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "grid": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 8
+          }
+        },
+        "min_samples": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  }
+}

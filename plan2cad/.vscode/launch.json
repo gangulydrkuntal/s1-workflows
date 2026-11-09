@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "plan2cad: run all drawings",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "plan2cad",
+      "args": ["run", "configs", "--out", "output"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "plan2cad: run current config file",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "plan2cad",
+      "args": ["run", "${file}", "--out", "output", "--log-level", "DEBUG"],
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "pytest: current file",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["${file}", "-x", "-q"],
+      "console": "integratedTerminal",
+      "justMyCode": false
+    }
+  ]
+}
