@@ -166,7 +166,7 @@ A minimal example is `configs/examples/drawing3_minimal_auto.yaml` (calibration 
 
 ## 8. What was tested
 
-* **109+ automated tests**, ~85 s: units, strict config validation (every error message), exact golden reproduction of the
+* **110 automated tests**, ~85 s: units, strict config validation (every error message), exact golden reproduction of the
   three accepted outputs, pipeline behaviour, CLI exit codes, bad input (corrupt/tiny images, unsuitable drawings, wrong
   parameters, simulated crashes, batch isolation, OCR missing), verification metric on synthetic data, an end-to-end
   millimetre plan with known geometry, automatic doors/OCR regression guards, determinism and parallel processes.

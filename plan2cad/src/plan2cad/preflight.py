@@ -6,6 +6,7 @@ import importlib.metadata as md
 import platform
 import sys
 import tempfile
+import warnings
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -73,7 +74,8 @@ def _smoke() -> Check:
         import geopandas as gpd
         from ezdxf import recover
         from shapely.geometry import Point, Polygon
-        with tempfile.TemporaryDirectory() as d:
+        with warnings.catch_warnings(), tempfile.TemporaryDirectory() as d:
+            warnings.simplefilter("ignore")
             p = Path(d) / "t.gpkg"
             gpd.GeoDataFrame({"a": [1]}, geometry=[Polygon([(0, 0), (1, 0), (1, 1)])], crs=None).to_file(p, layer="x", driver="GPKG")
             gpd.GeoDataFrame({"a": [1]}, geometry=[Point(0, 0)], crs=None).to_file(p, layer="y", driver="GPKG", mode="a")

@@ -178,6 +178,8 @@ def build_parser():
 
 
 def main(argv=None) -> int:
+    import warnings
+    warnings.filterwarnings("ignore", message=".*crs.*was not provided.*")   # local-metre outputs have no CRS by design
     args = build_parser().parse_args(argv)
     setup_console(args.log_level)
     try:

@@ -45,6 +45,7 @@ on the exercise drawing it reads room labels well but garbles tiny dimension tex
 | GeoPackage vs the accepted exercise output | **row-for-row identical** (geometry to 1e-6 m and every attribute), all 3 drawings |
 | DXF vs the accepted exercise output | identical entity census per layer/type, identical text, 0 audit errors |
 | Output line work within 3 px of the source drawing (drawings 2, 3; 6 px for the photographed sketch) | 96.7 % / 95.7 % / 99.8 % of 169,000 sampled points; every zone of a 3x3 grid passes |
+| Clean installs (fresh venvs, newer libraries: numpy 2.4/2.5, Pillow 13, OpenCV 5) | Python 3.11, 3.12 (107 passed, 2 OCR tests skipped) and 3.13 with OCR (all pass); golden reproduction identical in all |
 | Status | `REVIEW` for all three: each carries open questions from the exercise (unlabelled spaces, unknown line meanings, ...) |
 
 ## Outputs per drawing (`output/<name>/`)
@@ -98,7 +99,7 @@ configs/            one YAML per drawing (+ examples/ minimal config for a new d
 inputs/             the three source images
 src/plan2cad/       cli, config (strict validation), pipeline, check, verify, preview, report, ocr, preflight
   engines/          auto_lines, dimension_sheet, two_floor_sheet  (+ legacy/ = the exact exercise scripts)
-tests/              110+ tests incl. golden comparison against the accepted outputs (tests/golden/)
+tests/              110 tests incl. golden comparison against the accepted outputs (tests/golden/)
 docs/               VSCODE_GUIDE.md, config.schema.json (VS Code autocompletion for configs)
 .vscode/            tasks, debug configurations, recommended extensions
 ```

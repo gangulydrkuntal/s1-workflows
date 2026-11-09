@@ -112,8 +112,8 @@ def test_json_schema_matches_validator():
     """docs/config.schema.json drives VS Code autocompletion; it must accept every shipped config and reject typos."""
     import json
 
-    import jsonschema
     import yaml
+    jsonschema = pytest.importorskip("jsonschema")
     schema = json.loads((ROOT / "docs" / "config.schema.json").read_text())
     for p in [*CONFIGS.values(), ROOT / "configs" / "examples" / "drawing3_minimal_auto.yaml"]:
         jsonschema.validate(yaml.safe_load(p.read_text()), schema)

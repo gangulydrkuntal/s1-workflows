@@ -22,7 +22,7 @@ dependencies = [
 
 [project.optional-dependencies]
 ocr = ["rapidocr-onnxruntime>=1.2"]
-dev = ["pytest>=8.0", "ruff>=0.5"]
+dev = ["pytest>=8.0", "ruff>=0.5", "jsonschema>=4.0"]
 
 [project.scripts]
 plan2cad = "plan2cad.cli:main"
