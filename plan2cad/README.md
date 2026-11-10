@@ -8,7 +8,9 @@ against the source image. It is the exercise we ran three times by hand-and-scri
 config (YAML) -> ingest -> [OCR proposals] -> engine -> output checks -> preview -> verification -> review report
 ```
 
-**Start here:** [docs/VSCODE_GUIDE.md](docs/VSCODE_GUIDE.md) (prerequisites and step-by-step use in VS Code).
+**Start here:** [docs/VSCODE_GUIDE.md](docs/VSCODE_GUIDE.md) (prerequisites and step-by-step use in VS Code), or run the
+single-file guided walkthrough, which explains and executes the pipeline one stage at a time:
+`python step_by_step.py --pause` (see the docstring of [step_by_step.py](step_by_step.py); `--list` describes every step).
 
 ## 60-second quick start
 
@@ -99,7 +101,8 @@ configs/            one YAML per drawing (+ examples/ minimal config for a new d
 inputs/             the three source images
 src/plan2cad/       cli, config (strict validation), pipeline, check, verify, preview, report, ocr, preflight
   engines/          auto_lines, dimension_sheet, two_floor_sheet  (+ legacy/ = the exact exercise scripts)
-tests/              110 tests incl. golden comparison against the accepted outputs (tests/golden/)
+step_by_step.py     ONE file: explains and runs the whole pipeline step by step (--list, --pause, --until N)
+tests/              115 tests incl. golden comparison against the accepted outputs (tests/golden/)
 docs/               VSCODE_GUIDE.md, config.schema.json (VS Code autocompletion for configs)
 .vscode/            tasks, debug configurations, recommended extensions
 ```

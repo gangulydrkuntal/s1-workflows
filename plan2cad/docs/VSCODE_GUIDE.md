@@ -56,6 +56,11 @@ You do **not** need to install GDAL, Tesseract or any system library: the Python
 
 ## 3. Convert the three shipped drawings
 
+**Prefer to see every stage explained as it runs?** Open `step_by_step.py` in VS Code and press F5 (or run
+`python step_by_step.py --pause`). It is one self-contained file: it prints what each of the 10 steps does, why, what it
+produced and what to do if it fails, and waits for Enter between steps. `--list` shows all steps without running anything;
+`--config configs/myplan.yaml` runs it on your own drawing; `--until 3` stops early.
+
 **Terminal:** `python -m plan2cad run configs`  
 **Or in VS Code:** *Terminal > Run Task... > plan2cad: run all drawings* (also the default build task, `Ctrl+Shift+B`).
 
@@ -166,7 +171,7 @@ A minimal example is `configs/examples/drawing3_minimal_auto.yaml` (calibration 
 
 ## 8. What was tested
 
-* **110 automated tests**, ~85 s: units, strict config validation (every error message), exact golden reproduction of the
+* **115 automated tests**, ~85 s: units, strict config validation (every error message), exact golden reproduction of the
   three accepted outputs, pipeline behaviour, CLI exit codes, bad input (corrupt/tiny images, unsuitable drawings, wrong
   parameters, simulated crashes, batch isolation, OCR missing), verification metric on synthetic data, an end-to-end
   millimetre plan with known geometry, automatic doors/OCR regression guards, determinism and parallel processes.
